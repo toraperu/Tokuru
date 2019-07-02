@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+
+/*deviseのview変更*/
+.user-sign-up-title{
+	text-align: center;
+}
