@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'genres/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+	root 'products#index'
 
 	devise_for :admins, controllers: {
 	  sessions:      'admins/sessions',
@@ -12,9 +15,20 @@ Rails.application.routes.draw do
 	  registrations: 'users/registrations'
 	}
 
-#userのルーティング
+	#userのルーティング
 	get 'users/:id/resign' => 'users#resign', as: 'resign'
 	patch 'users/:id/resign_confirm' => 'users#resign_confirm', as: 'resign_confirm'
+
+	#userに紐づくproductのルーティング
+	resources :users, only:[:show, :edit, :update] do
+		resources :products, only:[:index, :new, :create, :show, :edit, :update]
+	end
+	#about/productのルーティング
+	get 'products/about' => 'products#about', as: 'products_about'
+
+	#ジャンルのルーティング
+	get 'genres/:id' => 'genres#show', as: 'genre'
+
 
 
 end

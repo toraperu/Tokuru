@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 			redirect_to user_path(@user.id)
 		else
 			render :"/users/edit"
+		end
 	end
 
 	def resign

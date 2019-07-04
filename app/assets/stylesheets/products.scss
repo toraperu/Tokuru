@@ -1,0 +1,114 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//footerの高さ固定のため、indexの中身を固定幅に=>あとで消す
+.main-container{
+	height: 625px;
+}
+//ジャンボトロンを綺麗にする
+.jumbotron{
+	height: 600px;
+	background-image: url("tokuru-index-junb.jpg");
+	background-size: cover;
+	opacity: 0.9;
+}
+//ジャンボトロン内の文字を浮かせる
+.products-container{
+	position: relative;
+}
+.jumb-title{
+	position: absolute;
+	left: 10px;
+	top: 30px;
+	color: white;
+	text-shadow: 1px 2px 3px #CCCCCC;
+}
+//aboutページへのリンク調整
+.about-link{
+	position: absolute;
+	left: 400px;
+	top: 400px;
+	font-size: 100px;
+	color: #999999;
+	text-shadow: 1px 2px 3px #CCCCCC;
+	font-family: cursive;
+}
+.about-link:hover{
+	color: #333333;
+	text-decoration: none;
+}
+//ジャンルボタンの調整
+.genre-link{
+	color: white;
+}
+.genre-link:hover{
+	color: #CCCCCC;
+	text-decoration: none;
+}
+.genre-seach-title{
+	color: white;
+	background-color: #CC9966;
+	border: solid 1px white;
+}
+//新着商品一覧のタイトル見やすく
+.new-item-title{
+	color: white;
+	background-color: #CC9966;
+	border: solid 1px white;
+}
+//投稿の商品説明の大きさ
+.product-body{
+	width: 250px;
+	height: 120px;
+}
+//投稿のフォント変更
+.field{
+	font-family: 'MS Mincho';
+}
+//投稿ページのbg
+.post-bg{
+	background-image: url("post-bg2.png");
+	background-size: cover;
+}
+//aboutページのジャンボトロン
+.about-junbotron{
+	background-image: url("mad-doll.jpg");
+	background-size: cover;
+	height: 600px;
+	opacity: 0.8;
+}
+//aboutページのbg
+.about1-bg{
+	background-image: url("guitar.jpg");
+	background-size: cover;
+	height: 400px;
+	opacity: 0.8;
+}
+.about2-bg{
+	background-image: url("macbook3.jpeg");
+	background-size: cover;
+	height: 500px;
+}
+//aboutページのジャンボもじ
+.about-container{
+	position: relative;
+}
+.junb-about-title{
+	position: absolute;
+	left: 30px;
+	top: 50px;
+	color: white;
+	text-shadow: 1px 2px 3px #CCCCCC;
+}
+//aboutページのタイトルにアンダーライン
+.about-item-title1{
+	border-style: solid dotted;
+	border-width: 10px;
+	border-color: #FF6666;
+}
+.about-item-title2{
+	border-style: solid dotted;
+	border-width: 10px;
+	border-color: #0066FF;
+}
