@@ -1,13 +1,20 @@
 <div class="mypage-container">
 	<div class="row">
-		<div class="col-6 offset-3">
+		<div class="col-4 offset-1">
+			<br><br>
 			<h1>マイページ</h1>
 			<br>
 			<div class="mypage-link">
+				<div class="my-profile-image">
+					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350,
+					fallback: "no_image.jpg", size: '350x350', class: "border" %>
+				</div><br>
 				<p><%= link_to "購入履歴", "#", class: 'btn btn-primary' %></p><br>
-				<p><%= link_to "ユーザー情報編集", "#", class: 'btn btn-primary'%></p><br>
-				<p><%= link_to "商品情報編集", "#", class: 'btn btn-primary'%></p>
+				<p><%= link_to "ユーザー情報編集", edit_user_path(current_user), class: 'btn btn-primary'%>
+				</p><br>
 			</div>
+		</div>
+		<div class="col-6 offset-1 mypage-bg">
 		</div>
 	</div>
 </div>
