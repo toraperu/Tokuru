@@ -1,0 +1,76 @@
+<div class="product-show-container">
+	<div class="row">
+		<div class="col-2 offset-5">
+			<h1>商品詳細</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6 offset-3 product-show-head">
+			<h2>商品名 : <%= @product.name %></h2>
+			<p>ユーザー名 : <%= @product.user.name %></p>
+			<p>販売実績 : <%= @product.sale_result %>件</p>
+			<p>お気に入り数 : <%= @favorite.number %>個</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-7 offset-1 col-xs-10 offset-1 product-show-item">
+			<!--色付きリンク二つ-->
+			<div class="row product-show-link">
+				<div class="consult-link">
+					<p>注文内容</p>
+					<p><%= @product.price %></p>
+					<div><%= @product.name %></div>
+					<p><%= link_to "注文相談へ進む", "#{}", class: 'btn btn-primary' %></p>
+				</div>
+				<div class="comment-link">
+					<p>コメント投稿</p>
+					<div>
+						あなたがしてもらって嬉しかったことや、もっとしてもらいたかったことを
+						コメントしてください！
+					</div>
+					<p><%= link_to "コメントへ進む", "#{}", class: 'btn btn-success' %></p>
+				</div>
+			</div>
+			<!-- タブ・メニュー -->
+			<ul class="nav nav-tabs">
+				<li><a href="#service-content" data-toggle="tab">サービス内容</a></li>
+				<li><a href="#caution" data-toggle="tab">購入時の注意</a></li>
+				<li><a href="#comment" data-toggle="tab">コメント</a></li>
+			</ul>
+
+			<!-- タブ内容 -->
+			<div class="tab-content">
+				<!--サービス内容-->
+				<div class="tab-pane" id="service-content">
+					<p>サービス内容</p>
+					<div><%= @product.body %></div>
+				</div><br><br><br><br><br><br>
+				<!--購入時の注意-->
+				<div class="tab-pane" id="caution">
+					<p>購入時の注意</p>
+					<div><%= product.caution %></div>
+				</div><br><br><br><br><br><br>
+				<!--コメント一覧-->
+				<div class="tab-pane" id="comment">
+					<p>コメント</p>
+					<div class="row comment-container">
+						<div class="col-2 offset-1">
+							<%= attachment_image_tag @product, :jacket_image, :fill, 30, 30, fallback: 'no_image.jpg', size: '30x30', class: "border"%>
+						</div>
+						<div class="col-8 offset-1">
+							<div id="comments-area">
+								<%= render partial: "comments/index", locals: {comments: @comments} %>
+							</div>
+						</div>
+					</div>
+				</div><br>
+			</div>
+		</div>
+		<!--プロフィール情報　固定-->
+		<div class="col-md-3 offset-1 col-xs-10 offset-1">
+			<div class="seller-profile">
+				<%= @product.user.profile %>
+			</div>
+		</div>
+	</div>
+</div>
