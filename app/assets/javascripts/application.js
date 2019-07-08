@@ -10,7 +10,24 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require turbolinks
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
+
+
+
+
+//クラス名を追加したり、削除することでハートの色を変える＝＞render法に変えた
+// $(function() {
+// 	$(document).on("ajax:success", ".fav", function(e) {
+// 		if ($('#' + e.detail[0]).hasClass('fas')) {
+// 			$('#' + e.detail[0]).removeClass('fas').addClass('far');
+// 			$('.favorite-count').find
+// 		} else {
+// 			$('#' + e.detail[0]).removeClass('far').addClass('fas');
+// 		}
+// 	})
+// })
+

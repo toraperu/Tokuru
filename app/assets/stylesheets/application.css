@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+
+/*deviseのview変更*/
+/*Footerの見た目*/
+footer{
+	height: 100px;
+	bottom: 0;
+}
+.footer-container{
+	opacity: 0.8;
+}
+
+main{
+	width: 100%;
+}
+/*ページトップへ戻るボタン*/
+#back{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+}
+#arrow-img{
+  width: 50px;
+}

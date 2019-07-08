@@ -1,0 +1,59 @@
+<div class="myinfo-edit-container">
+	<div class="row">
+		<div class="col-4 offset-4">
+			<br><br><br><br><br><br>
+			<h1 class="myinfo-edit-title">ユーザー情報編集</h1>
+		</div>
+	</div><br><br><br>
+	<div class="myinfo-edit-body">
+		<%= form_for @user do |f| %>
+			<div class="row">
+				<div class="col-md-4 offset-1 col-xs-12">
+					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350, format: 'jpeg', fallback: "no_image.jpg", size:'350x350', class: 'img-circle profile-thumb my-img edit-img'%>
+					<%= f.attachment_field :profile_image %>
+				</div>
+				<div class="col-md-4 col-xs-12">
+					<div class="user-edit-username">
+						<%= f.label :ユーザー名 %><br>
+						<%= f.text_field :name, autofocus: true, autocomplete: "" %>
+					</div>
+					<br>
+					<div class="user-edit-realname">
+						<%= f.label :本名 %><br>
+						<%= f.text_field :real_name, autofocus: true, autocomplete: "" %>
+					</div>
+					<br>
+					<div class="user-edit-profile">
+					<%= f.label :プロフィール情報 %><br>
+					<%= f.text_area :profile, autofocus: true, autocomplete: "", size: "20x8" %>
+					</div>
+					<br>
+				</div>
+				<div class="col-md-3 col-xs-12">
+					<div class="user-edit-password">
+						<%= f.label :パスワード %>
+						<% if @minimum_password_length %>
+						<em>(<%= @minimum_password_length %> characters minimum)</em>
+						<% end %><br />
+						<%= f.password_field :password, autocomplete: "new-password" %>
+					</div>
+					<br>
+					<div class="user-edit-password-confirm">
+						<%= f.label :パスワード確認 %><br />
+						<%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+					</div><br>
+					<div>
+						<%= f.submit "入力完了", class:"btn btn-primary btn-lg" %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<div class="row">
+			<div class="col-4 offset-8">
+	      		<%= link_to resign_path(@user.id) do %>
+		        	<button class="btn btn-danger">退会する</button>
+		      	<% end %>
+			</div>
+		</div>
+	</div>
+</div>

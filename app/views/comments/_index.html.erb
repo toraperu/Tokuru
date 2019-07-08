@@ -1,0 +1,33 @@
+<% comments.each do |comment|%>
+<div class="row comment-record" id="comment_<%= comment.id %>">
+	<% unless comment.id.nil? %>
+		<div class="col-3">
+			<div id="star_<%= comment.id %>" >
+				<script>
+					$('#star_<%= comment.id %>').raty({
+						space: false,
+						size: 36,
+						readOnly: true,
+						starOff:  '<%= asset_path('star-off.png') %>',
+				  		starOn : '<%= asset_path('star-on.png') %>',
+						score: '<%= comment.star %>'
+					});
+				</script>
+			</div>
+		</div>
+		<div class="col-5">
+			<p><%= comment.user.name %></p>
+		</div>
+		<% if comment.user == current_user%>
+			<div class="col-2">
+				<%= link_to "編集", edit_user_product_comment_path(product, product.user, comment), class: "btn btn-warning btn-xs" %>
+			</div>
+			<div class="col-2">
+				<%= link_to "削除", user_product_comment_path(product.user,product, comment), class: "btn btn-danger btn-xs",method: :delete, remote: true %>
+			</div>
+		<% end %>
+		<div class="col-12"><%= comment.body %></div>
+	<% end %>
+</div>
+<% end %>
+

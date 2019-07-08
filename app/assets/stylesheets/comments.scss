@@ -1,0 +1,25 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//newページ
+//タイトルを下にずらす
+.new-comment-title{
+	padding-top: 30px;
+}
+//全体を真ん中に
+.comment-new-container{
+	text-align: center;
+}
+
+//editページ
+.edit-comment-title{
+	padding-top: 30px;
+}
+//全体を真ん中に
+//タイトルを下にずらす
+.comment-edit-container{
+	text-align: center;
+}
+
