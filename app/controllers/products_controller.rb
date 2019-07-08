@@ -20,6 +20,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @comments = Comment.all
   end
 
   def edit
@@ -41,8 +43,11 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :body, :jacket_image, :price, :genre_id, :finish)
+    params.require(:product).permit(:name, :body, :jacket_image,
+                                    :price, :genre_id, :finish,
+                                    :sale_result, :caution)
   end
+
 
 
 end

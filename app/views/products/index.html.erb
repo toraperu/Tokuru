@@ -1,43 +1,41 @@
 <div class="products-container">
 	<!--ジャンボトロン、あとでcssで背景写真つける-->
+	<%= link_to products_about_path, class:"about-link" do %>
 	<div class="jumbotron">
 		<h1 class="jumb-title">自分が活きる世界を探せ。</h1>
-		<p><%= link_to "<< ABOUT >>", products_about_path, class:"about-link" %></p>
 	</div>
+	<% end %>
 	<div class="main-container">
 		<div class="row">
-			<div class="col-md-2 col-xs-6 genre-container">
+			<div class="col-md-2 offset-md-1 col-6 genre-container">
 				<!--何個かのジャンルボタンを用意する-->
-				<h4 class="genre-seach-title">ジャンルから探す</h4>
-				<div class="d-flex flex-wrap justify-content-start">
-					<% @genres.each do |genre| %>
-						<div>
-							<button type="button" class="btn btn-outline-light bg-secondary btn-lg">
-								<%= link_to genre.name, genre_path(genre.id), class:"genre-link" %>
-							</button>
-						</div>
-					<% end %>
-				</div>
+				<ul class="list-group" style="max-width: 400px;">
+				  <li class="list-group-item disabled" aria-disabled="true">ジャンル</li>
+				  <% @genres.each do |genre| %>
+				  <li class="list-group-item list-group-item-secondary genre-list-items"><%= link_to genre.name, genre_path(genre.id), class:"genre-link", style: "color: #333333" %>
+				  </li>
+				  <% end %>
+				</ul>
 			</div>
 			<!--新着順に商品を並べる、thumbnailを使う--> <!--あとで無限スクロールを使う-->
-			<div class="col-md-10 col-xs-6">
+			<div class="col-md-8 offset-md-1 col-6">
 				<div class="newitems">
 					<h2 class="new-item-title">新着商品一覧</h2>
-					<div>
-						<div class="row d-flex flex-wrap justify-content-center">
-							<div class="col-md-4 col-xs-6">
-								<% @products.each do |product| %>
-								<div class="thumbnail">
-									<%= attachment_image_tag  product,:jacket_image, :fill, 200, 200,fallback: "no_image.jpg", size: '200x200',class:"border"%>
-									<div class="caption">
-										<p><%= product.name %></p>
-										<p><%= product.price %>円</p>
-										<p><%= product.user.name %>さんの出品</p>
-									</div>
+					<div class="row d-flex flex-wrap">
+						<% @products.each do |product| %>
+						<div class="col-md-4 col-12">
+							<%= link_to user_product_path(product.user, product) do %>
+							<div class="thumbnail product-index-thumnail float-left">
+								<%= attachment_image_tag  product,:jacket_image,fallback: "no_image.jpg",class: "border img-fluid"%>
+								<div class="caption">
+									<p><%= product.name %></p>
+									<p><%= product.price %>円</p>
+									<p><%= product.user.name %>さんの出品</p>
 								</div>
-								<% end %>
 							</div>
+							<% end %>
 						</div>
+						<% end %>
 					</div>
 				</div>
 			</div>

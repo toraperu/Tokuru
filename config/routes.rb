@@ -23,8 +23,13 @@ Rails.application.routes.draw do
 
 	#userに紐づくproductのルーティング
 	resources :users, only:[:show, :edit, :update] do
-		resources :products, only:[:index, :new, :create, :show, :edit, :update]
+		resources :products, only:[:index, :new, :create, :show, :edit, :update] do
+			resources :comments, only: [:new, :index, :create, :edit, :update, :destroy]
+		end
 	end
+
+	#fav/favoriteのルーティング
+	get 'products/fav/:id' => 'favorites#fav', as: "fav_products"
 	#about/productのルーティング
 	get 'products/about' => 'products#about', as: 'products_about'
 

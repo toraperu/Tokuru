@@ -1,9 +1,9 @@
-<div class="comment-new-container">
+<div class="comment-edit-container">
 	<div class="row">
 		<div class="col-4 offset-md-4 offset-2">
-			<h1 class="new-comment-title">コメント投稿</h1><br><br>
-			<div class="new-comment-body">
-			<%= form_with model: Comment.new, url: user_product_comments_path, local: true do |f| %>
+			<h1 class="edit-comment-title">コメント編集</h1>
+			<div class="edit-comment-body">
+			<%= form_with model: @comment, url: user_product_comment_path(@product, @product.user, @comment), local: true do |f| %>
 				<!--星機能-->
 				<div id="star">
 					<%= f.label :rate,'評価 ', class:'col-form-label' %>
@@ -22,7 +22,7 @@
 					<%= f.text_area :body, size: "50x10" %>
 				</div><br><br>
 				<div>
-					<%= f.submit "投稿", class: 'btn btn-secondary' %>
+					<%= f.submit "編集完了", class: 'btn btn-secondary' %>
 				</div><br><br>
 			<% end %>
 			</div>

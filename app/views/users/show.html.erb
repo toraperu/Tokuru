@@ -1,20 +1,83 @@
 <div class="mypage-container">
 	<div class="row">
-		<div class="col-4 offset-1">
+		<div class="col-md-4 offset-md-4">
 			<br><br>
 			<h1>マイページ</h1>
 			<br>
-			<div class="mypage-link">
+			<div class=" row mypage-link">
 				<div class="my-profile-image">
 					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350,
-					fallback: "no_image.jpg", size: '350x350', class: "border" %>
+					fallback: "no_image.jpg", size: '350x350', class: "border img-fluid" %>
 				</div><br>
-				<p><%= link_to "購入履歴", "#", class: 'btn btn-primary' %></p><br>
-				<p><%= link_to "ユーザー情報編集", edit_user_path(current_user), class: 'btn btn-primary'%>
-				</p><br>
+				<div class="col-6 order-history-path"><%= link_to "購入履歴", "#", style: "color: white" %></div><br>
+				<div class="col-6 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
+				</div>
 			</div>
 		</div>
-		<div class="col-6 offset-1 mypage-bg">
+	</div><br><br>
+	<div class="row">
+		<div class="col-6 offset-3">
+			<!-- タブ・メニュー -->
+			<ul class="nav nav-tabs">
+				<li class="nav-item"><a class="nav-link" href="#nav-content-favorite" data-toggle="tab">いいねした商品</a></li>
+				<li class="nav-item"><a class="nav-link" href="#nav-content-myproduct" data-toggle="tab">自分の商品</a></li>
+			</ul>
+			<!-- タブ内容 -->
+			<div class="tab-content">
+
+				<!--いいねした商品-->
+				<div class="tab-pane" id="nav-content-favorite">
+					<h2>いいねした商品一覧</h2>
+					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+						<!-- スライドさせる画像の設定 -->
+						<div class="carousel-inner">
+						    <% @favorites.each do |favorite| %>
+						    	<% if @count == 1 %>
+							    	<div class="carousel-item active">
+						    	<% else %>
+							    	<div class="carousel-item">
+					    		<% end %>
+
+						    	<%= link_to user_product_path(favorite.product, favorite.product.user) do %>
+						    		<%= attachment_image_tag favorite.product, :jacket_image,  :fill, 200, 200, fallback: "no_image.jpg", size: '200x200', class: "border img-fluid d-block w-100"%>
+						    	<% end %>
+
+								    </div>
+							    <% @count += 1 %>
+							<% end %>
+						</div>
+						<!-- スライドコントロールの設定 -->
+						<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">前へ</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">次へ</span>
+						</a>
+					</div>
+				</div>
+				<!--自分の商品-->
+				<div class="tab-pane" id="nav-content-myproduct">
+					<div class="row d-flex flex-wrap">
+						<% @products.each do |product| %>
+						<div class="col-md-6 col-12">
+							<%= link_to user_product_path(product.user, product) do %>
+							<div class="thumbnail product-index-thumnail">
+								<%= attachment_image_tag  product,:jacket_image,fallback: "no_image.jpg",class: "border img-fluid"%>
+								<div class="caption">
+									<p><%= product.name %></p>
+									<p><%= link_to "編集", edit_user_product_path(product.user, product), class: "btn btn-warning" %>
+										<i class="fas fa-edit"></i>
+									</p>
+								</div>
+							</div>
+							<% end %>
+						</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</div><br><br>

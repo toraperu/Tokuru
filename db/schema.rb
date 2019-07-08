@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_04_100325) do
+ActiveRecord::Schema.define(version: 2019_07_06_073336) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 2019_07_04_100325) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "body"
+    t.integer "user_id"
+    t.integer "product_id"
+    t.integer "star"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
+    t.string "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "genres", force: :cascade do |t|
@@ -40,6 +57,8 @@ ActiveRecord::Schema.define(version: 2019_07_04_100325) do
     t.datetime "updated_at", null: false
     t.integer "genre_id"
     t.boolean "finish", default: false
+    t.text "caution"
+    t.string "sale_result"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,6 +73,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_100325) do
     t.string "real_name"
     t.string "profile_image_id"
     t.boolean "resignation", default: false
+    t.text "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

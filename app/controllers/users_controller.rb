@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@first_favorite = @user.favorites.first
+		@favorites = @user.favorites.all
+		@count = 1
+		@products = @user.products.all
 	end
 
 	def edit
@@ -35,7 +39,7 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(
-			:name, :real_name, :profile_image, :email, :password, :password_confirmation)
+			:name, :real_name, :profile_image, :profile, :email, :password, :password_confirmation)
 	end
 
 
