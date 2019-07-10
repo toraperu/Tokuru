@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @genres = Genre.all
-    @products = Product.all.order(id: "DESC")
+    @products = Product.all.order(id: "DESC").page(params[:page]).per(6)
   end
 
   def new

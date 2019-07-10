@@ -1,0 +1,6 @@
+ja:
+  enums:
+    order:
+      payment:
+        credit: クレジットカード
+        skill: スキルの交換

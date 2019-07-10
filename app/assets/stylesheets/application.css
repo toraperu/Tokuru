@@ -16,10 +16,39 @@
 
 
 /*deviseのview変更*/
+/*新規登録*/
+.sign-up-contanier{
+	text-align: center;
+	background-image: url('blue-bill');
+	background-size: cover;
+	opacity: 0.8;
+	height: 600px;
+}
+.sign-up-field{
+	margin: 20px;
+}
+.sign-up-title{
+	background-color: #AAAAAA;
+}
+/*サインイン*/
+.sign-in-container{
+	text-align: center;
+	background-image: url('blue-belly');
+	background-size: cover;
+	opacity: 0.8;
+	height: 600px;
+}
+.sign-in-field{
+	margin: 20px;
+}
+.sign-in-title{
+	background-color: #AAAAAA;
+}
 /*Footerの見た目*/
 footer{
 	height: 100px;
 	bottom: 0;
+	background-color: #DCDCDC;
 }
 .footer-container{
 	opacity: 0.8;
@@ -37,4 +66,13 @@ main{
 }
 #arrow-img{
   width: 50px;
+}
+
+/*無限スクロールする際のpadding*/
+.thumbnail-items{
+	padding: 0;
+}
+/*ページネーション 隠す*/
+.pagination{
+
 }

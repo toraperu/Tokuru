@@ -11,23 +11,49 @@
 // about supported directives.
 //
 //= require jquery
-//= require turbolinks
 //= require rails-ujs
-//= require activestorage
 //= require_tree .
 
 
 
 
-//クラス名を追加したり、削除することでハートの色を変える＝＞render法に変えた
-// $(function() {
-// 	$(document).on("ajax:success", ".fav", function(e) {
-// 		if ($('#' + e.detail[0]).hasClass('fas')) {
-// 			$('#' + e.detail[0]).removeClass('fas').addClass('far');
-// 			$('.favorite-count').find
-// 		} else {
-// 			$('#' + e.detail[0]).removeClass('far').addClass('fas');
-// 		}
-// 	})
-// })
+
+//連絡手段のその他を選択した時にフォーム出す
+$(function(){
+	$('#order_contact').change(function(){
+		if ($(this).children('option:selected').val() == 'その他') {
+			$('.else-contact-form').show();
+		} else {
+			$('.else-contact-form').hide();
+		}
+	});
+});
+
+//スキルの交換を選択した時にあなたのスキルの入力欄を出す
+$(function(){
+	$('#order_payment').change(function(){
+		if ($(this).children('option:selected').val() == 'skill') {
+			$('.your-skill-form').show();
+		} else {
+			$('.your-skill-form').hide();
+		}
+	});
+});
+
+//無限スクロール
+
+
+	$(window).on('scroll', function(){
+		scrollHeight = $(document).height();
+		scrollPosition = $(window).height() + $(window).scrollTop();
+		if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+			 $('.jscroll').jscroll({
+	            contentSelector: '.thumbnail-items',
+	            nextSelector: '.scroll-target'
+	          });
+		}
+	})
+
+
+
 

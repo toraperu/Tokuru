@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/index'
-  get 'comments/new'
-  get 'genres/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 	root 'products#index'
@@ -25,14 +22,20 @@ Rails.application.routes.draw do
 	resources :users, only:[:show, :edit, :update] do
 		resources :products, only:[:index, :new, :create, :show, :edit, :update] do
 			resources :comments, only: [:new, :index, :create, :edit, :update, :destroy]
+			resources :orders, only:[:new, :create, :index, :show]
 		end
+		#userに紐づくorderのルーティング
 	end
+
+
+
 
 	#fav/favoriteのルーティング
 	get 'products/fav/:id' => 'favorites#fav', as: "fav_products"
 	#about/productのルーティング
 	get 'products/about' => 'products#about', as: 'products_about'
-
+	#confirm/orderのルーティング
+	get 'orders/:id/confirm' => 'orders#confirm', as: 'order_confirm'
 	#ジャンルのルーティング
 	get 'genres/:id' => 'genres#show', as: 'genre'
 

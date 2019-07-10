@@ -1,7 +1,7 @@
 <div class="product-show-container">
 	<div class="row">
 		<div class="col-md-2 offset-md-5 col-4 offset-4">
-			<h1>商品詳細</h1>
+			<h1 class="show-product-title">商品詳細</h1>
 		</div><br><br><br><br><br>
 	</div>
 	<div class="row">
@@ -9,27 +9,53 @@
 			<h2>商品名 : <%= @product.name %></h2><br>
 			<p>ユーザー名 : <%= @product.user.name %></p><br>
 			<p>販売実績 : <%= @product.sale_result %>件</p><br>
-			<!--色付きリンク二つ-->
-			<div class="row product-show-link">
-				<div class="col-md-6 consult-link">
-					<%= link_to "#{}", :style=>"color:white; text-decoration: none;" do %>
-					<h4>注文内容</h4>
-					<p><%= @product.price %>円</p>
-					<div><%= @product.name %></div><br>
-					<p><< 注文相談へ進む >></p>
-				</div>
-				<% end %>
-				<div class="col-md-6 comment-link">
-				<%= link_to new_user_product_comment_path(current_user, @product), :style=>"color:white; text-decoration: none;" do %>
-					<h4>コメント投稿</h4>
-					<div>
-						あなたがしてもらって<br>嬉しかったことや、<br>もっとしてほしいことを<br>
-						コメントしてください！
+			<% if user_signed_in? %>
+				<% if @product.commented_by?(current_user) %>
+					<!--色付きリンク二つ-->
+					<div class="row product-show-link">
+						<div class="col-md-6 consult-link">
+							<%= link_to "#{}", :style=>"color:white; text-decoration: none;" do %>
+							<h4>注文内容</h4>
+							<p><%= @product.price %>円</p>
+							<div><%= @product.name %></div><br>
+							<p><< 注文相談へ進む >></p>
+						</div>
+						<% end %>
+						<div class="col-md-6 comment-link">
+						<%= link_to "#{}", :style=>"color:white; text-decoration: none;" do %>
+							<h4>コメント投稿</h4>
+							<div>
+								あなたがしてもらって<br>嬉しかったことや、<br>もっとしてほしいことを<br>
+								コメントしてください！
+							</div>
+							<p><< コメントへ進む >></p>
+						</div>
+						<% end %>
 					</div>
-					<p><< コメントへ進む >></p>
-				</div>
+				<% else %>
+					<!--色付きリンク二つ-->
+					<div class="row product-show-link">
+						<div class="col-md-6 consult-link">
+							<%= link_to "#{}", :style=>"color:white; text-decoration: none;" do %>
+							<h4>注文内容</h4>
+							<p><%= @product.price %>円</p>
+							<div><%= @product.name %></div><br>
+							<p><< 注文相談へ進む >></p>
+						</div>
+						<% end %>
+						<div class="col-md-6 comment-link">
+						<%= link_to new_user_product_comment_path(current_user, @product), :style=>"color:white; text-decoration: none;" do %>
+							<h4>コメント投稿</h4>
+							<div>
+								あなたがしてもらって<br>嬉しかったことや、<br>もっとしてほしいことを<br>
+								コメントしてください！
+							</div>
+							<p><< コメントへ進む >></p>
+						</div>
+						<% end %>
+					</div>
 				<% end %>
-			</div>
+			<% end %>
 		</div>
 	</div>
 	<br><br><br>

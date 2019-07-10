@@ -12,7 +12,7 @@ class Product < ApplicationRecord
 	    favorites.where(user_id: user.id).exists?
 	end
 
-	def commented_by(user) #コメントしてるかどうか
+	def commented_by?(user) #コメントしてるかどうか
 		comments.where(user_id: user.id).exists?
 	end
 end

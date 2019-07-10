@@ -21,10 +21,10 @@
 			<div class="col-md-8 offset-md-1 col-6">
 				<div class="newitems">
 					<h2 class="new-item-title">新着商品一覧</h2>
-					<div class="row d-flex flex-wrap">
+					<div class="row d-flex flex-wrap thumbnail-items jscroll">
 						<% @products.each do |product| %>
 						<div class="col-md-4 col-12">
-							<%= link_to user_product_path(product.user, product) do %>
+							<%= link_to user_product_path(product.user, product), class: "scroll-target" do %>
 							<div class="thumbnail product-index-thumnail float-left">
 								<%= attachment_image_tag  product,:jacket_image,fallback: "no_image.jpg",class: "border img-fluid"%>
 								<div class="caption">
@@ -37,8 +37,9 @@
 						</div>
 						<% end %>
 					</div>
+					<%= paginate @products %>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</div><br><br>

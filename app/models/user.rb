@@ -7,6 +7,7 @@ class User < ApplicationRecord
 	has_many :products
 	has_many :favorites, dependent: :destroy
 	has_many :comments, dependent: :destroy
+	has_many :orders
 
 	attachment :profile_image
 end
