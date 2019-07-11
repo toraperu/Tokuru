@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
 //= require rails-ujs
 //= require_tree .
 
@@ -41,18 +40,46 @@ $(function(){
 });
 
 //無限スクロール
+//注意点=> •ページネーションの位置重要　•classではなくid名を指定する　•autoTriggerではなくnextSerectorで次の要素を指定する
+$(window).on('scroll', function() {
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ((scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+		$('#scroll-target').jscroll({
+			contentSelector : "#scroll-target",
+			loadingHtml : '<div class="col-xs-12 text-center"><i class="fas fa-spinner"></i></div>',
+			nextSelector: '.pagination .next a',
+			callback: function() {
+             	$('nav.pagination').remove();
+         	}
+		});
+    }
+});
+//無限スクロールの参考にしたサイトの記述
+// $(window).on('scroll', function() {
+//     scrollHeight = $(document).height();
+//     scrollPosition = $(window).height() + $(window).scrollTop();
+//     if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+//           $('.jscroll').jscroll({
+//             contentSelector: '.skill-list',
+//             nextSelector: 'span.next:last a'
+//           });
+//     }
+// });
 
+//table/tr要素全体がリンクになる
+$(function(){
+	$('tbody tr[data-href]').addClass('clickable').click(function () {
+		window.location = $(this).attr('data-href');
+	}).find('a').hover(function () {
+		$(this).parents('tr').unbind('click');
+	}, function () {
+		$(this).parents('tr').click(function () {
+			window.location = $(this).attr('data-href');
+		});
+	});
+});
 
-	$(window).on('scroll', function(){
-		scrollHeight = $(document).height();
-		scrollPosition = $(window).height() + $(window).scrollTop();
-		if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
-			 $('.jscroll').jscroll({
-	            contentSelector: '.thumbnail-items',
-	            nextSelector: '.scroll-target'
-	          });
-		}
-	})
 
 
 

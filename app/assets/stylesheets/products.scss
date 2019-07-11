@@ -42,6 +42,7 @@
 .product-index-thumnail:hover{
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
+  	text-decoration: none;
 }
 //ジャンルボタン
 .genre-list-items:hover{
@@ -165,3 +166,10 @@
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
 }
+//検索ぺーじ
+//全体の大きさ
+.search-container{
+	height: 650px;
+}
+
+

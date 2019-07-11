@@ -76,3 +76,15 @@ main{
 .pagination{
 
 }
+/*検索窓*/
+.seach-window{
+	width: 30%;
+	position: absolute;
+	right: 20%;
+}
+.search_form{
+	width: 80%;
+}
+.glyphicon-search{
+	background-color: #FFCC33;
+}

@@ -4,6 +4,14 @@ class ProductsController < ApplicationController
     @products = Product.all.order(id: "DESC").page(params[:page]).per(6)
   end
 
+  def test
+    @products = Product.all.page(params[:page]).per(3)
+  end
+
+  def search_list
+    @products = Product.search(params[:search])
+  end
+
   def new
     @product = Product.new
     @genres = Genre.all

@@ -15,4 +15,14 @@ class Product < ApplicationRecord
 	def commented_by?(user) #コメントしてるかどうか
 		comments.where(user_id: user.id).exists?
 	end
+
+
+	#検索窓設置
+	def self.search(search) #self.でクラスメソッドとしている
+		if search
+		  Product.where(['name LIKE ?', "%#{search}%"])
+		else
+		  Product.all #全て表示。
+		end
+	end
 end

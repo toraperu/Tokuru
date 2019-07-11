@@ -2,13 +2,15 @@
 <html>
   <head>
     <title>Tokuru</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <!-- viewport meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- jQuery、Popper.js、Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--jscroll-->
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js></script>
+    <!--popper.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <!--Bootstrap Js-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -16,10 +18,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--fontawesome-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %><!-- viewport meta -->
+
+
   </head>
 
   <body>
@@ -79,6 +81,12 @@
                   <%= link_to "ログイン", new_user_session_path , class: "nav-link" %>
                 </li>
               <% end %>
+              <div class="seach-window">
+                <%= form_tag search_path, enforce_utf8: false, method:'get' do %>
+                  <%= text_field_tag :search, "", class: "search_form", placeholder: "商品名や出品者で検索" %>
+                  <%= button_tag sanitize('<i class="fa fa-search"></i>'), type: "submit", class: "btn glyphicon glyphicon-search" %>
+                <% end %>
+              </div>
             </ul>
             </div>
         </nav>

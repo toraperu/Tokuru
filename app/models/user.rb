@@ -10,4 +10,6 @@ class User < ApplicationRecord
 	has_many :orders
 
 	attachment :profile_image
+
+
 end

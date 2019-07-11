@@ -21,23 +21,25 @@
 			<div class="col-md-8 offset-md-1 col-6">
 				<div class="newitems">
 					<h2 class="new-item-title">新着商品一覧</h2>
-					<div class="row d-flex flex-wrap thumbnail-items jscroll">
-						<% @products.each do |product| %>
-						<div class="col-md-4 col-12">
-							<%= link_to user_product_path(product.user, product), class: "scroll-target" do %>
-							<div class="thumbnail product-index-thumnail float-left">
-								<%= attachment_image_tag  product,:jacket_image,fallback: "no_image.jpg",class: "border img-fluid"%>
-								<div class="caption">
-									<p><%= product.name %></p>
-									<p><%= product.price %>円</p>
-									<p><%= product.user.name %>さんの出品</p>
+					<div id="scroll-target">
+						<div class="row d-flex flex-wrap">
+							<% @products.each do |product| %>
+							<div class="col-md-4 col-12">
+								<%= link_to user_product_path(product.user, product) do %>
+								<div class="card img-thumbnail product-index-thumnail">
+									<%= attachment_image_tag  product,:jacket_image,fallback: "no_image.png",class: "border card-img-top img-fluid"%>
+									<div class="card-body px-2 py-3">
+										<h5 class="card-title"><%= product.name %></h5>
+										<p class="card-text"><%= product.user.name %> さんの出品</p>
+										<p class="card-text"><%= product.price %></p>
+									</div>
 								</div>
+								<% end %>
 							</div>
 							<% end %>
 						</div>
-						<% end %>
-					</div>
 					<%= paginate @products %>
+					</div>
 				</div>
 			</div>
 		</div>

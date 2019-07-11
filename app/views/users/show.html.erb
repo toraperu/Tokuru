@@ -7,9 +7,9 @@
 			<div class=" row mypage-link">
 				<div class="my-profile-image">
 					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350,
-					fallback: "no_image.jpg", size: '350x350', class: "border img-fluid" %>
+					fallback: "no_image.png", size: '350x350', class: "border img-fluid" %>
 				</div><br>
-				<div class="col-6 order-history-path"><%= link_to "購入履歴", "#", style: "color: white" %></div><br>
+				<div class="col-6 order-history-path"><%= link_to "購入履歴", user_orders_path(current_user), style: "color: white" %></div><br>
 				<div class="col-6 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
 				</div>
 			</div>
@@ -39,7 +39,7 @@
 					    		<% end %>
 
 						    	<%= link_to user_product_path(favorite.product, favorite.product.user) do %>
-						    		<%= attachment_image_tag favorite.product, :jacket_image,  :fill, 200, 200, fallback: "no_image.jpg", size: '200x200', class: "border img-fluid d-block w-100"%>
+						    		<%= attachment_image_tag favorite.product, :jacket_image,  :fill, 200, 200, fallback: "no_image.png", size: '200x200', class: "border img-fluid d-block w-100"%>
 						    	<% end %>
 
 								    </div>
@@ -63,11 +63,11 @@
 						<% @products.each do |product| %>
 						<div class="col-md-6 col-12">
 							<%= link_to user_product_path(product.user, product) do %>
-							<div class="thumbnail product-index-thumnail">
-								<%= attachment_image_tag  product,:jacket_image,fallback: "no_image.jpg",class: "border img-fluid"%>
-								<div class="caption">
-									<p><%= product.name %></p>
-									<p><%= link_to "編集", edit_user_product_path(product.user, product), class: "btn btn-warning" %>
+							<div class="card img-thumbnail product-index-thumnail">
+								<%= attachment_image_tag  product,:jacket_image,fallback: "no_image.png",class: "border card-img-top img-fluid"%>
+								<div class="card-body px-2 py-3">
+									<h5 class="card-title"><%= product.name %></h5>
+									<p class="mb-0"><%= link_to "編集", edit_user_product_path(product.user, product), class: "btn btn-warning btn-sm" %>
 										<i class="fas fa-edit"></i>
 									</p>
 								</div>
