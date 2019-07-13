@@ -12,7 +12,6 @@
 				</tr>
 			</thead>
 			<% @orders.each do |order| %>
-
 			<tbody>
 				<tr class="row order-history-item" data-href="<%= user_product_path(order.product.user, order.product) %>">
 					<td class="col-3">

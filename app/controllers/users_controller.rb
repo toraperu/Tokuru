@@ -2,10 +2,14 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		#カルーセルでactiveにする一件
 		@first_favorite = @user.favorites.first
+		#カルーセルで表示する全件
 		@favorites = @user.favorites.all
 		@count = 1
 		@products = @user.products.all
+		#renderで渡すインスタンス変数
+		@orders = Order.all
 	end
 
 	def edit

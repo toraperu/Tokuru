@@ -1,0 +1,110 @@
+<div class="product-show-container">
+	<div class="row">
+		<div class="col-md-2 offset-md-5 col-4 offset-4">
+			<h1 class="show-product-title">商品詳細</h1>
+		</div><br><br><br><br><br>
+	</div>
+	<div class="row">
+		<div class="col-md-4 offset-md-4 product-show-head">
+			<h2>商品名 : <%= @product.name %></h2><br>
+			<p>ユーザー名 : <%= @product.user.name %></p><br>
+			<p>販売実績 : <%= @product.sale_result %>件</p><br>
+			<% if user_signed_in? %>
+				<% if @product.commented_by?(current_user) %>
+					<!--色付きリンク二つ-->
+					<div class="row product-show-link">
+						<div class="col-md-6 consult-link">
+							<%= link_to "#{}", :style=>"color:white; text-decoration: none;" do %>
+							<h4>注文内容</h4>
+							<p><%= @product.price %>円</p>
+							<div><%= @product.name %></div><br>
+							<p><< 注文相談へ進む >></p>
+						</div>
+						<% end %>
+						<div class="col-md-6 comment-link">
+						<%= link_to "#{}", :style=>"color:white; text-decoration: none;" do %>
+							<h4>コメント投稿</h4>
+							<div>
+								あなたがしてもらって<br>嬉しかったことや、<br>もっとしてほしいことを<br>
+								コメントしてください！
+							</div>
+							<p><< コメントへ進む >></p>
+						</div>
+						<% end %>
+					</div>
+				<% else %>
+					<!--色付きリンク二つ-->
+					<div class="row product-show-link">
+						<div class="col-md-6 consult-link">
+							<%= link_to "#{}", :style=>"color:white; text-decoration: none;" do %>
+							<h4>注文内容</h4>
+							<p><%= @product.price %>円</p>
+							<div><%= @product.name %></div><br>
+							<p><< 注文相談へ進む >></p>
+						</div>
+						<% end %>
+						<div class="col-md-6 comment-link">
+						<%= link_to new_users_user_product_comment_path(current_user, @product), :style=>"color:white; text-decoration: none;" do %>
+							<h4>コメント投稿</h4>
+							<div>
+								あなたがしてもらって<br>嬉しかったことや、<br>もっとしてほしいことを<br>
+								コメントしてください！
+							</div>
+							<p><< コメントへ進む >></p>
+						</div>
+						<% end %>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+	<br><br><br>
+	
+	<!-- タブ・メニュー -->
+	<div class="row">
+		<div class="col-md-7 offset-md-1 col-10 offset-1">
+			<ul class="nav nav-tabs">
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#item-service-content">サービス内容</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#item-caution">購入時の注意</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#item-comment">コメント</a></li>
+				<li id="fav-area">
+					<%= render partial: 'products/fav', locals: {product: @product} %>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="row justify-content-center">
+		<div class="col-md-7 offset-md-1 col-xs-10 offset-1">
+
+			<!-- タブ内容 -->
+			<div class="col-12 tab-content">
+				<!--サービス内容-->
+				<div class="tab-pane" id="item-service-content">
+					<h2>サービス内容</h2>
+					<div><%= @product.body %></div>
+				</div><br>
+				<!--購入時の注意-->
+				<div class="tab-pane" id="item-caution">
+					<h2>購入時の注意点</h2>
+					<div><%= @product.caution %></div>
+				</div><br>
+				<!--コメント一覧-->
+				<div class="tab-pane" id="item-comment">
+					<h2>コメント</h2><br><br>
+					<div class="comment-container">
+						<%= render partial: "comments/index", locals: {comments: @comments, product: @product} %>
+					</div>
+				</div><br>
+			</div>
+		</div>
+		<!--プロフィール情報　固定-->
+		<div class="col-md-3 offset-md-1 col-6 offset-3">
+			<div class="seller-profile">
+				<h4>[出品者情報]</h4>
+				<%= @product.user.profile %>
+			</div>
+		</div>
+	</div>
+	<br><br>
+</div>

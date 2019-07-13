@@ -1,0 +1,23 @@
+<div class="container bank-new-container">
+	<div class="row">
+		<div class="col-4 offset-4">
+			<h1>振込先銀行登録</h1>
+			<%= form_with model: Bankbook.new, url: user_bankbooks_path(current_user), local: true do |f| %>
+			<div class="bank-field">
+				<%= f.label :銀行名 %><br>
+				<%= f.select :bankname, Bankbook.banknames.map { |k, v| [Bankbook.banknames_i18n[k], k]} %>
+			</div><br>
+			<div class="bank-field">
+				<%= f.label :支店番号 %><br>
+				<%= f.text_field :branchname %>
+			</div><br>
+			<div class="bank-field">
+				<%= f.label :口座番号 %><br>
+				<%= f.text_field :account_number %>
+			</div>
+			<div class="bank-action">
+				<%= f.submit "口座登録", class:"btn btn-secondary btn-lg"%>
+			</div>
+		</div>
+	</div>
+</div>

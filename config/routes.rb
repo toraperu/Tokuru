@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'banks/new'
+  get 'banks/create'
+  get 'banks/edit'
+  get 'banks/update'
+  get 'banks/destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 	root 'products#index'
@@ -24,7 +29,8 @@ Rails.application.routes.draw do
 			resources :comments, only: [:new, :index, :create, :edit, :update, :destroy]
 			resources :orders, only:[:new, :create]
 		end
-		#userに紐づくorderのルーティング
+		#userに紐づくbankのルーティング
+		resources :banks, only:[:new, :create, :edit, :update, :destroy]
 	end
 	#/index/order(特定の商品に紐付かない)のルーティング
 	get 'orders/index' => 'orders#index', as: 'user_orders'

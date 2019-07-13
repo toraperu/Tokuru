@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @comments = Comment.all
+    @orders = Order.all
   end
 
   def edit

@@ -9,7 +9,7 @@
 					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350,
 					fallback: "no_image.png", size: '350x350', class: "border img-fluid" %>
 				</div><br>
-				<div class="col-6 order-history-path"><%= link_to "購入履歴", user_orders_path(current_user), style: "color: white" %></div><br>
+				<div class="col-6 bank-new-path"><%= link_to "振込先登録", new_user_bank_path(current_user), style: "color: white" %></div><br>
 				<div class="col-6 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
 				</div>
 			</div>
@@ -21,6 +21,7 @@
 			<ul class="nav nav-tabs">
 				<li class="nav-item"><a class="nav-link" href="#nav-content-favorite" data-toggle="tab">いいねした商品</a></li>
 				<li class="nav-item"><a class="nav-link" href="#nav-content-myproduct" data-toggle="tab">自分の商品</a></li>
+				<li class="nav-item"><a class="nav-link" href="#nav-content-order-history" data-toggle="tab">購入履歴</a></li>
 			</ul>
 			<!-- タブ内容 -->
 			<div class="tab-content">
@@ -76,6 +77,9 @@
 						</div>
 						<% end %>
 					</div>
+				</div>
+				<div class="tab-pane" id="nav-content-order-history">
+					<%= render partial: 'orders/index', locals: { orders: @orders }%>
 				</div>
 			</div>
 		</div>

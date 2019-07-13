@@ -4,3 +4,9 @@ ja:
       payment:
         credit: クレジットカード
         skill: スキルの交換
+    bank:
+      name:
+        mitubishi: 三菱UFJ銀行
+        mituisumitomo: 三井住友銀行
+        mizuho: みずほ銀行
+        risona: りそな銀行

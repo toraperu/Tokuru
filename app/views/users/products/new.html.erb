@@ -1,0 +1,40 @@
+<div class="main-container">
+	<div class="row">
+		<div class="col-4 offset-2">
+			<h1 class="new-product-title">商品投稿</h1>
+			<br>
+			<br>
+			<%= form_for [current_user, @product] do |f| %>
+				<div class="field">
+					<%= f.label :"投稿画像" %>
+					<%= f.attachment_field :jacket_image %>
+				</div><br>
+				<div class="field">
+					<%= f.label :"あなたの得意" %>
+					<%= f.text_field :name, size: '25x4' %>
+				</div><br>
+				<div class="field">
+					<%= f.label :"ジャンル" %>
+					<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
+				</div><br>
+				<div class="field">
+					<%= f.label :"価格" %>
+					<%= f.text_field :price %>
+				</div><br>
+				<div class="field">
+					<%= f.label :"商品説明" %><br>
+					<%= f.text_area :body, size: '25x6', class: "product-body" %><br><br>
+				</div><br>
+				<div class="field">
+					<%= f.label :"購入時の注意点" %><br>
+					<%= f.text_area :caution, size: '25x6', class: "product-caution" %><br><br>
+				</div><br>
+				<div><%= f.submit "投稿", class:"btn btn-secondary btn-lg" %>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-4 offset-2 post-bg">
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,60 @@
+<div class="myproduct-edit-container">
+	<div class="row">
+		<div class="col-4 offset-4">
+			<br>
+			<h1 class="myproduct-edit-title">商品情報編集</h1>
+		</div>
+	</div>
+	<div class="myproduct-edit-body">
+		<%= form_for [current_user, @product] do |f| %>
+			<div class="row">
+				<div class="col-md-4 offset-1 col-xs-12">
+					<%= attachment_image_tag @product, :jacket_image, :fill, 350, 350, format: 'jpeg', fallback: "no_image.png", size:'350x350', class: 'img-circle profile-thumb my-img edit-img'%>
+					<%= f.attachment_field :jacket_image %>
+				</div>
+				<div class="col-md-4 col-xs-12">
+					<div class="product-edit-name">
+						<%= f.label :商品名 %><br>
+						<%= f.text_field :name, autofocus: true, autocomplete: "" %>
+					</div>
+					<br>
+					<div class="product-edit-price">
+						<%= f.label :価格 %><br>
+						<%= f.text_field :price, autocomplete: "" %>
+					</div>
+					<br>
+					<div class="product-edit-genre">
+						<%= f.label :ジャンル %><br>
+						<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
+					</div>
+					<br>
+					<div class="product-edit-body">
+						<%= f.label :商品説明 %><br>
+						<%= f.text_area :body, autocomplete: "", size: "20x8" %>
+					</div>
+					<br>
+				</div>
+				<div class="col-md-3 col-xs-12">
+					<div class="product-edit-finish">
+						<%= f.label :販売状況 %><br>
+						<%= f.select :finish, [["販売中", false], ["取扱停止", true],] %>
+					</div>
+					<br>
+					<div class="product-edit-sale">
+						<%= f.label :"販売実績(件数)" %>
+						<%= f.select(:sale_result, 1..200) %>
+					</div>
+					<br>
+					<div class="product-edit-caution">
+						<%= f.label :購入時の注意 %><br>
+						<%= f.text_area :caution, autocomplete: "", size: "25x10" %>
+					</div><br>
+					<div>
+						<%= f.submit "入力完了", class:"btn btn-primary btn-lg" %>
+					</div><br><br><br>
+				</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
