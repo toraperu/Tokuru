@@ -5,12 +5,13 @@
 			<h1>マイページ</h1>
 			<br>
 			<div class=" row mypage-link">
-				<div class="my-profile-image">
+				<div class="col-10 my-profile-image">
 					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350,
 					fallback: "no_image.png", size: '350x350', class: "border img-fluid" %>
 				</div><br>
-				<div class="col-6 bank-new-path"><%= link_to "振込先登録", new_user_bank_path(current_user), style: "color: white" %></div><br>
-				<div class="col-6 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
+				<div class="col-4 bank-new-path"><%= link_to "振込先登録", new_user_bank_path(current_user), style: "color: white" %></div><br>
+				<div class="col-4 bank-index-path"><%= link_to "振込先一覧", user_banks_path(current_user), style: "color: white" %></div><br>
+				<div class="col-4 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
 				</div>
 			</div>
 		</div>

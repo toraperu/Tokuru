@@ -23,6 +23,17 @@
 	font-family: 'Hiragino Mincho Pro';
 	margin-top: 20px;
 }
+.bank-index-path{
+	height: 80px;
+	text-align: center;
+	vertical-align: center;
+	padding: 0.5em 1em;
+    background: -moz-linear-gradient(#BBBBBB, #333333);
+    background: -webkit-linear-gradient(#BBBBBB, #333333);
+    background: linear-gradient(to right, #BBBBBB, #333333);
+	font-family: 'Hiragino Mincho Pro';
+	margin-top: 20px;
+}
 .user-edit-path{
 	height: 80px;
 	text-align: center;
@@ -34,6 +45,10 @@
 	margin-top: 20px;
 }
 .bank-new-path:hover{
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+  	transform: translateY(-0.1875em);
+}
+.bank-index-path:hover{
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
 }

@@ -1,0 +1,31 @@
+<div class="container index-bank-container">
+	<div class="row">
+		<div class="col-6 offset-3">
+			<table class="table">
+				<thead class="thead-light">
+					<tr class="row">
+						<th class="col-3">銀行名</th>
+						<th class="col-3">支店名</th>
+						<th class="col-2">口座番号</th>
+						<th class="col-4"></th>
+					</tr>
+				</thead>
+				<% @banks.each do |bank| %>
+				<tbody>
+					<tr class="row" id="bank_<%= bank.id %>">
+						<td class="col-3"><%= bank.name_i18n %></td>
+						<td class="col-3"><%= bank.branch %></td>
+						<td class="col-2"><%= bank.number %></td>
+						<% if bank.user == current_user %>
+							<td class="col-4">
+								<%= link_to "編集", edit_user_bank_path(current_user, bank), class:"btn btn-warning btn-xs" %>
+								<%= link_to "削除", user_bank_path(current_user, bank), class:"btn btn-danger btn-xs",method: :delete, remote: true %>
+							</td>
+						<% end %>
+					</tr>
+				</tbody>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

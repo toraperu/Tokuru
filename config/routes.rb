@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 			resources :orders, only:[:new, :create]
 		end
 		#userに紐づくbankのルーティング
-		resources :banks, only:[:new, :create, :edit, :update, :destroy]
+		resources :banks, only:[:new, :create, :index, :edit, :update, :destroy]
 	end
 	#/index/order(特定の商品に紐付かない)のルーティング
 	get 'orders/index' => 'orders#index', as: 'user_orders'

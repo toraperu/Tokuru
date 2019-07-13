@@ -6,19 +6,27 @@ class BanksController < ApplicationController
   def create
     @bank = current_user.banks.build(bank_params)
     if @bank.save
-      redirect_to root_path
+      redirect_to user_path(current_user)
     else
       render :new
     end
   end
 
+  def index
+    @banks = Bank.where(user_id: current_user.id)
+  end
+
   def edit
+    @bank = Bank.find(params[:id])
   end
 
   def update
   end
 
   def destroy
+    @bank = Bank.find(params[:id])
+    @bank_id = @bank.id
+    @bank.destroy
   end
 
   private
