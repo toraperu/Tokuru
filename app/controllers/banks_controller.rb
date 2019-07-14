@@ -21,6 +21,12 @@ class BanksController < ApplicationController
   end
 
   def update
+    @bank = Bank.find(params[:id])
+    if @bank.update(bank_params)
+      redirect_to user_banks_path
+    else
+      render :edit
+    end
   end
 
   def destroy
