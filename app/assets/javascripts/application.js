@@ -15,7 +15,15 @@
 
 
 
-
+//ページトップに戻るボタン
+$(function() {
+	$('#back a').on('click',function(){
+		$('body, html').animate({
+			scrollTop:0
+			}, 800);
+		return false;
+	});
+});
 
 //連絡手段のその他を選択した時にフォーム出す
 $(function(){
@@ -39,7 +47,7 @@ $(function(){
 	});
 });
 
-//無限スクロール
+//無限スクロール(Topページ)
 //注意点=> •ページネーションの位置重要　•classではなくid名を指定する　•autoTriggerではなくnextSerectorで次の要素を指定する
 $(window).on('scroll', function() {
     scrollHeight = $(document).height();
@@ -55,6 +63,8 @@ $(window).on('scroll', function() {
 		});
     }
 });
+
+
 //無限スクロールの参考にしたサイトの記述
 // $(window).on('scroll', function() {
 //     scrollHeight = $(document).height();

@@ -7,6 +7,12 @@ class Product < ApplicationRecord
 
 	attachment :jacket_image
 
+	validates :name, presence: true, length: {in: 1..13}
+	validates :price, presence: true
+	validates :body, presence: true, length: {in: 1..200}
+
+	#販売中のスコープ genre/show, product/indexに使用
+	scope :at_sale, -> { where(finish: false) }
 
 	def favorited_by?(user) #いいねしているかどうか
 	    favorites.where(user_id: user.id).exists?
@@ -22,7 +28,7 @@ class Product < ApplicationRecord
 		if search
 		  Product.where(['name LIKE ?', "%#{search}%"])
 		else
-		  Product.all #全て表示。
+		  Product.at_sale #販売中のものを全て表示。
 		end
 	end
 end

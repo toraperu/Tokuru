@@ -47,15 +47,24 @@
 /*Footerの見た目*/
 footer{
 	height: 100px;
-	bottom: 0;
 	background-color: #DCDCDC;
+	margin-top: auto;
 }
 .footer-container{
 	opacity: 0.8;
 }
+.footer-items{
+	text-align: center;
+}
 
 main{
 	width: 100%;
+}
+body,#wrapper{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	padding-top: 60px;
 }
 /*ページトップへ戻るボタン*/
 #back{
@@ -80,10 +89,10 @@ main{
 .seach-window{
 	width: 30%;
 	position: absolute;
-	right: 20%;
+	right: 1%;
 }
 .search_form{
-	width: 80%;
+	width: 60%;
 }
 .glyphicon-search{
 	background-color: #FFCC33;

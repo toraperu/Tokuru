@@ -1,7 +1,7 @@
 class GenresController < ApplicationController
   def show
   	@genre = Genre.find(params[:id])
-  	@products = @genre.products.page(params[:page]).per(6).order(created_at: :desc)
+  	@products = @genre.products.at_sale.page(params[:page]).per(6).order(created_at: :desc)
   end
 
 

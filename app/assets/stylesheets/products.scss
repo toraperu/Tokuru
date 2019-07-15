@@ -14,9 +14,19 @@
   	transform: translateY(-0.1875em);
   	opacity: 0.8;
 }
+.junb-about-title:first-letter{
+	font-size: 2em;
+ 	color: #222222;
+ 	font-family: 'YuMincho';
+}
 //ジャンボトロンの文字
 .jumb-title{
 	color: white;
+}
+.jumb-title:first-letter{
+	font-size: 2em;
+ 	color: #990033;
+ 	font-family: 'YuMincho';
 }
 .about-link:hover{
 	text-decoration: none;
@@ -54,6 +64,10 @@
 //投稿のフォント変更
 .field{
 	font-family: 'MS Mincho';
+}
+.user-edit-link-field{
+	color: #CC3300;
+	font-family: 'YuMincho';
 }
 //投稿ページのbg
 .post-bg{
@@ -169,7 +183,7 @@
 //検索ぺーじ
 //全体の大きさ
 .search-container{
-	height: 650px;
+	min-height: 100%;
 }
 
 

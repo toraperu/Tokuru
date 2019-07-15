@@ -1,7 +1,7 @@
-<div class="container bank-container">
+<div class="container new-bank-container">
 	<div class="row">
 		<div class="col-4 offset-4">
-			<h1>振込先登録</h1>
+			<h1 class="new-bank-title">振込先登録</h1>
 			<%= form_with model: Bank.new, url: user_banks_path, local: true do |f| %>
 			<div class="bank-field">
 				<%= f.label :name, "銀行名" %><br>

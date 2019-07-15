@@ -4,8 +4,8 @@
 			<br><br>
 			<h1>マイページ</h1>
 			<br>
-			<div class=" row mypage-link">
-				<div class="col-10 my-profile-image">
+			<div class="row mypage-link">
+				<div class="my-profile-image">
 					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350,
 					fallback: "no_image.png", size: '350x350', class: "border img-fluid" %>
 				</div><br>
@@ -80,7 +80,7 @@
 					</div>
 				</div>
 				<div class="tab-pane" id="nav-content-order-history">
-					<%= render partial: 'orders/index', locals: { orders: @orders }%>
+					<%= render 'orders/index', orders: @orders %>
 				</div>
 			</div>
 		</div>

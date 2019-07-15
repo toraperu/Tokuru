@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
+  before_action :setup_username, only:[:create]
+
   def index
     @genres = Genre.all
-    @products = Product.all.order(id: "DESC").page(params[:page]).per(6)
+    @products = Product.at_sale.order(id: "DESC").page(params[:page]).per(6)
   end
 
   def test
@@ -9,7 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def search_list
-    @products = Product.search(params[:search])
+    @products = Product.at_sale.search(params[:search]).page(params[:page]).per(4)
   end
 
   def new
@@ -30,7 +32,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @comments = Comment.all
-    @orders = Order.all
+    @orders = Order.all.
   end
 
   def edit
@@ -56,6 +58,15 @@ class ProductsController < ApplicationController
                                     :price, :genre_id, :finish,
                                     :sale_result, :caution)
   end
+
+  def setup_username
+    unless current_user.name.present?
+      @genres = Genre.all
+      @product = Product.new(product_params)
+      render :new
+    end
+  end
+
 
 
 

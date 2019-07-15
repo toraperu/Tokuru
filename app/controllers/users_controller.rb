@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 		@count = 1
 		@products = @user.products.all
 		#renderで渡すインスタンス変数
-		@orders = Order.all
+		@orders = Order.all.page(params[:page]).per(6)
 	end
 
 	def edit
