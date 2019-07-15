@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  #ユーザー名が無いと商品投稿ができない仕組み
   before_action :setup_username, only:[:create]
 
   def index
@@ -67,7 +68,5 @@ class ProductsController < ApplicationController
     end
   end
 
-
-
-
+  end
 end

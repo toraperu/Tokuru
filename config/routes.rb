@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'banks/new'
-  get 'banks/create'
-  get 'banks/edit'
-  get 'banks/update'
-  get 'banks/destroy'
+  namespace :admins do
+    get 'orders/index'
+  end
+  namespace :admins do
+    get 'product/index'
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 	root 'products#index'
@@ -18,6 +19,14 @@ Rails.application.routes.draw do
 	  passwords:     'users/passwords',
 	  registrations: 'users/registrations'
 	}
+
+	#adminのルーティング
+	namespace :admins do
+		get 'admins/top' => 'homes#top', as: 'admins_top'
+		resource :users, only:[:index]
+		resource :products, only:[:index]
+		resource :orders, only:[:index]
+	end
 
 	#userのルーティング
 	get 'users/:id/resign' => 'users#resign', as: 'resign'
