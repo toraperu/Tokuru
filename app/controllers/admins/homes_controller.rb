@@ -1,7 +1,7 @@
 class Admins::HomesController < ApplicationController
   def top
-  	@users = User.all
-  	@products = Product.all
-  	@orders = Order.all
+  	@users = User.page(params[:page]).per(10)
+  	@products = Product.page(params[:page]).per(10)
+  	@orders = Order.page(params[:page]).per(10)
   end
 end

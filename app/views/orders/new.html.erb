@@ -32,17 +32,18 @@
 					<%= f.text_field :my_skill %>
 				</div>
 			</div><br>
-			<div class="order-field">
-				<%= f.submit "購入確定", class:"btn btn-danger btn-lg" %>
-			</div>
 		</div>
 		<div class="col-md-4 col-12 order-new-right">
-			<h3>価格 : <% @product.price %> 円</h3><br>
+			<h3>価格 : <%= @product.price %> 円</h3><br>
+			<%= f.hidden_field :price, value: "#{@product.price}" %>
 			<h3>商品説明</h3>
 			<br>
 			<div>
 				<%= @product.body %>
 			</div><br>
+			<div class="order-field">
+				<%= f.submit "購入確定", class:"btn btn-danger btn-lg" %>
+			</div>
 		</div>
 		<% end %>
 	</div>

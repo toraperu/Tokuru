@@ -1,0 +1,25 @@
+<div class="container edit-admin-user-container">
+	<h1 class="edit-admin-user-title">＜管理者＞ユーザー編集</h1><br>
+	<%= form_for [:admins, @user] do |f| %>
+		<div>
+			<%= attachment_image_tag @user, :profile_image, :fill, 300, 300, fallback: 'no_image.png', size: '300x300', class: 'img-circle' %><br><br>
+			<%= f.attachment_field :profile_image %>
+		</div><br>
+		<div>
+			<%= f.label :ユーザー名 %><br>
+			<%= f.text_field :name, value: "#{@user.name}" %>
+		</div><br>
+		<div>
+			<%= f.label :プロフィール情報 %><br>
+			<%= f.text_area :profile, value: "#{@user.profile}", size: '35x8'  %>
+		</div><br>
+		<div>
+			<%= f.submit "編集完了", class: "btn btn-warning btn-lg" %>
+		</div>
+	<% end %><br>
+	<div>
+		<%= link_to resign_path(@user.id) do %>
+        	<button class="btn btn-danger">退会させる</button>
+      	<% end %>
+	</div>
+</div><br>

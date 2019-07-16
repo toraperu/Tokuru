@@ -42,16 +42,10 @@
           <ul class="navbar-nav mr-auto">
           <!--管理者サインイン時のヘッダー-->
             <% if admin_signed_in? %>
-                <li class="nav-item">
-                <%= link_to "管理者トップ", "#{}", class: "nav-link" %>
+              <li class="nav-item">
+                <%= link_to "管理者トップ", admins_admins_top_path, class: "nav-link" %>
               </li>
-                <li class="nav-item">
-                <%= link_to "商品一覧", root_path, class: "nav-link" %>
-              </li>
-                <li class="nav-item">
-                <%= link_to "ユーザー一覧", "#{}", class: "nav-link" %>
-              </li>
-                <li class="nav-item">
+              <li class="nav-item">
                 <%= link_to "ログアウト", destroy_admin_session_path, method: :delete , class: "nav-link" %>
               </li>
             <!--ユーザーサインイン時のヘッダー-->
@@ -89,7 +83,8 @@
           </ul>
           </div>
       </nav>
-    </header><!-- /header -->
+    </header>
+    <div class="header-height"></div>
     <div id="wrapper">
       <main>
         

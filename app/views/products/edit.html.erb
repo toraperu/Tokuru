@@ -37,12 +37,12 @@
 				<div class="col-md-3 col-xs-12">
 					<div class="product-edit-finish">
 						<%= f.label :販売状況 %><br>
-						<%= f.select :finish, [["販売中", false], ["取扱停止", true],] %>
+						<%= f.select :finish, [["販売中", false], ["取扱停止", true]] %>
 					</div>
 					<br>
 					<div class="product-edit-sale">
 						<%= f.label :"販売実績(件数)" %>
-						<%= f.select(:sale_result, 0..200) %>
+						<%= f.select(:sale_result, 0..300) %>
 					</div>
 					<br>
 					<div class="product-edit-caution">

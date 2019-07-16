@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admins do
-    get 'orders/index'
-  end
-  namespace :admins do
-    get 'product/index'
-  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 	root 'products#index'
@@ -23,12 +17,13 @@ Rails.application.routes.draw do
 	#adminのルーティング
 	namespace :admins do
 		get 'admins/top' => 'homes#top', as: 'admins_top'
-		resource :users, only:[:index]
-		resource :products, only:[:index]
-		resource :orders, only:[:index]
+		resources :users, only:[:index, :show, :edit, :update, :destroy]
+		resources :products, only:[:index, :show, :edit, :update, :destroy]
+		resources :orders, only:[:index, :show, :edit, :update, :destroy]
 	end
 
 	#userのルーティング
+	#resign/userのルーティング
 	get 'users/:id/resign' => 'users#resign', as: 'resign'
 	patch 'users/:id/resign_confirm' => 'users#resign_confirm', as: 'resign_confirm'
 

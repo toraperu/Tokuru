@@ -1,6 +1,6 @@
 <div class="container admin-home-container">
 	<div class="row">
-		<div class="col-6 offset3">
+		<div class="col-10 offset-1">
 			<h1>管理者TOP</h1><br>
 			<!-- タブ・メニュー -->
 			<ul class="nav nav-tabs">
@@ -16,7 +16,7 @@
 				</div><br>
 				<!--商品一覧-->
 				<div class="tab-pane" id="product-index-content">
-					<%= render partial: "admins/product/index", locals: {products: @products} %>
+					<%= render partial: "admins/products/index", locals: {products: @products} %>
 				</div><br>
 				<!--注文一覧-->
 				<div class="tab-pane" id="order-index-content">

@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user_id = current_user.id
     @product.save
-    redirect_to root_path
+    redirect_to user_product_path(current_user, @product)
   end
 
   def about
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @comments = Comment.all
-    @orders = Order.all.
+    @orders = Order.all
   end
 
   def edit
@@ -62,11 +62,10 @@ class ProductsController < ApplicationController
 
   def setup_username
     unless current_user.name.present?
+      render :new
+    else
       @genres = Genre.all
       @product = Product.new(product_params)
-      render :new
     end
-  end
-
   end
 end
