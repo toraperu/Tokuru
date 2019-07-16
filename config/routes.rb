@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 		get 'admins/top' => 'homes#top', as: 'admins_top'
 		resources :users, only:[:index, :show, :edit, :update, :destroy]
 		resources :products, only:[:index, :show, :edit, :update, :destroy]
-		resources :orders, only:[:index, :show, :edit, :update, :destroy]
+		resources :orders, only:[:index, :show, :destroy]
 	end
 
 	#userのルーティング

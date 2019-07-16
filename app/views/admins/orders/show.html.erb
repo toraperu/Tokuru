@@ -13,7 +13,7 @@
 			<% if @order.my_skill? %>
 				<div><span class="bold">購入者側のスキル :</span> <%= @order.my_skill %></div>
 			<% end %><br>
-			<div><%= link_to "編集", "#{}", class: "btn btn-warning btn-lg" %>
+			<div>
 				<%= link_to "管理者トップへ", admins_admins_top_path, class: "btn btn-info btn-lg" %>
 			</div>
 		</div>
