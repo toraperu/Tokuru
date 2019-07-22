@@ -1,0 +1,14 @@
+<div class="message-container">
+	<div class="col-8 offset-2">
+			<div class="message_box">
+				<div id="messages">
+					<%= render @room.messages %>
+				</div>
+			</div>
+			<div class="message_form">
+				<%= render 'messages/new', {from_user: current_user, to_user: @user, room_id: @room.id}%>
+			</div>
+	</div>
+</div>
+
+<%= javascript_include_tag "room/room", "data-turbolinks-track": "reload" %>

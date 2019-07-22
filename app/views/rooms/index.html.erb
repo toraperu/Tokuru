@@ -1,0 +1,23 @@
+<div class="room-index-container">
+	<div class="row">
+		<div class="col-6 offset-3">
+			<h1>Room一覧</h1>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>商品名</th>
+						<th>出品者</th>
+					</tr>
+				</thead>
+				<% current_user.rooms.each do |room| %>
+				<tbody>
+					<tr>
+						<td><%= room.product.name %></td>
+						<td><%= room.product.user.name %></td>
+					</tr>
+				</tbody>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

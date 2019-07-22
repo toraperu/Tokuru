@@ -12,6 +12,7 @@
 	text-shadow: 1px 2px 3px #CCCCCC;
 	font-family: 'Hiragino Kaku Gothic Std';
 }
+//ユーザー詳細
 .bank-new-path{
 	height: 80px;
 	text-align: center;
@@ -41,6 +42,16 @@
     background: -moz-linear-gradient(#66CC99, #003399);
     background: -webkit-linear-gradient(#66CC99, #003399);
     background: linear-gradient(to right, #66CC99, #003399);
+	font-family: 'Hiragino Mincho Pro';
+	margin-top: 20px;
+}
+.chat-room-path{
+	height: 80px;
+	text-align: center;
+	padding: 0.5em 1em;
+    background: -moz-linear-gradient(#FFFF55, #00EE00);
+    background: -webkit-linear-gradient(#FFFF55, #00EE00);
+    background: linear-gradient(to right, #FFFF55, #00EE00);
 	font-family: 'Hiragino Mincho Pro';
 	margin-top: 20px;
 }

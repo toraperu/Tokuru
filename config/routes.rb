@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  	#Action Cableを利用する
+  	mount ActionCable.server => '/cable'
 
 	root 'products#index'
 
@@ -32,10 +34,13 @@ Rails.application.routes.draw do
 		resources :products, only:[:index, :new, :create, :show, :edit, :update] do
 			resources :comments, only: [:new, :index, :create, :edit, :update, :destroy]
 			resources :orders, only:[:new, :create]
+			resources :messages, only:[:new, :show]
 		end
 		#userに紐づくbankのルーティング
 		resources :banks, only:[:new, :create, :index, :edit, :update, :destroy]
 	end
+	#ルーム
+	resources :rooms, only:[:create, :index, :show]
 	#/index/order(特定の商品に紐付かない)のルーティング
 	get 'orders/index' => 'orders#index', as: 'user_orders'
 

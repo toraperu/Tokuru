@@ -5,13 +5,15 @@
 			<h1>マイページ</h1>
 			<br>
 			<div class="row mypage-link">
-				<div class="my-profile-image">
+				<div class="my-profile-image col-12">
 					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350,
 					fallback: "no_image.png", size: '350x350', class: "border img-fluid" %>
 				</div><br>
-				<div class="col-4 bank-new-path"><%= link_to "振込先登録", new_user_bank_path(current_user), style: "color: white" %></div><br>
-				<div class="col-4 bank-index-path"><%= link_to "振込先一覧", user_banks_path(current_user), style: "color: white" %></div><br>
-				<div class="col-4 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
+				<div class="col-3 bank-new-path"><%= link_to "振込先登録", new_user_bank_path(current_user), style: "color: white" %></div><br>
+				<div class="col-3 bank-index-path"><%= link_to "振込先一覧", user_banks_path(current_user), style: "color: white" %></div><br>
+				<div class="col-3 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
+				</div><br>
+				<div class="col-3 chat-room-path"><%= link_to "チャット", rooms_path, style: "color: white"%>
 				</div>
 			</div>
 		</div>
@@ -79,6 +81,7 @@
 						<% end %>
 					</div>
 				</div>
+				<!--購入履歴-->
 				<div class="tab-pane" id="nav-content-order-history">
 					<%= render 'orders/index', orders: @orders %>
 				</div>
