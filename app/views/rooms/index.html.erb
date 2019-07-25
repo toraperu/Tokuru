@@ -11,11 +11,13 @@
 				</thead>
 				<tbody>
 					<% current_user.rooms.each do |room| %>
-						<tr>
-						<%= link_to room_path(room) do %>
-							<td><%= room.product.name %></td>
-							<td><%= room.product.user.name %></td>
-						<% end %>
+						<tr data-href="<%= room_path(room) %>">
+							<td>
+								<%= room.product.name %>
+							</td>
+							<td>
+								<%= room.product.user.name %>
+							</td>
 						</tr>
 					<% end %>
 				</tbody>

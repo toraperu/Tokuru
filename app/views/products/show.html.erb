@@ -13,7 +13,7 @@
 				<!--色付きリンク二つ-->
 				<div class="row product-show-link">
 					<div class="col-md-6 consult-link">
-					<%= link_to rooms_path(current_user, @product), method: :post, :style=>"color:white; text-decoration: none;" do %>
+					<%= link_to rooms_path, method: :post, :style=>"color:white; text-decoration: none;" do %>
 						<h4>注文内容</h4>
 						<p><%= @product.price %>円</p>
 						<div><%= @product.name %></div><br>
