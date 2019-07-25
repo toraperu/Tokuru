@@ -9,6 +9,15 @@ class RoomsController < ApplicationController
   end
 
   def create
+  	@room = Room.new(room_params)
+  	@room.save
+  	redirect_to room_path(params[:id])
+  end
+
+  private
+
+  def room_params
+  	params.require(:room).permit(:user_id, :product_id)
   end
 
 

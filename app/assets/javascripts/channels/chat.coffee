@@ -5,7 +5,7 @@ current_user_id = ->
 user_id = ->
 	$('input:hidden[name="to_id"]').val()
 room_id = ->
-	$('input:hidden[name="room_id]').val()
+	$('input:hidden[name="room_id"]').val()
 
 room_ch = ->
 	id = room_id()
@@ -30,6 +30,7 @@ document.addEventListener 'turbolinks:load', ->
 			received: (data) ->
 				$('#messages').append data['message']
 				$('div.message_box').scrollTop(messages_height());
+
 			speak: (from_id, to_id, room_id, content) ->
 				@perform 'speak', {
 					"from_id": from_id
@@ -42,9 +43,11 @@ $(document).on 'keypress', '[data-behavior~=chat_speaker]', (event) ->
 	if event.which is 13
 		value = event.target.value
 		if value.replace(/\s/g, '').length > 0 && value.length <= 50
+			console.log(room_id())
 			App.chat.speak(current_user_id(), user_id(), room_id(), value)
 			event.target.value = ''
 			event.preventDefault()
+			console.log("check")
 		else if value.length > 50
 			alert("メッセージは50字以内で入力してください")
 			event.target.value = ''

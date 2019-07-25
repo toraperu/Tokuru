@@ -13,7 +13,7 @@
 				<div class="col-3 bank-index-path"><%= link_to "振込先一覧", user_banks_path(current_user), style: "color: white" %></div><br>
 				<div class="col-3 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
 				</div><br>
-				<div class="col-3 chat-room-path"><%= link_to "チャット", rooms_path, style: "color: white"%>
+				<div class="col-3 chat-room-path"><%= link_to "チャット", rooms_path, data: {"turbolinks" => false}, style: "color: white" %>
 				</div>
 			</div>
 		</div>

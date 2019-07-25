@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
+	#フレンドリーフォワード
+	before_action :store_current_location, if: :storable_location?
 	#退会してるか否かをチェック
 	before_action :resignation_user?
+
 	def resignation_user?
 	    if user_signed_in?
 	        if current_user.resignation == true
@@ -16,7 +19,7 @@ class ApplicationController < ActionController::Base
 		if resource_or_scope.is_a?(Admin)
 			admins_admins_top_path
 		else
-			root_path
+			stored_location_for(resource_or_scope)|| super
 		end
 	end
 
@@ -26,5 +29,13 @@ class ApplicationController < ActionController::Base
 		else
 			root_path
 		end
+	end
+
+	def storable_location?
+	    request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
+  	end
+
+	def store_current_location
+		store_location_for(:user, request.fullpath)
 	end
 end
