@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
 	def resignation_user?
 	    if user_signed_in?
+	    	session[:user_id] = current_user.id
 	        if current_user.resignation == true
 	        	sign_out(current_user)
 	      	end

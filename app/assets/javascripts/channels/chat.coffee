@@ -6,7 +6,6 @@ user_id = ->
 	$('input:hidden[name="to_id"]').val()
 room_id = ->
 	$('input:hidden[name="room_id"]').val()
-
 room_ch = ->
 	id = room_id()
 	if id?
@@ -14,17 +13,17 @@ room_ch = ->
 	else
 		return null
 
-message_height = ->
+messages_height = ->
 	temp = 0;
 	$("div.message").each ->
 	temp += ($(this).height());
 	return temp
 
-document.addEventListener 'turbolinks:request-start', ->
+window.addEventListener 'onunload' , ->
 	if room_ch()?
 		App.chat.unsubscribe()
 
-document.addEventListener 'turbolinks:load', ->
+window.addEventListener 'load', ->
 	if room_ch()?
 		App.chat = App.cable.subscriptions.create room_ch(),
 			received: (data) ->
@@ -43,11 +42,9 @@ $(document).on 'keypress', '[data-behavior~=chat_speaker]', (event) ->
 	if event.which is 13
 		value = event.target.value
 		if value.replace(/\s/g, '').length > 0 && value.length <= 50
-			console.log(room_id())
 			App.chat.speak(current_user_id(), user_id(), room_id(), value)
 			event.target.value = ''
 			event.preventDefault()
-			console.log("check")
 		else if value.length > 50
 			alert("メッセージは50字以内で入力してください")
 			event.target.value = ''

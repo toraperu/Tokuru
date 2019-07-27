@@ -40,10 +40,11 @@ Rails.application.routes.draw do
 		resources :banks, only:[:new, :create, :index, :edit, :update, :destroy]
 	end
 	#ルーム
-	resources :rooms, only:[:create, :index, :show]
+	resources :rooms, only:[:index, :show]
 	#/index/order(特定の商品に紐付かない)のルーティング
 	get 'orders/index' => 'orders#index', as: 'user_orders'
-
+	#create/roomのルーティング
+	post 'rooms/:buyer_id/:product_id' => 'rooms#create', as: 'rooms_create'
 	#fav/favoriteのルーティング
 	get 'products/fav/:id' => 'favorites#fav', as: "fav_products"
 	#about/productのルーティング

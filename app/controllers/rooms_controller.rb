@@ -9,9 +9,14 @@ class RoomsController < ApplicationController
   end
 
   def create
-  	@room = Room.new(room_params)
-  	@room.save
-  	redirect_to room_path(params[:id])
+  	@room = Room.new
+  	@room.user_id = params[:buyer_id]
+  	@room.product_id = params[:product_id]
+  	if @room.save
+  		redirect_to room_path(@room.id)
+ 	else
+  		render :index
+  	end
   end
 
   private

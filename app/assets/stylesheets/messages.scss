@@ -2,10 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.message-container{
+    height: 90px;
+}
 .message_box {
 	background-color: rgba(100,200,50,0.5);
-    padding: 10px;
+    padding: 100px;
     margin-top: 50px;
     border: 1px solid #778899;
     overflow: scroll;
@@ -13,9 +15,19 @@
     	height: 400px;
     }
 }
+.message-title{
+    text-align: center;
+    padding: 20px;
+}
+.message-user1{
+    color: #3399FF;
+}
+.message-user2{
+    color: #CC3333;
+}
 
 .message_form {
-    padding-top: 10px;
+    padding: 10px;
 }
 
 #message_sender {
@@ -24,4 +36,30 @@
 
 #message_content {
     font-size: 1.1em;
+
+}
+#message_content > span {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+
+.message-right {
+    text-align: right;
+}
+.room-item{
+    position: relative;
+}
+.ok-bottun{
+    position: absolute;
+    left: 10px;
+    background-color: #FFFF66;
+    font-size: 20px;
+    padding: 5px;
+}
+.go-order{
+    position: absolute;
+    right: 30px;
 }
