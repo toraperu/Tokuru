@@ -10,8 +10,9 @@ class RoomsController < ApplicationController
 
   def create
   	@room = Room.new
-  	@room.user_id = params[:buyer_id]
-  	@room.product_id = params[:product_id]
+    @room.product_id = params[:product_id]
+  	@room.buyer_id = params[:buyer_id]
+  	@room.seller_id = params[:seller_id]
   	if @room.save
   		redirect_to room_path(@room.id)
  	else
@@ -19,10 +20,14 @@ class RoomsController < ApplicationController
   	end
   end
 
-  private
+  def permit
+    @room = Room.find(params[:id])
+    @room.update({permitted?: true})
+  end
 
-  def room_params
-  	params.require(:room).permit(:user_id, :product_id)
+  def permitted
+    @room = Room.find(params[:id])
+    @room.update({permitted?: false})
   end
 
 

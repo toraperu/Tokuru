@@ -1,23 +1,19 @@
 <div class="message-container">
 	<div class="col-8 offset-2">
-		<h1 class="message-title"><span class="message-user1"><%= current_user.name %></span>と<span class="message-user2"><%= @product.user.name %></span>のチャット</h1>
+		<h1 class="message-title"><span class="message-user1"><%= @room.buyer.name %>（購入者）</span>と<span class="message-user2"><%= @room.seller.name %>（販売者）</span>のチャット</h1>
 		<div class="message_box">
 			<div id="messages">
 				<%= render @room.messages %>
 			</div>
 		</div>
-		<div class="message_form">
-			<%= render 'messages/new', {from_user: current_user, to_user: @user, room_id: @room.id}%>
-		</div>
-		<div class="room-item">
-			<div class="ok-bottun">スキル交換を望む</div>
-			<% if current_user != @product.user %>
-				<div class="go-order">
-					<%= link_to "購入内容画面へ", new_user_product_order_path(current_user, @product), class: "btn btn-danger btn-lg" %>
-				</div>
-			<% end %>
+		<div class="row">
+			<div class="col-6 message_form">
+				<%= render 'messages/new', {from_user: current_user, to_user: @user, room_id: @room.id}%>
+			</div>
+			<div class="col-6 room-item">
+				<%= render partial: 'rooms/permit', locals: {room: @room  }%>
+			</div>
 		</div>
 	</div>
 </div>
 
-<%= javascript_include_tag "room/room", "data-turbolinks-track": "reload" %>

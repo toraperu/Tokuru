@@ -92,6 +92,20 @@ $(function(){
 	});
 });
 
+//メッセージ一覧で新しいメッセージを一番下に表示
+$(function(){
+	var height = 0;
+	$("div.message").each( function(){
+		height += ($(this).height());
+	})
+	$("div.message_box").scrollTop(height);
+});
+
+
+
+
+
+
 
 
 

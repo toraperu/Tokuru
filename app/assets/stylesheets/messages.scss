@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .message-container{
-    height: 90px;
+    overflow: hidden;
 }
 .message_box {
 	background-color: rgba(100,200,50,0.5);
@@ -50,16 +50,13 @@
     text-align: right;
 }
 .room-item{
-    position: relative;
+    padding: 30px;
+    text-align: center;
 }
-.ok-bottun{
-    position: absolute;
-    left: 10px;
-    background-color: #FFFF66;
-    font-size: 20px;
-    padding: 5px;
+.ok-order{
+    color: white;
+    font-size: 24px;
 }
 .go-order{
-    position: absolute;
-    right: 30px;
 }
+

@@ -14,7 +14,7 @@
 				<div class="row product-show-link">
 					<% if current_user != @product.user %>
 						<div class="col-md-6 consult-link">
-						<%= link_to rooms_create_path(current_user.id, @product.id), method: :post, :style=>"color:white; text-decoration: none;" do %>
+						<%= link_to rooms_create_path(current_user, @product.user, @product), method: :post, :style=>"color:white; text-decoration: none;" do %>
 							<h4>注文内容</h4>
 							<p><%= @product.price %>円</p>
 							<div><%= @product.name %></div><br>

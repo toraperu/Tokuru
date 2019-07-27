@@ -10,7 +10,17 @@
 					</tr>
 				</thead>
 				<tbody>
-					<% current_user.rooms.each do |room| %>
+					<% current_user.buyer_rooms.each do |room| %>
+						<tr data-href="<%= room_path(room) %>">
+							<td>
+								<%= room.product.name %>
+							</td>
+							<td>
+								<%= room.product.user.name %>
+							</td>
+						</tr>
+					<% end %>
+					<% current_user.seller_rooms.each do |room| %>
 						<tr data-href="<%= room_path(room) %>">
 							<td>
 								<%= room.product.name %>

@@ -41,10 +41,14 @@ Rails.application.routes.draw do
 	end
 	#ルーム
 	resources :rooms, only:[:index, :show]
+	#permit/roomのルーティング
+	get 'rooms/:id/permit' => 'rooms#permit', as: 'room_permit'
+	#permitted/roomのルーティング
+	get 'rooms/:id/permitted' => 'rooms#permitted', as: 'room_permitted'
 	#/index/order(特定の商品に紐付かない)のルーティング
 	get 'orders/index' => 'orders#index', as: 'user_orders'
 	#create/roomのルーティング
-	post 'rooms/:buyer_id/:product_id' => 'rooms#create', as: 'rooms_create'
+	post 'rooms/:buyer_id/:seller_id/:product_id' => 'rooms#create', as: 'rooms_create'
 	#fav/favoriteのルーティング
 	get 'products/fav/:id' => 'favorites#fav', as: "fav_products"
 	#about/productのルーティング
