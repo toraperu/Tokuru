@@ -19,7 +19,7 @@
 								<% if product.jacket_image.present? %>
 									<%= attachment_image_tag  product, :jacket_image, :fill, 120, 120 %>
 								<% else %>
-									<%= image_tag 'no_image.png', size:'120x120' %>
+									<%= image_tag '/images/no_image.png', size:'120x120' %>
 								<% end %>
 							</td>
 							<td>

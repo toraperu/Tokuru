@@ -3,7 +3,7 @@
 		<div class="col-6 offset-3">
 			<h1>注文情報</h1><br>
 			<div><span class="bold">商品名 :</span> <%= @order.product.name %></div><br>
-			<div><%= attachment_image_tag @order.product, :jacket_image, :fill, 300, 300, fallback: 'no_image.png', size: '300x300', class: 'img-circle' %></div><br>
+			<div><%= attachment_image_tag @order.product, :jacket_image, :fill, 300, 300, fallback: '/images/no_image.png', size: '300x300', class: 'img-circle' %></div><br>
 			<div><span class="bold">価格 :</span> <%= @order.price %></div><br>
 			<div><span class="bold">コンタクト手段 :</span> <%= @order.contact_i18n %></div><br>
 			<div><span class="bold">お支払い方法 :</span> <%= @order.payment_i18n %></div><br>

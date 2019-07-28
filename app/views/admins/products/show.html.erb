@@ -3,7 +3,7 @@
 		<div class="col-6 offset-3">
 			<h1>商品情報</h1><br>
 			<div><span class="bold">商品名 :</span> <%= @product.name %></div><br>
-			<div><%= attachment_image_tag @product, :jacket_image, :fill, 300, 300, fallback: 'no_image.png', size: '300x300', class: 'img-circle' %></div><br>
+			<div><%= attachment_image_tag @product, :jacket_image, :fill, 300, 300, fallback: '/images/no_image.png', size: '300x300', class: 'img-circle' %></div><br>
 			<div><span class="bold">価格 :</span> <%= @product.price %></div><br>
 			<div><span class="bold">商品説明 :</span> <%= @product.body %></div><br>
 			<div><span class="bold">購入時の注意 :</span> <%= @product.caution %></div><br>

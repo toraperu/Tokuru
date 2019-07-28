@@ -5,7 +5,7 @@
 //ジャンボトロンを綺麗にする
 .jumbotron{
 	height: 600px;
-	background-image: url("tokuru-index-junb.jpg");
+	background-image: url("/images/tokuru-index-junb.jpg");
 	background-size: cover;
 	opacity: 0.9;
 }
@@ -73,7 +73,7 @@
 }
 //投稿ページのbg
 .post-bg{
-	background-image: url("post-bg2.png");
+	background-image: url("/images/post-bg2.png");
 	background-size: cover;
 }
 //投稿タイトル
@@ -85,20 +85,20 @@
 //aboutページ
 //aboutページのジャンボトロン
 .about-junbotron{
-	background-image: url("mad-doll.jpg");
+	background-image: url("/images/mad-doll.jpg");
 	background-size: cover;
 	height: 600px;
 	opacity: 0.8;
 }
 //aboutページのbg
 .about1-bg{
-	background-image: url("guitar.jpg");
+	background-image: url("/images/guitar.jpg");
 	background-size: cover;
 	height: 400px;
 	opacity: 0.8;
 }
 .about2-bg{
-	background-image: url("macbook3.jpeg");
+	background-image: url("/images/macbook3.jpeg");
 	background-size: cover;
 	height: 500px;
 }
@@ -127,7 +127,7 @@
 //editページのレイアウト
 .myproduct-edit-container{
 	height: 1200px;
-	background-image: url("cat2.jpeg");
+	background-image: url("/images/cat2.jpeg");
 	background-size: cover;
 	opacity: 0.7;
 	text-shadow: 1px 2px 3px #CCCCCC;

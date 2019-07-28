@@ -95,15 +95,26 @@
         <!--ページトップへ戻るボタン-->
         <span id="back">
           <a href="#">
-            <%= image_tag "arrow.png",:size => '50x50', class: "arrow-img" %>
+            <%= image_tag "/images/arrow.png",:size => '50x50', class: "arrow-img" %>
           </a>
         </span>
 
       </main>
       <footer>
-        <div class="footer-items">
-          <p><%= image_tag 'tokuru_logo.png', size: '150x50', class: "logo_image" %></p>
-          <p class="logo_subtitle">~skills for all~</p>
+        <div class="row footer-items">
+          <div class="col-3">
+            <p><%= link_to "会社概要", "#{}" %></p>
+          </div>
+          <div class="col-3">
+            <p><%= link_to "このサイトの使い方", "#{}" %></p>
+          </div>
+
+          <div class="col-3">
+            <p><%= link_to "Q&A", "#{}" %></p>
+          </div>
+          <div class="col-3">
+            <p><%= link_to "お支払いについて"%></p>
+          </div>
         </div>
       </footer>
     </div>
