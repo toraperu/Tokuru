@@ -1,7 +1,18 @@
 class ProductsController < ApplicationController
+  #ユーザー名が無いと商品投稿ができない仕組み
+  before_action :setup_username, only:[:create]
+
   def index
     @genres = Genre.all
-    @products = Product.all.order(id: "DESC")
+    @products = Product.at_sale.order(id: "DESC").page(params[:page]).per(6)
+  end
+
+  def test
+    @products = Product.all.page(params[:page]).per(3)
+  end
+
+  def search_list
+    @products = Product.at_sale.search(params[:search]).page(params[:page]).per(4)
   end
 
   def new
@@ -13,7 +24,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user_id = current_user.id
     @product.save
-    redirect_to root_path
+    redirect_to user_product_path(current_user, @product)
   end
 
   def about
@@ -22,6 +33,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @comments = Comment.all
+    @orders = Order.all
   end
 
   def edit
@@ -48,6 +60,12 @@ class ProductsController < ApplicationController
                                     :sale_result, :caution)
   end
 
-
-
+  def setup_username
+    unless current_user.name.present?
+      render :new
+    else
+      @genres = Genre.all
+      @product = Product.new(product_params)
+    end
+  end
 end

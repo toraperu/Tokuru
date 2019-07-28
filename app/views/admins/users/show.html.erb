@@ -1,0 +1,16 @@
+<div class="container admin-user-show-container">
+	<div class="row">
+		<div class="col-6 offset-3">
+			<h1>ユーザー情報</h1><br>
+			<div><span class="bold">ユーザー名 :</span> <%= @user.name %></div><br>
+			<div><%= attachment_image_tag @user, :profile_image, :fill, 300, 300, fallback: 'no_image.png', size: '300x300', class: 'img-circle' %></div><br>
+			<div><span class="bold">メールアドレス :</span> <%= @user.email %></div><br>
+			<div><span class="bold">本名 :</span> <%= @user.real_name %></div><br>
+			<div><span class="bold">プロフィール情報 :</span> <%= @user.profile %></div><br>
+			<div><span class="bold">退会情報 :</span> <%= @user.resignation %></div><br>
+			<div><%= link_to "編集", edit_admins_user_path(@user), class: "btn btn-warning btn-lg" %>
+				<%= link_to "管理者トップへ", admins_admins_top_path, class: "btn btn-info btn-lg" %>
+			</div>
+		</div>
+	</div>
+</div><br>

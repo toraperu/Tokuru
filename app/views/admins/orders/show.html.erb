@@ -1,0 +1,21 @@
+<div class="container admin-order-show-container">
+	<div class="row">
+		<div class="col-6 offset-3">
+			<h1>注文情報</h1><br>
+			<div><span class="bold">商品名 :</span> <%= @order.product.name %></div><br>
+			<div><%= attachment_image_tag @order.product, :jacket_image, :fill, 300, 300, fallback: 'no_image.png', size: '300x300', class: 'img-circle' %></div><br>
+			<div><span class="bold">価格 :</span> <%= @order.price %></div><br>
+			<div><span class="bold">コンタクト手段 :</span> <%= @order.contact_i18n %></div><br>
+			<div><span class="bold">お支払い方法 :</span> <%= @order.payment_i18n %></div><br>
+			<% if @order.other_contact? %>
+				<div><span class="bold">他の支払い方法 :</span> <%= @order.other_contact %></div>
+			<% end %><br>
+			<% if @order.my_skill? %>
+				<div><span class="bold">購入者側のスキル :</span> <%= @order.my_skill %></div>
+			<% end %><br>
+			<div>
+				<%= link_to "管理者トップへ", admins_admins_top_path, class: "btn btn-info btn-lg" %>
+			</div>
+		</div>
+	</div>
+</div><br>

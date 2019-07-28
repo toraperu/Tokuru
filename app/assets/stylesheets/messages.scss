@@ -1,0 +1,65 @@
+// Place all the styles related to the Messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message-container{
+    overflow: hidden;
+}
+.message_box {
+	background-color: rgba(100,200,50,0.5);
+    padding: 100px;
+    margin-top: 50px;
+    border: 1px solid #778899;
+    overflow: scroll;
+    #messages {
+    	height: 400px;
+    }
+}
+.message-title{
+    text-align: center;
+    padding: 20px;
+}
+.message-product-title{
+    text-align: center;
+}
+.message-user1{
+    color: #3399FF;
+}
+.message-user2{
+    color: #CC3333;
+}
+
+.message_form {
+    padding: 10px;
+}
+
+#message_sender {
+    font-size: 0.6em;
+}
+
+#message_content {
+    font-size: 1.1em;
+
+}
+#message_content > span {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+
+.message-right {
+    text-align: right;
+}
+.room-item{
+    padding: 30px;
+    text-align: center;
+}
+.ok-order{
+    color: white;
+    font-size: 24px;
+}
+.go-order{
+}
+

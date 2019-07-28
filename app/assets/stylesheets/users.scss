@@ -12,7 +12,8 @@
 	text-shadow: 1px 2px 3px #CCCCCC;
 	font-family: 'Hiragino Kaku Gothic Std';
 }
-.order-history-path{
+//ユーザー詳細
+.bank-new-path{
 	height: 80px;
 	text-align: center;
 	vertical-align: center;
@@ -20,6 +21,17 @@
     background: -moz-linear-gradient(#ffb03c, #ff708d);
     background: -webkit-linear-gradient(#ffb03c, #ff708d);
     background: linear-gradient(to right, #ffb03c, #ff708d);
+	font-family: 'Hiragino Mincho Pro';
+	margin-top: 20px;
+}
+.bank-index-path{
+	height: 80px;
+	text-align: center;
+	vertical-align: center;
+	padding: 0.5em 1em;
+    background: -moz-linear-gradient(#BBBBBB, #333333);
+    background: -webkit-linear-gradient(#BBBBBB, #333333);
+    background: linear-gradient(to right, #BBBBBB, #333333);
 	font-family: 'Hiragino Mincho Pro';
 	margin-top: 20px;
 }
@@ -33,11 +45,29 @@
 	font-family: 'Hiragino Mincho Pro';
 	margin-top: 20px;
 }
-.order-history-path:hover{
+.chat-room-path{
+	height: 80px;
+	text-align: center;
+	padding: 0.5em 1em;
+    background: -moz-linear-gradient(#FFFF55, #00EE00);
+    background: -webkit-linear-gradient(#FFFF55, #00EE00);
+    background: linear-gradient(to right, #FFFF55, #00EE00);
+	font-family: 'Hiragino Mincho Pro';
+	margin-top: 20px;
+}
+.bank-new-path:hover{
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+  	transform: translateY(-0.1875em);
+}
+.bank-index-path:hover{
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
 }
 .user-edit-path:hover{
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+  	transform: translateY(-0.1875em);
+}
+.chat-room-path:hover{
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
 }
@@ -46,4 +76,13 @@
 	border: solid 1px #000000;
 	width: 250px;
 	padding: 10px;
+}
+
+//マイページ
+//中央寄せ
+.mypage-container{
+	text-align: center;
+}
+.my-profile-image{
+	margin: 0 auto;
 }

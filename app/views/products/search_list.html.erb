@@ -1,0 +1,27 @@
+<div class="search-container">
+	<div class="col-6 offset-3">
+		<h1>検索結果一覧</h1>
+		<h3>"<%= params[:search] %>"の検索結果</h3>
+		<table class="table table-hover table-inverse">
+			<thead>
+				<tr class="row">
+					<th class="col-6"></th>
+					<th class="col-3">商品名</th>
+					<th class="col-3">出品者</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @products.each do |product| %>
+					<tr class="row" data-href="<%= user_product_path(product.user, product) %>">
+						<td class="col-6">
+							<%= attachment_image_tag product, :jacket_image, fallback: "no_image.png", class: "img-fluid"%>
+						</td>
+						<td class="col-3"><%= product.name %></td>
+						<td class="col-3"><%= product.user.name %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<%= paginate @products %>
+	</div>
+</div>

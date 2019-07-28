@@ -1,0 +1,97 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//new画面
+//隠れ入力欄二つ
+.else-contact-form{
+	display: none;
+}
+.your-skill-form{
+	display: none;
+}
+//タイトル
+.order-new-title{
+	margin: 30px 0 30px 0;
+	text-align: center;
+	background-color: #BBBBBB;
+}
+//商品名
+.order-new-product-title{
+	font-size: 20px;
+}
+//ユーザー名
+.order-new-user-name{
+	font-size: 20px;
+}
+//上二つをくくる枠
+.order-new-head{
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #ff7d6e;
+    background: #ffebe9;
+    border-top: solid 10px #ff7d6e;
+}
+//フォーム
+.order-new-left{
+	padding: 0.5em 1em;
+	margin: 5em;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+}
+//商品情報
+.order-new-right{
+	padding: 0.5em 1em;
+	margin: 5em;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+}
+
+
+//confirm画面
+//高さ固定指定
+.confirm-container{
+	height: 600px;
+}
+//タイトル
+.confirm-title{
+	text-align: center;
+	padding-top: 30px;
+}
+//商品説明
+.confirm-product-content{
+	font-size: 20px;
+}
+.confirm-span-title{
+	font-size: 25px;
+}
+//左コンテンツ
+.order-confirm-left{
+	padding: 0.2em 0.5em;
+    background: #FFDAB9;
+    box-shadow: 0px 0px 0px 10px #FFEBCD;
+    border: dashed 2px white;
+}
+//右コンテンツ
+.order-confirm-right{
+	padding: 0.2em 0.5em;
+    background: #FFDAB9;
+    box-shadow: 0px 0px 0px 10px #FFEBCD;
+    border: dashed 2px white;
+    font-size: 20px;
+}
+//商品トップへ戻るボタン
+.confirm-back-btn{
+	text-align: center;
+	margin-top: 40px;
+}
+//購入履歴
+//列のhover
+.order-history-item:hover{
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+  	transform: translateY(-0.1875em);
+}
+
+

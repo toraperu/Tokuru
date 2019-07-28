@@ -12,10 +12,21 @@
 .jumbotron:hover{
 	box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
+  	opacity: 0.8;
+}
+.junb-about-title:first-letter{
+	font-size: 2em;
+ 	color: #222222;
+ 	font-family: 'YuMincho';
 }
 //ジャンボトロンの文字
 .jumb-title{
 	color: white;
+}
+.jumb-title:first-letter{
+	font-size: 2em;
+ 	color: #990033;
+ 	font-family: 'YuMincho';
 }
 .about-link:hover{
 	text-decoration: none;
@@ -27,9 +38,11 @@
 }
 //新着商品一覧のタイトル見やすく
 .new-item-title{
-	color: white;
-	background-color: #CC9966;
-	border: solid 1px white;
+	padding: 0.2em 0.8em;
+    margin: 2em 0;
+    background: #DEB887;
+    box-shadow: 0px 0px 0px 10px #F5DEB3;
+    border: dashed 2px white;
 }
 //新着商品のthumbnail
 .product-index-thumnail{
@@ -39,27 +52,33 @@
 .product-index-thumnail:hover{
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
+  	text-decoration: none;
 }
 //ジャンルボタン
 .genre-list-items:hover{
 	background-color: #778899;
 }
-
+.pagination-display-none{
+	display: none;
+}
 
 //投稿ページ
-//投稿の商品説明の大きさ
-.product-body{
-	width: 250px;
-	height: 120px;
-}
 //投稿のフォント変更
 .field{
 	font-family: 'MS Mincho';
+}
+.user-edit-link-field{
+	color: #CC3300;
+	font-family: 'YuMincho';
 }
 //投稿ページのbg
 .post-bg{
 	background-image: url("post-bg2.png");
 	background-size: cover;
+}
+//投稿タイトル
+.new-product-title{
+	padding-top: 20px;
 }
 
 
@@ -117,6 +136,12 @@
 
 
 //showページ
+//詳細タイトル
+.show-product-title{
+	margin: 30px 0 30px 0;
+	text-align: center;
+	background-color: #BBBBBB;
+}
 //色付きリンク
 .consult-link{
 	text-align: center;
@@ -159,3 +184,10 @@
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
 }
+//検索ぺーじ
+//全体の大きさ
+.search-container{
+	min-height: 100%;
+}
+
+

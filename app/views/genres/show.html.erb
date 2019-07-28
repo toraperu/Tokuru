@@ -14,12 +14,12 @@
 					</thead>
 					<% @products.each do|product| %>
 					<tbody>
-						<tr date-href=<%= user_product_path(product.user, product) %>>
+						<tr data-href="<%= user_product_path(product.user, product) %>">
 							<td>
 								<% if product.jacket_image.present? %>
 									<%= attachment_image_tag  product, :jacket_image, :fill, 120, 120 %>
 								<% else %>
-									<%= image_tag 'no_image.jpg', size:'120x120' %>
+									<%= image_tag 'no_image.png', size:'120x120' %>
 								<% end %>
 							</td>
 							<td>

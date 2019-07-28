@@ -1,0 +1,28 @@
+<div class="container admin-home-container">
+	<div class="row">
+		<div class="col-10 offset-1">
+			<h1>管理者TOP</h1><br>
+			<!-- タブ・メニュー -->
+			<ul class="nav nav-tabs">
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#user-index-content">ユーザー一覧</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#product-index-content">商品一覧</a></li>
+				<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#order-index-content">注文一覧</a></li>
+			</ul>
+			<!-- タブ内容 -->
+			<div class="col-12 tab-content">
+				<!--ユーザー一覧-->
+				<div class="tab-pane" id="user-index-content">
+					<%= render partial: "admins/users/index", locals: {users: @users} %>
+				</div><br>
+				<!--商品一覧-->
+				<div class="tab-pane" id="product-index-content">
+					<%= render partial: "admins/products/index", locals: {products: @products} %>
+				</div><br>
+				<!--注文一覧-->
+				<div class="tab-pane" id="order-index-content">
+					<%= render partial: "admins/orders/index", locals: {orders: @orders} %>
+				</div><br>
+			</div>
+		</div>
+	</div>
+</div>
