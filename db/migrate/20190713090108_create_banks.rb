@@ -1,6 +1,6 @@
 class CreateBanks < ActiveRecord::Migration[5.2]
   def change
-    create_table :banks do |t|
+    create_table :banks, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
       t.string :name
       t.string :branch
       t.string :number
