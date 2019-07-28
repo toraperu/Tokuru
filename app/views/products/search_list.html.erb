@@ -14,7 +14,7 @@
 				<% @products.each do |product| %>
 					<tr class="row" data-href="<%= user_product_path(product.user, product) %>">
 						<td class="col-6">
-							<%= attachment_image_tag product, :jacket_image, fallback: "no_image.png", class: "img-fluid"%>
+							<%= attachment_image_tag product, :jacket_image, fallback: "/images/no_image.png", class: "img-fluid"%>
 						</td>
 						<td class="col-3"><%= product.name %></td>
 						<td class="col-3"><%= product.user.name %></td>

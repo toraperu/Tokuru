@@ -19,7 +19,7 @@
 /*新規登録*/
 .sign-up-contanier{
 	text-align: center;
-	background-image: url('blue-bill');
+	background-image: url('/images/blue-bill');
 	background-size: cover;
 	opacity: 0.8;
 	height: 600px;
@@ -33,7 +33,7 @@
 /*サインイン*/
 .sign-in-container{
 	text-align: center;
-	background-image: url('blue-belly');
+	background-image: url('/images/blue-belly');
 	background-size: cover;
 	opacity: 0.8;
 	height: 600px;
@@ -99,7 +99,7 @@ body,#wrapper{
 /*admin session*/
 .admin-session-container{
 	text-align: center;
-	background-image: url('bulldog.jpeg');
+	background-image: url('/images/bulldog.jpeg');
 	background-size: cover;
 	opacity: 0.8;
 	height: 700px;

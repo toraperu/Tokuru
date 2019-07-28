@@ -9,7 +9,7 @@
 		<%= form_for @user do |f| %>
 			<div class="row">
 				<div class="col-md-4 offset-1 col-xs-12">
-					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350, format: 'jpeg', fallback: "no_image.png", size:'350x350', class: 'img-circle profile-thumb my-img edit-img'%>
+					<%= attachment_image_tag @user, :profile_image, :fill, 350, 350, format: 'jpeg', fallback: "/images/no_image.png", size:'350x350', class: 'img-circle profile-thumb my-img edit-img'%>
 					<%= f.attachment_field :profile_image %>
 				</div>
 				<div class="col-md-4 col-xs-12">
