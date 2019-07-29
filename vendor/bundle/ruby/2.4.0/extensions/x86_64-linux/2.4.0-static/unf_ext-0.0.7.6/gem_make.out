@@ -1,5 +1,5 @@
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/unf_ext-0.0.7.6/ext/unf_ext
-/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190728-17220-ohae23.rb extconf.rb
+/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190729-32030-1wmwh0v.rb extconf.rb
 checking for -lstdc++... yes
 creating Makefile
 
@@ -24,4 +24,4 @@ linking shared-object unf_ext.so
 
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/unf_ext-0.0.7.6/ext/unf_ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20190728-17220-1frgs1f
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20190729-32030-gy01nv

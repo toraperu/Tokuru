@@ -1,5 +1,5 @@
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/msgpack-1.3.0/ext/msgpack
-/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190728-17220-mb70lk.rb extconf.rb
+/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190729-32030-13acglj.rb extconf.rb
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_str_replace() in ruby.h... yes
@@ -65,4 +65,4 @@ linking shared-object msgpack/msgpack.so
 
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/msgpack-1.3.0/ext/msgpack
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 msgpack.so ./.gem.20190728-17220-14gym6x/msgpack
+/usr/bin/install -c -m 0755 msgpack.so ./.gem.20190729-32030-1p39801/msgpack

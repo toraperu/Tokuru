@@ -1,5 +1,5 @@
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/bootsnap-1.4.4/ext/bootsnap
-/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190728-17220-1418qd8.rb extconf.rb
+/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190729-32030-73ws2.rb extconf.rb
 creating Makefile
 
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/bootsnap-1.4.4/ext/bootsnap
@@ -35,4 +35,4 @@ linking shared-object bootsnap/bootsnap.so
 
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/bootsnap-1.4.4/ext/bootsnap
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20190728-17220-melfcf/bootsnap
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20190729-32030-1jeg82d/bootsnap

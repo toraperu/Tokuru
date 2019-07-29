@@ -1,5 +1,5 @@
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/ffi-1.11.1/ext/ffi_c
-/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190728-17220-1v1wket.rb extconf.rb
+/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190729-32030-1ywj5s1.rb extconf.rb
 checking for ffi_call() in -lffi... yes
 checking for ffi_closure_alloc()... yes
 checking for shlwapi.h... no
@@ -48,4 +48,4 @@ linking shared-object ffi_c.so
 
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/ffi-1.11.1/ext/ffi_c
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20190728-17220-1jrha1g
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20190729-32030-o9e0ih

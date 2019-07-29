@@ -1,5 +1,5 @@
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.10.3/ext/nokogiri
-/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190728-17220-cee3jp.rb extconf.rb
+/home/ec2-user/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20190729-32030-13bl4s3.rb extconf.rb
 checking if the C compiler accepts ... yes
 Building nokogiri using packaged libraries.
 Using mini_portile version 2.4.0
@@ -146,4 +146,4 @@ rm -rf /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.10.3/ports
 
 current directory: /var/www/html/Tokuru/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.10.3/ext/nokogiri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20190728-17220-tk8w9b/nokogiri
+/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20190729-32030-wusskp/nokogiri
