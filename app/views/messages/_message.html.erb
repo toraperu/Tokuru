@@ -4,7 +4,7 @@
 		<%= send_user.name %>
 	</p>
 	<p class="<%= message.id%>" id="message_content">
-		<span><%= message.content %></span>
+		<span class="message_content"><%= message.content %></span>
 	</p>
 	<!--メッセージを自分と相手の位置を右左で分ける-->
 	<script>
@@ -12,10 +12,22 @@
 			var from_id = <%= message.from_id %>;
 			var current_user_id = $(".message").data('session');
 			if(from_id == current_user_id){
-				$('p.' + <%= message.id %>).css('text-align', 'right');
+				$('p.' + <%= message.id %>).css({
+												'text-align': 'right',
+											});
+				$('.message_content').css({
+											'background-color': '#DEB887'
+										});
 			}else{
-				$('p.' + <%= message.id %>).css('text-align', 'left');
+				$('p.' + <%= message.id %>).css({
+												'text-align': 'left',
+											});
+				$('.message_content').css({
+											'background-color': '#DEB887'
+										});
 			}
 		});
 	</script>
 </div>
+
+

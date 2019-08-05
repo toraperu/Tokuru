@@ -1,5 +1,5 @@
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/unicorn-5.5.1/ext/unicorn_http
-/usr/bin/ruby2.5 -r ./siteconf20190729-21318-1njk8d8.rb extconf.rb
+/usr/bin/ruby2.5 -r ./siteconf20190805-23487-1ydp0uk.rb extconf.rb
 checking for SIZEOF_OFF_T in ruby.h... yes
 checking for SIZEOF_SIZE_T in ruby.h... yes
 checking for SIZEOF_LONG in ruby.h... yes
@@ -12,13 +12,19 @@ creating Makefile
 
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/unicorn-5.5.1/ext/unicorn_http
 make "DESTDIR=" clean
+make: Warning: File 'Makefile' has modification time 950 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/unicorn-5.5.1/ext/unicorn_http
 make "DESTDIR="
+make: Warning: File 'Makefile' has modification time 950 s in the future
 compiling httpdate.c
 compiling unicorn_http.c
 linking shared-object unicorn_http.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/unicorn-5.5.1/ext/unicorn_http
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 unicorn_http.so ./.gem.20190729-21318-sfqsbz
+make: Warning: File 'Makefile' has modification time 948 s in the future
+/usr/bin/install -c -m 0755 unicorn_http.so ./.gem.20190805-23487-1chzdio
+make: warning:  Clock skew detected.  Your build may be incomplete.

@@ -2366,7 +2366,7 @@ In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33:
 /usr/include/features.h:184:3: warning: #warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE" [-Wcpp]
  # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
    ^~~~~~~
-/tmp/cccejwD7.o: In function `t':
+/tmp/ccCWZr6R.o: In function `t':
 /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/raindrops-0.19.0/ext/raindrops/conftest.c:14: undefined reference to `rb_thread_blocking_region'
 collect2: error: ld returned 1 exit status
 checked program was:

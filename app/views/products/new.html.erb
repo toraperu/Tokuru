@@ -8,7 +8,7 @@
 				<% if current_user.name? %>
 					<div class="field">
 							<%= f.label :"投稿画像" %>
-							<%= f.attachment_field :jacket_image %>
+							<%= f.file_field :avatar %>
 					</div><br>
 					<div class="field">
 						<%= f.label :"あなたの得意" %>
@@ -40,7 +40,7 @@
 					</div>
 					<div class="field">
 						<%= f.label :"投稿画像" %>
-						<%= f.attachment_field :jacket_image %>
+						<%= f.file_field :avatar %>
 					</div><br>
 					<div class="field">
 						<%= f.label :"あなたの得意" %>

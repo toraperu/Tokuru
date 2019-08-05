@@ -11,7 +11,11 @@
 		<tbody>
 			<% users.each do |user| %>
 			<tr id="admin-user_<%= user.id %>">
-				<td><%= attachment_image_tag user, :profile_image,:fill, 100, 100, fallback: "/images/no_image.png", size:'100x100', class: "img-fluid" %>
+				<td><% if user.avatar.attached? %>
+						<%= image_tag user.avatar.variant(resize: "100x100"), class: "img-fluid" %>
+					<% else %>
+						<%= image_tag '/images/no_image.png', size:'100x100', class: "img-fluid" %>
+					<% end %>
 				</td>
 				<td><%= user.name %></td>
 				<td><%= link_to "詳細", admins_user_path(user), class: "btn btn-info btn-xs" %>

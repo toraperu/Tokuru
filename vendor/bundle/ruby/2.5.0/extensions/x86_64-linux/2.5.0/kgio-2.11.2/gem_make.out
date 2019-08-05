@@ -1,5 +1,5 @@
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/kgio-2.11.2/ext/kgio
-/usr/bin/ruby2.5 -r ./siteconf20190729-20748-6u1q4m.rb extconf.rb
+/usr/bin/ruby2.5 -r ./siteconf20190805-23487-1vpc82q.rb extconf.rb
 checking for CLOCK_MONOTONIC in time.h... yes
 checking for clockid_t in time.h... yes
 checking for clock_gettime() in -lrt... yes
@@ -39,9 +39,12 @@ creating Makefile
 
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/kgio-2.11.2/ext/kgio
 make "DESTDIR=" clean
+make: Warning: File 'Makefile' has modification time 951 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/kgio-2.11.2/ext/kgio
 make "DESTDIR="
+make: Warning: File 'Makefile' has modification time 951 s in the future
 compiling accept.c
 compiling autopush.c
 compiling connect.c
@@ -53,7 +56,10 @@ compiling wait.c
 compiling write.c
 compiling writev.c
 linking shared-object kgio_ext.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/kgio-2.11.2/ext/kgio
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 kgio_ext.so ./.gem.20190729-20748-11jex68
+make: Warning: File 'Makefile' has modification time 947 s in the future
+/usr/bin/install -c -m 0755 kgio_ext.so ./.gem.20190805-23487-1xo4e3e
+make: warning:  Clock skew detected.  Your build may be incomplete.

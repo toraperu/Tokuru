@@ -27,11 +27,15 @@
 							<div class="col-md-4 col-12">
 								<%= link_to user_product_path(product.user, product) do %>
 								<div class="card img-thumbnail product-index-thumnail">
-									<%= attachment_image_tag  product,:jacket_image,fallback: "/images/no_image.png",class: "border card-img-top img-fluid"%>
+									<% if product.avatar.attached? %>
+										<%= image_tag product.avatar.variant(resize: "350x350"), class: "img-fluid" %>
+									<% else %>
+										<%= image_tag '/images/no_image.png', size:'350x350', class: "img-fluid" %>
+									<% end %>
 									<div class="card-body px-2 py-3">
 										<h5 class="card-title"><%= product.name %></h5>
 										<p class="card-text"><%= product.user.name %> さんの出品</p>
-										<p class="card-text"><%= product.price %></p>
+										<p class="card-text"><%= product.price %>円</p>
 									</div>
 								</div>
 								<% end %>

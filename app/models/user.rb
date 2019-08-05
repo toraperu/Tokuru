@@ -32,9 +32,6 @@ class User < ApplicationRecord
 		from_messages.create!(to_id: other_user.id, room_id: room_id, content: content)
 	end
 
-	# validates :name, presence: true
-	# validates :real_name, presence: true
-	# validates :profile, presence: true
 
 
 end

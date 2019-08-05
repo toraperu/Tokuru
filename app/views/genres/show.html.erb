@@ -16,10 +16,10 @@
 					<tbody>
 						<tr data-href="<%= user_product_path(product.user, product) %>">
 							<td>
-								<% if product.jacket_image.present? %>
-									<%= attachment_image_tag  product, :jacket_image, :fill, 120, 120 %>
+								<% if product.avatar.attached? %>
+									<%= image_tag product.avatar.variant(resize: "120x120"), class: "img-fluid" %>
 								<% else %>
-									<%= image_tag '/images/no_image.png', size:'120x120' %>
+									<%= image_tag '/images/no_image.png', size:'120x120', class: "img-fluid" %>
 								<% end %>
 							</td>
 							<td>

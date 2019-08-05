@@ -13,7 +13,11 @@
 		<tbody>
 			<% products.each do |product| %>
 			<tr id="admin-product_<%= product.id %>">
-				<td><%= attachment_image_tag product, :jacket_image,:fill, 100, 100, fallback: "/images/no_image.png", size:'100x100', class: "img-fluid" %>
+				<td><% if product.avatar.attached? %>
+						<%= image_tag product.avatar.variant(resize: "100x100"), class: "img-fluid" %>
+					<% else %>
+						<%= image_tag '/images/no_image.png', size:'100x100', class: "img-fluid" %>
+					<% end %>
 				</td>
 				<td><%= product.name %></td>
 				<td><%= product.price %></td>

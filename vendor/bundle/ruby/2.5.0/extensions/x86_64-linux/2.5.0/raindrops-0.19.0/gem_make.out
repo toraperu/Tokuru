@@ -1,5 +1,5 @@
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/raindrops-0.19.0/ext/raindrops
-/usr/bin/ruby2.5 -r ./siteconf20190729-21318-10abna.rb extconf.rb
+/usr/bin/ruby2.5 -r ./siteconf20190805-23487-m9nzt5.rb extconf.rb
 checking for mmap() in sys/mman.h... yes
 checking for munmap() in sys/mman.h... yes
 checking for mremap() in sys/mman.h... yes
@@ -77,9 +77,12 @@ creating Makefile
 
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/raindrops-0.19.0/ext/raindrops
 make "DESTDIR=" clean
+make: Warning: File 'Makefile' has modification time 951 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/raindrops-0.19.0/ext/raindrops
 make "DESTDIR="
+make: Warning: File 'Makefile' has modification time 951 s in the future
 compiling linux_inet_diag.c
 In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33:0,
                  from /usr/include/stdio.h:27,
@@ -111,7 +114,10 @@ In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33:
  # warning "_BSD_SOURCE and _SVID_SOURCE are deprecated, use _DEFAULT_SOURCE"
    ^~~~~~~
 linking shared-object raindrops_ext.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/tokuru/vendor/bundle/ruby/2.5.0/gems/raindrops-0.19.0/ext/raindrops
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 raindrops_ext.so ./.gem.20190729-21318-1aju95t
+make: Warning: File 'Makefile' has modification time 949 s in the future
+/usr/bin/install -c -m 0755 raindrops_ext.so ./.gem.20190805-23487-5cn775
+make: warning:  Clock skew detected.  Your build may be incomplete.

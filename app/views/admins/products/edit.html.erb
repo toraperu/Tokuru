@@ -2,8 +2,12 @@
 	<h1 class="edit-admin-product-title">＜管理者＞商品編集</h1><br>
 	<%= form_for [:admins, @product] do |f| %>
 		<div>
-			<%= attachment_image_tag @product, :jacket_image, :fill, 300, 300, fallback: '/images/no_image.png', size: '300x300', class: 'img-circle' %><br><br>
-			<%= f.attachment_field :jacket_image %>
+			<% if @product.avatar.attached? %>
+				<%= image_tag @product.avatar.variant(resize: "300x300"), class: 'img-circle' %>
+			<% else %>
+				<%= image_tag '/images/no_image.png', size:'300x300', class: 'img-circle' %>
+			<% end %><br>
+			<%= f.file_field :avatar %>
 		</div><br>
 		<div>
 			<%= f.label :商品名 %><br>
