@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 			sign_in(@user, bypass: true)  #パスワードが変更された時、強制ログアウト=>ログインする
 			redirect_to user_path(@user.id)
 		else
-			render :"/users/edit"
+			render :edit
 		end
 	end
 
