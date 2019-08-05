@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 			sign_in(@user, bypass: true)  #パスワードが変更された時、強制ログアウト=>ログインする
 			redirect_to user_path(@user.id)
 		else
-			render :"/users/edit"
+			render :edit
 		end
 	end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(
-			:name, :real_name, :profile_image, :profile, :email, :password, :password_confirmation)
+			:name, :real_name, :avatar, :profile, :email, :password, :password_confirmation)
 	end
 
 

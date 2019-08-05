@@ -23,8 +23,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id
-    @product.save
-    redirect_to user_product_path(current_user, @product)
+    if @product.save
+      redirect_to user_product_path(current_user, @product)
+    else
+      render :new
+    end
   end
 
   def about
@@ -47,7 +50,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "編集内容を更新しました"
       redirect_to root_path
     else
-      render :"/products/edit"
+      render :new
     end
   end
 
@@ -55,7 +58,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :body, :jacket_image,
+    params.require(:product).permit(:name, :body, :avatar,
                                     :price, :genre_id, :finish,
                                     :sale_result, :caution)
   end

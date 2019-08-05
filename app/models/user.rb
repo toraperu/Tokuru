@@ -22,7 +22,9 @@ class User < ApplicationRecord
 	has_many :seller_rooms, class_name: "Room",
 			 foreign_key: "seller_id", dependent: :destroy
 
-	attachment :profile_image
+	#attachment :profile_image
+	#active storage使用
+	has_one_attached :avatar
 
 
 	#チャット機能でメッセージを送信するためのメソッド

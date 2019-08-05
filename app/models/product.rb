@@ -6,7 +6,9 @@ class Product < ApplicationRecord
 	has_many :comments, dependent: :destroy
 	has_many :rooms, dependent: :destroy
 
-	attachment :jacket_image
+	#attachment :jacket_image
+	#active storage使用
+	has_one_attached :avatar
 
 	validates :name, presence: true, length: {in: 1..13}
 	validates :price, presence: true
