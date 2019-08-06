@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+//topページ
 //ジャンボトロンを綺麗にする
 .jumbotron{
 	height: 600px;
@@ -62,11 +65,20 @@
 	display: none;
 }
 
+
+
+
+
+
+
+
 //投稿ページ
-//投稿のフォント変更
-.field{
-	font-family: 'MS Mincho';
+//中央寄せ
+.new-product-container{
+	text-align: center;
+	margin-bottom: 10px;
 }
+//投稿のフォント変更
 .user-edit-link-field{
 	color: #CC3300;
 	font-family: 'YuMincho';
@@ -74,11 +86,6 @@
 //投稿タイトル
 .new-product-title{
 	background-color: #AAAAAA;
-}
-//中央寄せ
-.new-product-container{
-	text-align: center;
-	margin-bottom: 10px;
 }
 .product-new-field{
 	margin: 20px;
@@ -94,7 +101,7 @@
 	text-align: center;
 	border:solid 2px transparent;
 	border-radius: 30px;
-	font-size: 30px;
+	font-size: 20px;
 	background-color: #000066;
 	color: white;
 }
@@ -105,10 +112,12 @@
 	text-align: center;
 	border:solid 2px transparent;
 	border-radius: 30px;
-	font-size: 30px;
+	font-size: 20px;
 	background-color: #000066;
 	color: white;
 }
+
+
 
 
 
@@ -155,15 +164,32 @@
 	border-width: 10px;
 	border-color: #0066FF;
 }
+
+
+
+
+
+
+
 //editページのレイアウト
 .myproduct-edit-container{
-	height: 1200px;
-	background-image: url("/images/cat2.jpeg");
-	background-size: cover;
-	opacity: 0.7;
-	text-shadow: 1px 2px 3px #CCCCCC;
-	font-family: 'Hiragino Kaku Gothic Std';
+	text-align: center;
+	margin-bottom: 10px;
 }
+.product-edit-skillprice{
+	width: 300px;
+	height: 50px;
+	outline: 0;
+	text-align: center;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 20px;
+	background-color: #000066;
+	color: white;
+}
+
+
+
 
 
 //showページ
@@ -215,6 +241,13 @@
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
 }
+
+
+
+
+
+
+
 //検索ぺーじ
 //全体の大きさ
 .search-container{
