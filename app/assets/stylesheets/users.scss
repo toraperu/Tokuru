@@ -5,13 +5,43 @@
 
 //ユーザー情報編集
 .myinfo-edit-container{
-	height: 1000px;
-	background-image: url("/images/cat.jpeg");
-	background-size: cover;
-	opacity: 0.8;
-	text-shadow: 1px 2px 3px #CCCCCC;
-	font-family: 'Hiragino Kaku Gothic Std';
+	text-align: center;
+	margin-bottom: 10px;
 }
+.myinfo-edit-title{
+	background-color: #AAAAAA;
+}
+.edit-user-field{
+	margin: 20px;
+}
+.user-wname{
+	width: 300px;
+	height: 50px;
+	outline: 0;
+	text-align: center;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 20px;
+	background-color: #000066;
+	color: white;
+}
+.user-profile{
+	width: 400px;
+	height: 200px;
+	outline: 0;
+	text-align: center;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 20px;
+	background-color: #000066;
+	color: white;
+}
+
+
+
+
+
+
 //ユーザー詳細
 .bank-new-path{
 	height: 80px;
