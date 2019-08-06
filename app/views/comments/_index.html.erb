@@ -5,13 +5,13 @@
 			<div id="star_<%= comment.id %>" >
 				<script>
 					$('#star_<%= comment.id %>').raty({
-						space: false,
-						size: 36,
-						readOnly: true,
+						size     : 36,
 						starOff:  '<%= asset_path('star-off.png') %>',
-				  		starOn : '<%= asset_path('star-on.png') %>',
+		  				starOn : '<%= asset_path('star-on.png') %>',
+		  				readOnly: true,
+						scoreName: 'comment[star]',
 						score: '<%= comment.star %>'
-					});
+						});
 				</script>
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 		</div>
 		<% if comment.user == current_user%>
 			<div class="col-2">
-				<%= link_to "編集", edit_user_product_comment_path(product, product.user, comment), class: "btn btn-warning btn-xs" %>
+				<%= link_to "編集", edit_user_product_comment_path(product.user, product, comment), class: "btn btn-warning btn-xs" %>
 			</div>
 			<div class="col-2">
 				<%= link_to "削除", user_product_comment_path(product.user,product, comment), class: "btn btn-danger btn-xs",method: :delete, remote: true %>

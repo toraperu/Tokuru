@@ -7,9 +7,9 @@ class UsersController < ApplicationController
 		#カルーセルで表示する全件
 		@favorites = @user.favorites.all
 		@count = 1
-		@products = @user.products.all
+		@products = @user.products.page(params[:page]).per(6)
 		#renderで渡すインスタンス変数
-		@orders = Order.all.page(params[:page]).per(6)
+		@orders = @user.orders.page(params[:page]).per(6)
 	end
 
 	def edit

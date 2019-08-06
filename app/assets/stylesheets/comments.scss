@@ -3,29 +3,51 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-//newページ
-//タイトルを下にずらす
-.new-comment-title{
-	margin: 30px 0 30px 0;
-	background-color: #BBBBBB;
+//indexページ
+.comment-record{
+	border: dashed 3px #666666;
+	border-radius: 3px;
+	margin: 10px;
+	padding: 5px;
 }
+
+
+
+
+
+//newページ
 //全体を真ん中に
 .comment-new-container{
 	text-align: center;
-	background-image: url('/images/shi-zu-.jpeg');
-	background-size: cover;
 }
-
-//editページ
-//タイトルを下にずらす
-.edit-comment-title{
-	margin: 30px 0 30px 0;
+//タイトル
+.new-comment-title{
 	background-color: #BBBBBB;
 }
+
+
+
+
+
+//editページ
 //全体を真ん中に
 .comment-edit-container{
 	text-align: center;
-	background-image: url('/images/agonose-cat.jpeg');
-	background-size: cover;
+}
+//タイトル
+.edit-comment-title{
+	background-color: #AAAAAA;
+}
+//form綺麗に
+.comment-post{
+	width: 400px;
+	height: 200px;
+	outline: 0;
+	text-align: center;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 20px;
+	background-color: #000066;
+	color: white;
 }
 
