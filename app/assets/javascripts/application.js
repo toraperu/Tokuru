@@ -43,8 +43,12 @@ $(function(){
 	$('#order_payment').change(function(){
 		if ($(this).children('option:selected').val() == 'skill') {
 			$('.your-skill-form').show();
+			$('.existing-price').hide();
+			$('.free-price').show();
 		} else {
 			$('.your-skill-form').hide();
+			$('.existing-price').show();
+			$('.free-price').hide();
 		}
 	});
 });

@@ -22,7 +22,7 @@
 		</div>
 	</div><br><br>
 	<div class="row">
-		<div class="col-6 offset-3">
+		<div class="col-12">
 			<!-- タブ・メニュー -->
 			<ul class="nav nav-tabs">
 				<li class="nav-item"><a class="nav-link" href="#nav-content-favorite" data-toggle="tab">いいねした商品</a></li>
@@ -46,10 +46,10 @@
 					    		<% end %>
 
 						    	<%= link_to user_product_path(favorite.product, favorite.product.user) do %>
-						    		<% if @user.avatar.attached? %>
-										<%= image_tag @user.avatar.variant(resize: "200x200"), class: "img-fluid" %>
+						    		<% if favorite.product.avatar.attached? %>
+										<%= image_tag favorite.product.avatar.variant(resize: "400x400"), class: "img-fluid" %>
 									<% else %>
-										<%= image_tag '/images/no_image.png', size:'200x200', class: "img-fluid" %>
+										<%= image_tag '/images/no_image.png', size:'400x400', class: "img-fluid" %>
 									<% end %>
 						    	<% end %>
 
@@ -72,11 +72,11 @@
 				<div class="tab-pane" id="nav-content-myproduct">
 					<div class="row d-flex flex-wrap">
 						<% @products.each do |product| %>
-						<div class="col-md-6 col-12">
+						<div class="col-md-3 col-6">
 							<%= link_to user_product_path(product.user, product) do %>
 							<div class="card img-thumbnail product-index-thumnail">
-								<% if @user.avatar.attached? %>
-									<%= image_tag @user.avatar.variant(resize: "350x350"), class: "img-fluid border card-img-top" %>
+								<% if product.avatar.attached? %>
+									<%= image_tag product.avatar.variant(resize: "350x350"), class: "img-fluid border card-img-top" %>
 								<% else %>
 									<%= image_tag '/images/no_image.png', size:'350x350', class: "img-fluid border card-img-top" %>
 								<% end %>

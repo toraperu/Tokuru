@@ -1,7 +1,9 @@
 <div class="confirm-container">
-	<h1 class="confirm-title">購入内容確認</h1><br>
+	<div class="center">
+		<h1 class="confirm-title">購入内容確認</h1><br>
+	</div>
 	<div class="row">
-		<div class="col-5 offset-1 order-confirm-left">
+		<div class="col-md-6 col-12 order-confirm-left">
 			<h3 class="confirm-product-name">
 				商品名: <%= @product.name %>
 			</h3><br>
@@ -9,7 +11,7 @@
 				<span class="confirm-span-title">商品説明:</span><br> <%= @product.body %>
 			</div><br>
 		</div>
-		<div class="col-4 offset-1 order-confirm-right">
+		<div class="col-md-6 col-12 order-confirm-right">
 			<div class="confirm-product-price">
 				価格: <%= @product.price %>円
 			</div><br>
