@@ -71,15 +71,46 @@
 	color: #CC3300;
 	font-family: 'YuMincho';
 }
-//投稿ページのbg
-.post-bg{
-	background-image: url("/images/post-bg2.png");
-	background-size: cover;
-}
 //投稿タイトル
 .new-product-title{
-	padding-top: 20px;
+	background-color: #AAAAAA;
 }
+//中央寄せ
+.new-product-container{
+	text-align: center;
+	margin-bottom: 10px;
+}
+.product-new-field{
+	margin: 20px;
+}
+.new-product-image{
+	outline: 0;
+}
+//form綺麗に
+.product-new-skillprice{
+	width: 300px;
+	height: 50px;
+	outline: 0;
+	text-align: center;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 30px;
+	background-color: #000066;
+	color: white;
+}
+.product-bodycaution{
+	width: 400px;
+	height: 200px;
+	outline: 0;
+	text-align: center;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 30px;
+	background-color: #000066;
+	color: white;
+}
+
+
 
 
 //aboutページ
