@@ -16,7 +16,7 @@
 
 
 
-//headerの位置
+//headerの位置=>固定、下にスクロールすると隠れる
 $(function() {
   var $win = $(window),
       $header = $('header'),
@@ -34,6 +34,15 @@ $(function() {
   });
 });
 
+
+
+//ロゴ押すとページ再読み込み??????
+$('#header-logo a').on('click',function(){
+	location.reload(false);
+});
+
+
+
 //ページトップに戻るボタン
 $(function() {
 	$('#back a').on('click',function(){
@@ -43,6 +52,8 @@ $(function() {
 		return false;
 	});
 });
+
+
 
 //連絡手段のその他を選択した時にフォーム出す
 $(function(){
@@ -54,6 +65,8 @@ $(function(){
 		}
 	});
 });
+
+
 
 //スキルの交換を選択した時にあなたのスキルの入力欄を出す
 $(function(){
@@ -69,6 +82,8 @@ $(function(){
 		}
 	});
 });
+
+
 
 //無限スクロール(Topページ)
 //注意点=> •ページネーションの位置重要　•classではなくid名を指定する　•autoTriggerではなくnextSerectorで次の要素を指定する
@@ -100,6 +115,8 @@ $(window).on('scroll', function() {
 //     }
 // });
 
+
+
 //table/tr要素全体がリンクになる
 $(function(){
 	$('tbody tr[data-href]').addClass('clickable').click(function () {
@@ -113,7 +130,10 @@ $(function(){
 	});
 });
 
-//メッセージ一覧で新しいメッセージを一番下に表示
+
+
+
+//ルームのメッセージ一覧で新しいメッセージを一番下に表示
 $(function(){
 	var height = 0;
 	$("div.message").each( function(){

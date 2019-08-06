@@ -1,103 +1,96 @@
 <div class="mypage-container">
-	<div class="row">
-		<div class="col-md-4 offset-md-4">
-			<br><br>
-			<h1>マイページ</h1>
-			<br>
-			<div class="row mypage-link">
-				<div class="my-profile-image col-12">
-					<% if @user.avatar.attached? %>
-						<%= image_tag @user.avatar.variant(resize: "350x350"), class: "img-fluid" %>
-					<% else %>
-						<%= image_tag '/images/no_image.png', size:'350x350', class: "img-fluid" %>
-					<% end %>
-				</div><br>
-				<div class="col-3 bank-new-path"><%= link_to "振込先登録", new_user_bank_path(current_user), style: "color: white" %></div><br>
-				<div class="col-3 bank-index-path"><%= link_to "振込先一覧", user_banks_path(current_user), style: "color: white" %></div><br>
-				<div class="col-3 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
-				</div><br>
-				<div class="col-3 chat-room-path"><%= link_to "チャット", rooms_path, data: {"turbolinks" => false}, style: "color: white" %>
+	<h1 class="mypage-title">マイページ</h1>
+	<div class="row mypage-link">
+		<div class="my-profile-image col-12">
+			<% if @user.avatar.attached? %>
+				<%= image_tag @user.avatar.variant(resize: "350x350"), class: "img-fluid" %>
+			<% else %>
+				<%= image_tag '/images/no_image.png', size:'350x350', class: "img-fluid" %>
+			<% end %>
+		</div><br>
+		<!--リンク4つ-->
+		<div class="col-3 bank-new-path"><%= link_to "振込先登録", new_user_bank_path(current_user), style: "color: white" %></div><br>
+		<div class="col-3 bank-index-path"><%= link_to "振込先一覧", user_banks_path(current_user), style: "color: white" %></div><br>
+		<div class="col-3 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
+		</div><br>
+		<div class="col-3 chat-room-path"><%= link_to "チャット", rooms_path, data: {"turbolinks" => false}, style: "color: white" %>
+		</div>
+	</div>
+	<div class="tab-wrapper">
+		<!-- タブ・メニュー -->
+		<ul class="nav nav-tabs">
+			<li class="nav-item"><a class="nav-link" href="#nav-content-favorite" data-toggle="tab">いいねした商品</a></li>
+			<li class="nav-item"><a class="nav-link" href="#nav-content-myproduct" data-toggle="tab">自分の商品</a></li>
+			<li class="nav-item"><a class="nav-link" href="#nav-content-order-history" data-toggle="tab">購入履歴</a></li>
+		</ul>
+		<!-- タブ内容 -->
+		<div class="tab-content">
+			<!--いいねした商品-->
+			<div class="tab-pane" id="nav-content-favorite">
+				<h2>いいねした商品一覧</h2>
+				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+					<!-- スライドさせる画像の設定 -->
+					<div class="carousel-inner">
+					    <% @favorites.each do |favorite| %>
+					    	<% if @count == 1 %>
+						    	<div class="carousel-item active">
+					    	<% else %>
+						    	<div class="carousel-item">
+				    		<% end %>
+
+					    	<%= link_to user_product_path(favorite.product, favorite.product.user) do %>
+					    		<% if favorite.product.avatar.attached? %>
+									<%= image_tag favorite.product.avatar.variant(resize: "400x400"), class: "img-fluid" %>
+								<% else %>
+									<%= image_tag '/images/no_image.png', size:'400x400', class: "img-fluid" %>
+								<% end %>
+					    	<% end %>
+
+							    </div>
+						    <% @count += 1 %>
+						<% end %>
+					</div>
+					<!-- スライドコントロールの設定 -->
+					<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">前へ</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">次へ</span>
+					</a>
 				</div>
 			</div>
-		</div>
-	</div><br><br>
-	<div class="row">
-		<div class="col-12">
-			<!-- タブ・メニュー -->
-			<ul class="nav nav-tabs">
-				<li class="nav-item"><a class="nav-link" href="#nav-content-favorite" data-toggle="tab">いいねした商品</a></li>
-				<li class="nav-item"><a class="nav-link" href="#nav-content-myproduct" data-toggle="tab">自分の商品</a></li>
-				<li class="nav-item"><a class="nav-link" href="#nav-content-order-history" data-toggle="tab">購入履歴</a></li>
-			</ul>
-			<!-- タブ内容 -->
-			<div class="tab-content">
-
-				<!--いいねした商品-->
-				<div class="tab-pane" id="nav-content-favorite">
-					<h2>いいねした商品一覧</h2>
-					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-						<!-- スライドさせる画像の設定 -->
-						<div class="carousel-inner">
-						    <% @favorites.each do |favorite| %>
-						    	<% if @count == 1 %>
-							    	<div class="carousel-item active">
-						    	<% else %>
-							    	<div class="carousel-item">
-					    		<% end %>
-
-						    	<%= link_to user_product_path(favorite.product, favorite.product.user) do %>
-						    		<% if favorite.product.avatar.attached? %>
-										<%= image_tag favorite.product.avatar.variant(resize: "400x400"), class: "img-fluid" %>
-									<% else %>
-										<%= image_tag '/images/no_image.png', size:'400x400', class: "img-fluid" %>
-									<% end %>
-						    	<% end %>
-
-								    </div>
-							    <% @count += 1 %>
+			<!--自分の商品-->
+			<div class="tab-pane" id="nav-content-myproduct">
+				<div class="row d-flex flex-wrap">
+					<% @products.each do |product| %>
+					<div class="col-md-3 col-6">
+						<%= link_to user_product_path(product.user, product) do %>
+						<div class="card img-thumbnail product-index-thumnail">
+							<% if product.avatar.attached? %>
+								<%= image_tag product.avatar.variant(resize: "350x350"), class: "img-fluid border card-img-top" %>
+							<% else %>
+								<%= image_tag '/images/no_image.png', size:'350x350', class: "img-fluid border card-img-top" %>
 							<% end %>
-						</div>
-						<!-- スライドコントロールの設定 -->
-						<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">前へ</span>
-						</a>
-						<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">次へ</span>
-						</a>
-					</div>
-				</div>
-				<!--自分の商品-->
-				<div class="tab-pane" id="nav-content-myproduct">
-					<div class="row d-flex flex-wrap">
-						<% @products.each do |product| %>
-						<div class="col-md-3 col-6">
-							<%= link_to user_product_path(product.user, product) do %>
-							<div class="card img-thumbnail product-index-thumnail">
-								<% if product.avatar.attached? %>
-									<%= image_tag product.avatar.variant(resize: "350x350"), class: "img-fluid border card-img-top" %>
-								<% else %>
-									<%= image_tag '/images/no_image.png', size:'350x350', class: "img-fluid border card-img-top" %>
-								<% end %>
-								<div class="card-body px-2 py-3">
-									<h5 class="card-title"><%= product.name %></h5>
-									<p class="mb-0"><%= link_to "編集", edit_user_product_path(product.user, product), class: "btn btn-warning btn-sm" %>
-										<i class="fas fa-edit"></i>
-									</p>
-								</div>
+							<div class="card-body px-2 py-3">
+								<h5 class="card-title"><%= product.name %></h5>
+								<p class="mb-0"><%= link_to "編集", edit_user_product_path(product.user, product), class: "btn btn-warning btn-sm" %>
+									<i class="fas fa-edit"></i>
+								</p>
 							</div>
-							<% end %>
 						</div>
 						<% end %>
 					</div>
-					<%= paginate @products %>
+					<% end %>
 				</div>
-				<!--購入履歴-->
-				<div class="tab-pane" id="nav-content-order-history">
-					<%= render 'orders/index', orders: @orders %>
-				</div>
+				<%= paginate @products %>
+			</div>
+			<!--購入履歴-->
+			<div class="tab-pane" id="nav-content-order-history">
+				<%= render 'orders/index', orders: @orders %>
 			</div>
 		</div>
+	</div>
 	</div>
 </div><br><br>

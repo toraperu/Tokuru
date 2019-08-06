@@ -38,8 +38,8 @@
               <% end %>
               <p>管理者トップ</p>
             </li>
-            <li class="header-list">
-              <p><%= image_tag "/images/tokuru_logo.png", class: "img-fluid logo-picture" %></p>
+            <li class="header-list" id="header-logo">
+              <a href="#"><%= image_tag "/images/tokuru_logo.png", class: "img-fluid" %></a>
             </li>
             <li class="header-list">
               <%= link_to destroy_admin_session_path, method: :delete do %>
@@ -61,8 +61,8 @@
               <% end %>
               <p>商品投稿</p>
             </li>
-            <li class="header-list">
-              <p><%= image_tag "/images/tokuru_logo.png", class: "img-fluid" %></p>
+            <li class="header-list" id="header-logo">
+              <a href="#"><%= image_tag "/images/tokuru_logo.png", class: "img-fluid" %></a>
             </li>
             <li class="header-list">
               <%= link_to user_path(current_user) do %>
