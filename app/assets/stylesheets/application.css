@@ -60,8 +60,28 @@ footer{
 main{
 	width: 100%;
 }
-.header-height{
-	height: 56px;
+/*header*/
+header{
+	background-color: #DEB887;
+}
+.navbar{
+	text-align: center;
+	list-style: none;
+	display: flex;
+}
+.header-list{
+	text-align: center;
+	width: 120px;
+	height: 120px;
+	margin: 10px;
+	color: white;
+	border:solid 2px transparent;
+}
+.header-list:hover{
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+}
+.logo-picture{
+	border-radius: 20px;
 }
 body,#wrapper{
 	display: flex;
@@ -85,12 +105,14 @@ body,#wrapper{
 }
 /*検索窓*/
 .seach-window{
-	width: 30%;
-	position: absolute;
-	right: 1%;
+	width: 50%;
+	margin: 20px auto;
 }
 .search_form{
-	width: 60%;
+	text-align: center;
+	width: 90%;
+	outline: 0;
+	border-radius: 35px;
 }
 .glyphicon-search{
 	background-color: #FFCC33;
