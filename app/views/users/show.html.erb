@@ -9,11 +9,29 @@
 			<% end %>
 		</div><br>
 		<!--リンク4つ-->
-		<div class="col-3 bank-new-path"><%= link_to "振込先登録", new_user_bank_path(current_user), style: "color: white" %></div><br>
-		<div class="col-3 bank-index-path"><%= link_to "振込先一覧", user_banks_path(current_user), style: "color: white" %></div><br>
-		<div class="col-3 user-edit-path"><%= link_to "ユーザー情報編集", edit_user_path(current_user), style: "color: white"%>
-		</div><br>
-		<div class="col-3 chat-room-path"><%= link_to "チャット", rooms_path, data: {"turbolinks" => false}, style: "color: white" %>
+		<div class="col-3 user-show-links">
+			<%= link_to new_user_bank_path(current_user), {:style => 'text-decoration: none'} do %>
+				<p><%= image_tag "/images/creditcard.png", class: "img-fluid user-show-icon" %></p>
+				<p class="show-link-title">振込先登録</p>
+			<% end %>
+		</div>
+		<div class="col-3 user-show-links">
+			<%= link_to user_banks_path(current_user), {:style => 'text-decoration: none'} do %>
+				<p><%= image_tag "/images/bank.png", class: "img-fluid user-show-icon" %></p>
+				<p class="show-link-title">振込先一覧</p>
+			<% end %>
+		</div>
+		<div class="col-3 user-show-links">
+			<%= link_to edit_user_path(current_user), {:style => 'text-decoration: none'} do %>
+				<p><%= image_tag "/images/house.png", class: "img-fluid user-show-icon" %></p>
+				<p class="show-link-title">ユーザー編集</p>
+			<% end %>
+		</div>
+		<div class="col-3 user-show-links">
+			<%= link_to  rooms_path, {:style => 'text-decoration: none'} do %>
+				<p><%= image_tag "/images/message.png", class: "img-fluid user-show-icon" %></p>
+				<p class="show-link-title">チャットルーム</p>
+			<% end %>
 		</div>
 	</div>
 	<div class="tab-wrapper">
