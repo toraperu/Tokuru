@@ -78,15 +78,6 @@
             </li>
           <!--非ログイン時のヘッダー-->
           <% else %>
-              <!-- <li class="nav-item">
-              <%= link_to "商品一覧", root_path, class: "nav-link" %>
-            </li>
-              <li class="nav-item">
-              <%= link_to "新規登録", new_user_registration_path, class: "nav-link"  %>
-            </li>
-              <li class="nav-item">
-              <%= link_to "ログイン", new_user_session_path , class: "nav-link" %>
-            </li> -->
             <li class="header-list">
               <%= link_to root_path do %>
                 <p><%= image_tag "/images/anker.png", class: "img-fluid" %></p>
@@ -110,7 +101,7 @@
         <div class="seach-window">
           <%= form_tag search_path, enforce_utf8: false, method:'get' do %>
             <%= text_field_tag :search, "", class: "search_form", placeholder: "商品名で検索" %>
-            <%= button_tag sanitize('<i class="fa fa-search"></i>'), type: "submit", class: "btn glyphicon glyphicon-search" %>
+            <span><%= button_tag sanitize('<i class="fa fa-search"></i>'), type: "submit", class: "btn glyphicon glyphicon-search" %></span>
           <% end %>
         </div>
       </nav>
