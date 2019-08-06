@@ -149,6 +149,90 @@ $(function(){
 
 
 
+//aboutページの要素をジワリと表示
+$(function() {
+  $('.fadeIn1').on('inview', function(event, isInView) {
+    console.log('fadeIn')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('fadeInLeft');
+    } else {
+    //表示領域から出た時
+    console.log('fadeOut')
+      $(this).removeClass('fadeInLeft');
+    }
+  });
+});
+
+$(function() {
+  $('.fadeIn2').on('inview', function(event, isInView) {
+    console.log('fadeIn')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('fadeInRight');
+    } else {
+    //表示領域から出た時
+    console.log('fadeOut')
+      $(this).removeClass('fadeInRight');
+    }
+  });
+});
+
+
+
+//topページのジャンボトロンをジワリだす
+$(function() {
+  $('.fadeIn3').on('inview', function(event, isInView) {
+    console.log('fadeIn3')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('fadeInDown');
+    } else {
+    //表示領域から出た時
+      $(this).removeClass('fadeInDown');
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -4,13 +4,13 @@
 
 
 
+
 //topページ
 //ジャンボトロンを綺麗にする
 .jumbotron{
 	height: 600px;
 	background-image: url("/images/tokuru-index-junb.jpg");
 	background-size: cover;
-	opacity: 0.9;
 }
 .jumbotron:hover{
 	box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.25);
@@ -128,23 +128,32 @@
 	background-image: url("/images/mad-doll.jpg");
 	background-size: cover;
 	height: 600px;
-	opacity: 0.8;
 }
 //aboutページのbg
 .about1-bg{
 	background-image: url("/images/guitar.jpg");
 	background-size: cover;
 	height: 400px;
-	opacity: 0.8;
 }
 .about2-bg{
 	background-image: url("/images/macbook3.jpg");
 	background-size: cover;
 	height: 500px;
 }
+
+
+
+
+
+
+
+
+
 //aboutページのジャンボもじ
 .about-container{
 	position: relative;
+	width: 98%;
+	margin: 0 auto;
 }
 .junb-about-title{
 	position: absolute;
