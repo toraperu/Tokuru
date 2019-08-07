@@ -1,5 +1,8 @@
-<div class="order-container">
+<div class="order-new-container">
 	<h1 class="order-new-title">購入内容確定</h1>
+	<% if @order.errors.any? %>
+		<%= render 'layouts/flash_messages' %>
+	<% end %>
 	<%= form_with model: Order.new, url: user_product_orders_path, local: true do |f| %>
 		<!--入力欄-->
 		<div class="order-new-top">

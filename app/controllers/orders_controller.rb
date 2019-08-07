@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   	if @order.save
   		redirect_to order_confirm_path(@order.id)
   	else
+      flash.now[:danger] = '連絡手段、連絡番号、および支払い手段の入力が完了していません'
   		render :new
   	end
   end
