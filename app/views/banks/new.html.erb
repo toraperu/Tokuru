@@ -13,6 +13,10 @@
 		<%= f.label :number, "口座番号" %><br>
 		<%= f.text_field :number, class: "bank-content" %>
 	</div><br>
+	<div class="bank-field">
+		<%= f.label :holder, "名義人" %><br>
+		<%= f.text_field :holder, class: "bank-content" %>
+	</div><br>
 	<div class="bank-action">
 		<%= f.submit "振込先登録", class:"post-btn btn btn-secondary btn-lg" %>
 	</div>
