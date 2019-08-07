@@ -16,6 +16,32 @@
 
 
 
+//headerの位置=>固定、下にスクロールすると隠れる
+$(function() {
+  var $win = $(window),
+      $header = $('header'),
+      headerHeight = $header.outerHeight(),
+      startPos = 0;
+
+  $win.on('load scroll', function() {
+    var value = $(this).scrollTop();
+    if ( value > startPos && value > headerHeight ) {
+      $header.css('top', '-' + headerHeight + 'px');
+    } else {
+      $header.css('top', '0');
+    }
+    startPos = value;
+  });
+});
+
+
+
+//ロゴ押すとページ再読み込み??????
+$('#header-logo a').on('click',function(){
+	location.reload(false);
+});
+
+
 
 //ページトップに戻るボタン
 $(function() {
@@ -26,6 +52,8 @@ $(function() {
 		return false;
 	});
 });
+
+
 
 //連絡手段のその他を選択した時にフォーム出す
 $(function(){
@@ -38,16 +66,24 @@ $(function(){
 	});
 });
 
+
+
 //スキルの交換を選択した時にあなたのスキルの入力欄を出す
 $(function(){
 	$('#order_payment').change(function(){
 		if ($(this).children('option:selected').val() == 'skill') {
 			$('.your-skill-form').show();
+			$('.existing-price').hide();
+			$('.free-price').show();
 		} else {
 			$('.your-skill-form').hide();
+			$('.existing-price').show();
+			$('.free-price').hide();
 		}
 	});
 });
+
+
 
 //無限スクロール(Topページ)
 //注意点=> •ページネーションの位置重要　•classではなくid名を指定する　•autoTriggerではなくnextSerectorで次の要素を指定する
@@ -79,6 +115,8 @@ $(window).on('scroll', function() {
 //     }
 // });
 
+
+
 //table/tr要素全体がリンクになる
 $(function(){
 	$('tbody tr[data-href]').addClass('clickable').click(function () {
@@ -92,7 +130,10 @@ $(function(){
 	});
 });
 
-//メッセージ一覧で新しいメッセージを一番下に表示
+
+
+
+//ルームのメッセージ一覧で新しいメッセージを一番下に表示
 $(function(){
 	var height = 0;
 	$("div.message").each( function(){
@@ -100,6 +141,90 @@ $(function(){
 	})
 	$("div.message_box").scrollTop(height);
 });
+
+
+
+
+
+
+
+
+//aboutページの要素をジワリと表示
+$(function() {
+  $('.fadeIn1').on('inview', function(event, isInView) {
+    console.log('fadeIn')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('fadeInLeft');
+    } else {
+    //表示領域から出た時
+    console.log('fadeOut')
+      $(this).removeClass('fadeInLeft');
+    }
+  });
+});
+
+$(function() {
+  $('.fadeIn2').on('inview', function(event, isInView) {
+    console.log('fadeIn')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('fadeInRight');
+    } else {
+    //表示領域から出た時
+    console.log('fadeOut')
+      $(this).removeClass('fadeInRight');
+    }
+  });
+});
+
+
+
+//topページのジャンボトロンをジワリだす
+$(function() {
+  $('.fadeIn3').on('inview', function(event, isInView) {
+    console.log('fadeIn3')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('fadeInDown');
+    } else {
+    //表示領域から出た時
+      $(this).removeClass('fadeInDown');
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

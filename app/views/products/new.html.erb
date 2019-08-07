@@ -1,74 +1,68 @@
-<div class="main-container">
-	<div class="row">
-		<div class="col-4 offset-2">
-			<h1 class="new-product-title">商品投稿</h1>
-			<br>
-			<br>
-			<%= form_for [current_user, @product] do |f| %>
-				<% if current_user.name? %>
-					<div class="field">
-							<%= f.label :"投稿画像" %>
-							<%= f.attachment_field :jacket_image %>
-					</div><br>
-					<div class="field">
-						<%= f.label :"あなたの得意" %>
-						<%= f.text_field :name, size: '25x4' %>
-					</div><br>
-					<div class="field">
-						<%= f.label :"ジャンル" %>
-						<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
-					</div><br>
-					<div class="field">
-						<%= f.label :"価格" %>
-						<%= f.text_field :price %>
-					</div><br>
-					<div class="field">
-						<%= f.label :"商品説明" %><br>
-						<%= f.text_area :body, size: '25x6', class: "product-body" %><br><br>
-					</div><br>
-					<div class="field">
-						<%= f.label :"購入時の注意点" %><br>
-						<%= f.text_area :caution, size: '25x6', class: "product-caution" %><br><br>
-					</div><br>
-					<div><%= f.submit "投稿", class:"btn btn-secondary btn-lg" %>
-					</div>
-				<% else %>
-					<div class="user-edit-link-field">
-						*投稿するにはユーザー名が必要です。<br>
-						ユーザー情報編集はこちら<span><i class="far fa-hand-point-right"></i></span>
-						<%= link_to "", edit_user_path(current_user), class: "far fa-edit btn btn-warning btn-xs"%><br><br>
-					</div>
-					<div class="field">
-						<%= f.label :"投稿画像" %>
-						<%= f.attachment_field :jacket_image %>
-					</div><br>
-					<div class="field">
-						<%= f.label :"あなたの得意" %>
-						<%= f.text_field :name, size: '25x4' %>
-					</div><br>
-					<div class="field">
-						<%= f.label :"ジャンル" %>
-						<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
-					</div><br>
-					<div class="field">
-						<%= f.label :"価格" %>
-						<%= f.text_field :price %>
-					</div><br>
-					<div class="field">
-						<%= f.label :"商品説明" %><br>
-						<%= f.text_area :body, size: '25x6', class: "product-body" %><br><br>
-					</div><br>
-					<div class="field">
-						<%= f.label :"購入時の注意点" %><br>
-						<%= f.text_area :caution, size: '25x6', class: "product-caution" %><br><br>
-					</div><br>
-					<div><%= f.submit "投稿", class:"btn btn-secondary btn-lg" %>
-					</div>
-				<% end %>
-			<% end %>
-		</div>
-		<div class="col-4 offset-2 post-bg">
-		</div>
-	</div>
+<div class="new-product-container">
+	<h1 class="new-product-title">商品投稿</h1>
+	<br>
+	<br>
+	<%= form_for [current_user, @product] do |f| %>
+		<% if current_user.name? %>
+			<div class="product-new-field">
+				<%= f.label :"投稿画像" %><br>
+				<%= f.file_field :avatar, class: "new-product-image" %>
+			</div><br>
+			<div class="product-new-field">
+				<%= f.label :"あなたの得意" %><br>
+				<%= f.text_field :name, class: "product-new-skillprice" %>
+			</div><br>
+			<div class="product-new-field">
+				<%= f.label :"ジャンル" %><br>
+				<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
+			</div><br>
+			<div class="product-new-field new-under">
+				<%= f.label :"価格" %><br>
+				<%= f.text_field :price, class: "product-new-skillprice" %>
+			</div><br>
+			<div class="product-new-field new-under">
+				<%= f.label :"商品説明" %><br>
+				<%= f.text_area :body, class: "product-bodycaution" %><br><br>
+			</div><br>
+			<div class="product-new-field new-under">
+				<%= f.label :"購入時の注意点" %><br>
+				<%= f.text_area :caution, class: "product-bodycaution" %><br><br>
+			</div><br>
+			<div><%= f.submit "投稿", class:"post-btn btn btn-secondary btn-lg" %>
+			</div>
+		<% else %>
+			<div class="user-edit-link-field">
+				*投稿するにはユーザー名が必要です。<br>
+				ユーザー情報編集はこちら<span><i class="far fa-hand-point-right"></i></span>
+				<%= link_to "", edit_user_path(current_user), class: "far fa-edit btn btn-warning btn-xs"%><br><br>
+			</div>
+			<div class="product-new-field">
+				<%= f.label :"投稿画像" %><br>
+				<%= f.file_field :avatar, class: "new-product-image" %>
+			</div><br>
+			<div class="product-new-field">
+				<%= f.label :"あなたの得意" %><br>
+				<%= f.text_field :name, class: "product-new-skillprice" %>
+			</div><br>
+			<div class="product-new-field">
+				<%= f.label :"ジャンル" %><br>
+				<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
+			</div><br>
+			<div class="product-new-field new-under">
+				<%= f.label :"価格" %><br>
+				<%= f.text_field :price, class: "product-new-skillprice" %>
+			</div><br>
+			<div class="product-new-field new-under">
+				<%= f.label :"商品説明" %><br>
+				<%= f.text_area :body, class: "product-bodycaution" %><br><br>
+			</div><br>
+			<div class="product-new-field new-under">
+				<%= f.label :"購入時の注意点" %><br>
+				<%= f.text_area :caution, class: "product-bodycaution" %><br><br>
+			</div><br>
+			<div><%= f.submit "投稿", class:"post-btn btn btn-secondary btn-lg" %>
+			</div>
+		<% end %>
+	<% end %>
 </div>
 

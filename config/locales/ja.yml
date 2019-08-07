@@ -1,5 +1,18 @@
 ja:
   enums:
+    genre:
+      name:
+        design: デザイン
+        art: 描画
+        music: 音楽
+        fashion: ファッション
+        programming: プログラミング
+        language: 語学
+        love: 恋愛結婚
+        business: ビジネス
+        webdesign: WEBデザイン
+        consulting: 悩み相談
+        lisence: 資格学習
     order:
       payment:
         credit: クレジットカード

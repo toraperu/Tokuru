@@ -15,7 +15,11 @@
 			<tbody>
 				<tr class="row order-history-item" data-href="<%= user_product_path(order.product.user, order.product) %>">
 					<td class="col-3">
-						<%= attachment_image_tag order.product, :jacket_image, :fill, 100, 100, format: 'jpeg' %>
+						<% if order.product.avatar.attached? %>
+							<%= image_tag order.product.avatar.variant(resize: "100x100"), class: "img-fluid" %>
+						<% else %>
+							<%= image_tag '/images/no_image.png', size:'100x100', class: "img-fluid" %>
+						<% end %>
 					</td>
 					<td class="col-2"><%= order.product.name %></td>
 					<td class="col-2"><%= order.price %></td>

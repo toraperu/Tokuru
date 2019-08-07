@@ -1,16 +1,14 @@
 <div class="order-container">
-	<div class="row">
-		<div class="col-4 offset-4">
-			<h1 class="order-new-title">購入内容入力</h1>
-			<div class="order-new-head">
-				<p class="order-new-product-title">商品名 : <%= @product.name %></p>
-				<p class="order-new-user-name">ユーザー名 : <%= @product.user.name %></p>
-			</div>
+	<div class="center">
+		<h1 class="order-new-title">購入内容入力</h1>
+		<div class="order-new-head">
+			<p class="order-new-product-title">商品名 : <%= @product.name %></p>
+			<p class="order-new-user-name">ユーザー名 : <%= @product.user.name %></p>
 		</div>
 	</div>
 	<%= form_with model: Order.new, url: user_product_orders_path, local: true do |f| %>
 	<div class="row">
-		<div class="col-md-4 offset-md-2 col-12 offset-4 order-new-left">
+		<div class="col-md-6 col-12 order-new-left">
 			<div class=order-field>
 				<%= f.label :contact, "連絡手段 " %><br>
 				<%= f.select :contact, Order.contacts.keys.to_a, {} %>
@@ -21,7 +19,7 @@
 			</div><br>
 			<div class="order-field">
 				<%= f.label :contact_info, "連絡番号およびID" %><br>
-				<%= f.text_field :contact_info %>
+				<%= f.text_field :contact_info, class: 'outline' %>
 			</div><br>
 			<div class="order-field">
 				<%= f.label :payment, "支払い方法" %><br>
@@ -29,12 +27,14 @@
 
 				<div class="your-skill-form">
 					<%= f.label :my_skill, "あなたが交換するスキル" %><br>
-					<%= f.text_field :my_skill %>
+					<%= f.text_field :my_skill, class: 'outline' %>
 				</div>
 			</div><br>
 		</div>
-		<div class="col-md-4 col-12 order-new-right">
-			<h3>価格 : <%= @product.price %> 円</h3><br>
+		<div class="col-md-6 col-12 order-new-right">
+			<h3>価格 : <span class="existing-price"><%= @product.price %>円</span>
+				<span class="free-price">スキルで決済</span>
+			</h3><br>
 			<%= f.hidden_field :price, value: "#{@product.price}" %>
 			<h3>商品説明</h3>
 			<br>
@@ -42,7 +42,7 @@
 				<%= @product.body %>
 			</div><br>
 			<div class="order-field">
-				<%= f.submit "購入確定", class:"btn btn-danger btn-lg" %>
+				<%= f.submit "購入確定", class:"btn btn-danger btn-lg order-make" %>
 			</div>
 		</div>
 		<% end %>

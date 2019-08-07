@@ -13,7 +13,7 @@ class BanksController < ApplicationController
   end
 
   def index
-    @banks = Bank.where(user_id: current_user.id)
+    @banks = Bank.where(user_id: current_user.id).page(params[:page]).per(10)
   end
 
   def edit
@@ -38,6 +38,6 @@ class BanksController < ApplicationController
   private
 
   def bank_params
-    params.require(:bank).permit(:name, :branch, :number)
+    params.require(:bank).permit(:name, :branch, :number, :holder)
   end
 end

@@ -6,10 +6,12 @@
     overflow: hidden;
 }
 .message_box {
-	background-color: rgba(100,200,50,0.5);
+	background-color: #ddd;
     padding: 100px;
     margin-top: 50px;
     border: 1px solid #778899;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #999999;
     overflow: scroll;
     #messages {
     	height: 400px;
@@ -32,6 +34,17 @@
 .message_form {
     padding: 10px;
 }
+.input_messages{
+    width: 70%;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    outline: 0;
+    background-color: #ddd;
+}
+.input_messages:hover{
+    box-shadow: 0 0 10px #999999;
+}
 
 #message_sender {
     font-size: 0.6em;
@@ -44,14 +57,11 @@
 #message_content > span {
     margin: 10px 0;
     padding: 10px;
-    border: 1px solid #000000;
-    border-radius: 10px;
+    border: 1px solid transparent;
+    border-radius: 15px;
     background-color: #ddd;
 }
 
-.message-right {
-    text-align: right;
-}
 .room-item{
     padding: 30px;
     text-align: center;
@@ -60,6 +70,17 @@
     color: white;
     font-size: 24px;
 }
-.go-order{
+.ok-order:hover{
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
 }
-
+.go-order{
+    color: white;
+    font-size: 24px;
+}
+.go-order:hover{
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}

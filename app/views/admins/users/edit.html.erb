@@ -2,8 +2,12 @@
 	<h1 class="edit-admin-user-title">＜管理者＞ユーザー編集</h1><br>
 	<%= form_for [:admins, @user] do |f| %>
 		<div>
-			<%= attachment_image_tag @user, :profile_image, :fill, 300, 300, fallback: '/images/no_image.png', size: '300x300', class: 'img-circle' %><br><br>
-			<%= f.attachment_field :profile_image %>
+			<% if @user.avatar.attached? %>
+				<%= image_tag @user.avatar.variant(resize: "300x300"), class: 'img-circle' %>
+			<% else %>
+				<%= image_tag '/images/no_image.png', size:'300x300', class: 'img-circle' %>
+			<% end %><br>
+			<%= f.file_field :avatar %>
 		</div><br>
 		<div>
 			<%= f.label :ユーザー名 %><br>

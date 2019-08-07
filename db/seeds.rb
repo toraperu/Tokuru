@@ -19,3 +19,4 @@ Genre.create!(name: "business")
 Genre.create!(name: "WEBdesign")
 Genre.create!(name: "consulting")
 Genre.create!(name: "lisence")
+

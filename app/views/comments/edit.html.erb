@@ -1,31 +1,27 @@
 <div class="comment-edit-container">
-	<div class="row">
-		<div class="col-4 offset-md-4 offset-2">
-			<h1 class="edit-comment-title">コメント編集</h1>
-			<div class="edit-comment-body">
-			<%= form_with model: @comment, url: user_product_comment_path(@product, @product.user, @comment), local: true do |f| %>
-				<!--星機能-->
-				<div id="star">
-					<%= f.label :rate,'評価 ', class:'col-form-label' %>
-					<%= f.hidden_field :star, id: :comment_star %>
-				</div><br>
-				<script>
-					$('#star').raty({
-						size: 36,
-						starOff:  '<%= asset_path('star-off.png') %>',
-				  		starOn : '<%= asset_path('star-on.png') %>',
-						scoreName: 'comment[star]',
-					});
-				</script>
-				<!--コメント内容-->
-				<div>
-					<%= f.text_area :body, size: "50x10" %>
-				</div><br><br>
-				<div>
-					<%= f.submit "編集完了", class: 'btn btn-secondary' %>
-				</div><br><br>
-			<% end %>
-			</div>
+	<h1 class="edit-comment-title">コメント編集</h1>
+	<div class="edit-comment-body">
+	<%= form_with model: @comment, url: user_product_comment_path(@product, @product.user, @comment), local: true do |f| %>
+		<!--星機能-->
+		<div id="star">
+			<%= f.label :rate,'評価 ', class:'col-form-label' %>
+			<%= f.hidden_field :star, id: :comment_star %>
+		</div><br>
+		<script>
+			$('#star').raty({
+				size: 36,
+				starOff:  '<%= asset_path('star-off.png') %>',
+		  		starOn : '<%= asset_path('star-on.png') %>',
+				scoreName: 'comment[star]'
+			});
+		</script>
+		<!--コメント内容-->
+		<div>
+			<%= f.text_area :body, class: "comment-post" %>
+		</div><br><br>
+		<div>
+			<%= f.submit "編集完了", class: 'post-btn btn btn-secondary btn-lg' %>
 		</div>
+	<% end %>
 	</div>
 </div>

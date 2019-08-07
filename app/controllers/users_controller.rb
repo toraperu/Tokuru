@@ -7,9 +7,9 @@ class UsersController < ApplicationController
 		#カルーセルで表示する全件
 		@favorites = @user.favorites.all
 		@count = 1
-		@products = @user.products.all
+		@products = @user.products.page(params[:page]).per(8)
 		#renderで渡すインスタンス変数
-		@orders = Order.all.page(params[:page]).per(6)
+		@orders = @user.orders.page(params[:page]).per(6)
 	end
 
 	def edit
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(
-			:name, :real_name, :profile_image, :profile, :email, :password, :password_confirmation)
+			:name, :real_name, :avatar, :profile, :email, :password, :password_confirmation)
 	end
 
 

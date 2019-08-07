@@ -6,11 +6,13 @@ class Product < ApplicationRecord
 	has_many :comments, dependent: :destroy
 	has_many :rooms, dependent: :destroy
 
-	attachment :jacket_image
+	#attachment :jacket_image
+	#active storage使用
+	has_one_attached :avatar
 
-	validates :name, presence: true, length: {in: 1..13}
+	validates :name, presence: true, length: {in: 1..20}
 	validates :price, presence: true
-	validates :body, presence: true, length: {in: 1..200}
+	validates :body, presence: true, length: {in: 1..400}
 
 	#販売中のスコープ genre/show, product/indexに使用
 	scope :at_sale, -> { where(finish: false) }

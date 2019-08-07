@@ -5,84 +5,90 @@
 
 //ユーザー情報編集
 .myinfo-edit-container{
-	height: 1000px;
-	background-image: url("/images/cat.jpeg");
-	background-size: cover;
-	opacity: 0.8;
-	text-shadow: 1px 2px 3px #CCCCCC;
-	font-family: 'Hiragino Kaku Gothic Std';
-}
-//ユーザー詳細
-.bank-new-path{
-	height: 80px;
 	text-align: center;
-	vertical-align: center;
-	padding: 0.5em 1em;
-    background: -moz-linear-gradient(#ffb03c, #ff708d);
-    background: -webkit-linear-gradient(#ffb03c, #ff708d);
-    background: linear-gradient(to right, #ffb03c, #ff708d);
-	font-family: 'Hiragino Mincho Pro';
-	margin-top: 20px;
+	margin-bottom: 10px;
 }
-.bank-index-path{
-	height: 80px;
+.myinfo-edit-title{
+	background-color: #AAAAAA;
+}
+.edit-user-field{
+	margin: 20px;
+}
+.user-wname{
+	width: 300px;
+	height: 50px;
+	outline: 0;
 	text-align: center;
-	vertical-align: center;
-	padding: 0.5em 1em;
-    background: -moz-linear-gradient(#BBBBBB, #333333);
-    background: -webkit-linear-gradient(#BBBBBB, #333333);
-    background: linear-gradient(to right, #BBBBBB, #333333);
-	font-family: 'Hiragino Mincho Pro';
-	margin-top: 20px;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 20px;
+	background-color: #000066;
+	color: white;
 }
-.user-edit-path{
-	height: 80px;
+.user-profile{
+	width: 400px;
+	height: 200px;
+	outline: 0;
 	text-align: center;
-	padding: 0.5em 1em;
-    background: -moz-linear-gradient(#66CC99, #003399);
-    background: -webkit-linear-gradient(#66CC99, #003399);
-    background: linear-gradient(to right, #66CC99, #003399);
-	font-family: 'Hiragino Mincho Pro';
-	margin-top: 20px;
-}
-.chat-room-path{
-	height: 80px;
-	text-align: center;
-	padding: 0.5em 1em;
-    background: -moz-linear-gradient(#FFFF55, #00EE00);
-    background: -webkit-linear-gradient(#FFFF55, #00EE00);
-    background: linear-gradient(to right, #FFFF55, #00EE00);
-	font-family: 'Hiragino Mincho Pro';
-	margin-top: 20px;
-}
-.bank-new-path:hover{
-	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
-  	transform: translateY(-0.1875em);
-}
-.bank-index-path:hover{
-	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
-  	transform: translateY(-0.1875em);
-}
-.user-edit-path:hover{
-	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
-  	transform: translateY(-0.1875em);
-}
-.chat-room-path:hover{
-	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
-  	transform: translateY(-0.1875em);
-}
-//出品者情報
-.seller-profile{
-	border: solid 1px #000000;
-	width: 250px;
-	padding: 10px;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 20px;
+	background-color: #000066;
+	color: white;
 }
 
-//マイページ
+
+
+
+
+
+//ユーザー詳細
 //中央寄せ
 .mypage-container{
 	text-align: center;
 }
+
+//画像の位置
 .my-profile-image{
+	margin: 30px auto;
+}
+//title
+.mypage-title{
+	background-color: #AAAAAA;
+}
+.mypage-link{
+	width: 80%;
+	margin: 30px auto;
+}
+//リンク集4つ
+.show-link-title{
+	color: #BBBBBB;
+}
+.user-show-icon{
+	border-radius: 50px;
+	color: #BBBBBB;
+}
+//回転する
+.user-show-icon:hover{
+	transform: rotate(360deg);
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+
+
+
+
+
+//tab大きさ
+.tab-wrapper{
+	width: 70%;
 	margin: 0 auto;
+}
+//いいねした商品のカルーセル矢印
+.carousel-control-prev-icon{
+	background-color: #000;
+}
+.carousel-control-next-icon{
+	background-color: #000;
 }

@@ -2,12 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
+//topページ
 //ジャンボトロンを綺麗にする
 .jumbotron{
 	height: 600px;
 	background-image: url("/images/tokuru-index-junb.jpg");
 	background-size: cover;
-	opacity: 0.9;
 }
 .jumbotron:hover{
 	box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.25);
@@ -62,24 +65,61 @@
 	display: none;
 }
 
+
+
+
+
+
+
+
 //投稿ページ
-//投稿のフォント変更
-.field{
-	font-family: 'MS Mincho';
+//中央寄せ
+.new-product-container{
+	text-align: center;
+	margin-bottom: 10px;
 }
+//投稿のフォント変更
 .user-edit-link-field{
 	color: #CC3300;
 	font-family: 'YuMincho';
 }
-//投稿ページのbg
-.post-bg{
-	background-image: url("/images/post-bg2.png");
-	background-size: cover;
-}
 //投稿タイトル
 .new-product-title{
-	padding-top: 20px;
+	background-color: #AAAAAA;
 }
+.product-new-field{
+	margin: 20px;
+}
+.new-product-image{
+	outline: 0;
+}
+//form綺麗に
+.product-new-skillprice{
+	width: 300px;
+	height: 50px;
+	outline: 0;
+	text-align: center;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 20px;
+	background-color: #000066;
+	color: white;
+}
+.product-bodycaution{
+	width: 400px;
+	height: 200px;
+	outline: 0;
+	text-align: center;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 20px;
+	background-color: #000066;
+	color: white;
+}
+
+
+
+
 
 
 //aboutページ
@@ -88,23 +128,32 @@
 	background-image: url("/images/mad-doll.jpg");
 	background-size: cover;
 	height: 600px;
-	opacity: 0.8;
 }
 //aboutページのbg
 .about1-bg{
 	background-image: url("/images/guitar.jpg");
 	background-size: cover;
 	height: 400px;
-	opacity: 0.8;
 }
 .about2-bg{
 	background-image: url("/images/macbook3.jpg");
 	background-size: cover;
 	height: 500px;
 }
+
+
+
+
+
+
+
+
+
 //aboutページのジャンボもじ
 .about-container{
 	position: relative;
+	width: 98%;
+	margin: 0 auto;
 }
 .junb-about-title{
 	position: absolute;
@@ -124,15 +173,32 @@
 	border-width: 10px;
 	border-color: #0066FF;
 }
+
+
+
+
+
+
+
 //editページのレイアウト
 .myproduct-edit-container{
-	height: 1200px;
-	background-image: url("/images/cat2.jpeg");
-	background-size: cover;
-	opacity: 0.7;
-	text-shadow: 1px 2px 3px #CCCCCC;
-	font-family: 'Hiragino Kaku Gothic Std';
+	text-align: center;
+	margin-bottom: 10px;
 }
+.product-edit-skillprice{
+	width: 300px;
+	height: 50px;
+	outline: 0;
+	text-align: center;
+	border:solid 2px transparent;
+	border-radius: 30px;
+	font-size: 20px;
+	background-color: #000066;
+	color: white;
+}
+
+
+
 
 
 //showページ
@@ -161,6 +227,21 @@
     color: #FFF;
 	font-family: 'Hiragino Mincho Pro';
 }
+//linkのhover
+.consult-link:hover{
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+  	transform: translateY(-0.1875em);
+}
+.comment-link:hover{
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+  	transform: translateY(-0.1875em);
+}
+//出品者情報
+.seller-profile{
+	border: solid 1px #000000;
+	width: 250px;
+	padding: 10px;
+}
 //商品情報の字体
 .product-show-head{
 	font-family: 'Hiragino Kaku Gothic Std';
@@ -175,15 +256,14 @@
 .tab-content{
 	padding: 50px;
 }
-//linkのhover
-.consult-link:hover{
-	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
-  	transform: translateY(-0.1875em);
-}
-.comment-link:hover{
-	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
-  	transform: translateY(-0.1875em);
-}
+
+
+
+
+
+
+
+
 //検索ぺーじ
 //全体の大きさ
 .search-container{

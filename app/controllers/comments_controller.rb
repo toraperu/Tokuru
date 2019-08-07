@@ -8,27 +8,30 @@ class CommentsController < ApplicationController
   def create
   	@product = Product.find(params[:product_id])
   	@comment = @product.comments.build(comment_params)
-  	@comment.user_id = current_user.id
-  	if @comment.save
-  	  redirect_to user_product_path(@product.user_id, @product.id)
-        else
-          render :new
-        end
+
+  	if @comment.user_id = current_user.id
+      @comment.save
+      redirect_to user_product_path(@product.user_id, @product.id)
+    else
+      render :new
+    end
   end
 
   def edit
-  	@product = Product.find(params[:product_id])
   	@comment = Comment.find(params[:id])
+  	@product = @comment.product
   end
 
   def update
-  	@product = Product.find(params[:product_id])
   	@comment = Comment.find(params[:id])
+
+    @product = @comment.product
   	if @comment.update(comment_params)
-  	  redirect_to user_product_path(@product.user_id, @product.id)
-        else
-          render :edit
-        end
+      redirect_to user_product_path(@product.user_id, @product.id)
+    else
+      render :edit
+    end
+
   end
 
   def destroy
