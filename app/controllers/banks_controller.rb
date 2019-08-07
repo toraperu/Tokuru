@@ -8,6 +8,7 @@ class BanksController < ApplicationController
     if @bank.save
       redirect_to user_path(current_user)
     else
+      flash.now[:danger] = '銀行名、支店名、口座番号および名義人を入力してください'
       render :new
     end
   end

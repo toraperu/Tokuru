@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to user_product_path(current_user, @product)
     else
-      flash.now[:danger] = '商品名、価格および商品情報が不足しています'
+      flash.now[:danger] = '商品名(1~20字)、ジャンル、価格、商品情報(1~400字)および購入時の注意(1~400字)を正しく入力してください'
       render :new
     end
   end
@@ -48,7 +48,6 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      flash[:notice] = "編集内容を更新しました"
       redirect_to root_path
     else
       render :new
@@ -58,18 +57,18 @@ class ProductsController < ApplicationController
 
   private
 
-  def product_params
-    params.require(:product).permit(:name, :body, :avatar,
-                                    :price, :genre_id, :finish,
-                                    :sale_result, :caution)
-  end
-
-  def setup_username
-    unless current_user.name.present?
-      render :new
-    else
-      @genres = Genre.all
-      @product = Product.new(product_params)
+    def product_params
+      params.require(:product).permit(:name, :body, :avatar,
+                                      :price, :genre_id, :finish,
+                                      :sale_result, :caution)
     end
-  end
+
+    def setup_username
+      unless current_user.name.present?
+        render :new
+      else
+        @genres = Genre.all
+        @product = Product.new(product_params)
+      end
+    end
 end

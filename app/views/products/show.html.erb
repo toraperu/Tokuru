@@ -2,7 +2,7 @@
 	<h1 class="show-product-title">商品詳細</h1>
 	<%= render 'layouts/flash_messages' %>
 	<div class="product-show-head">
-		<div class="product-show-item-wrapper">
+		<div class="product-show-item-wrapper animated fadeIn3">
 			<h2 class="product-show-item">商品名<br>
 				『　<%= @product.name %> 』
 			</h2>
@@ -17,7 +17,7 @@
 			<div class="row product-show-link">
 				<!--自分の商品じゃない時-->
 				<% if current_user != @product.user %>
-					<div class="col-md-6 consult-link">
+					<div class="col-md-6 consult-link animated fadeIn1">
 					<%= link_to rooms_create_path(current_user, @product.user, @product), method: :post, :style=>"color:white; text-decoration: none;" do %>
 						<h4>注文内容</h4>
 						<p><%= @product.price %>円</p>
@@ -27,7 +27,7 @@
 					<% end %>
 				<!--自分の商品の時-->
 				<% else %>
-					<div class="col-md-6 consult-link">
+					<div class="col-md-6 consult-link animated fadeIn1">
 					<%= link_to "#{}", :style=>"color:white; text-decoration: none;" do %>
 						<h4>注文内容</h4>
 						<p><%= @product.price %>円</p>
@@ -38,7 +38,7 @@
 				<% end %>
 				<!--すでにコメントしている場合-->
 				<% if @product.commented_by?(current_user) %>
-					<div class="col-md-6 comment-link">
+					<div class="col-md-6 comment-link animated fadeIn2">
 					<%= link_to "#{}", :style=>"color:white; text-decoration: none;" do %>
 						<h4>コメント投稿</h4>
 						<div>
@@ -50,7 +50,7 @@
 					<% end %>
 				<!--まだコメントしてない時-->
 				<% else %>
-					<div class="col-md-6 comment-link">
+					<div class="col-md-6 comment-link animated fadeIn2">
 					<%= link_to new_user_product_comment_path(current_user, @product), :style=>"color:white; text-decoration: none;" do %>
 						<h4>コメント投稿</h4>
 						<div>
@@ -66,7 +66,7 @@
 		<% else %>
 			<!--色付きリンク二つ-->
 			<div class="row product-show-link">
-				<div class="col-md-6 consult-link">
+				<div class="col-md-6 consult-link animated fadeIn1">
 				<%= link_to new_user_session_path, :style=>"color:white; text-decoration: none;" do %>
 					<h4>注文内容</h4>
 					<p><%= @product.price %>円</p>
@@ -74,7 +74,7 @@
 					<p><< ログインしてください >></p>
 				</div>
 				<% end %>
-				<div class="col-md-6 comment-link">
+				<div class="col-md-6 comment-link animated fadeIn2">
 				<%= link_to new_user_session_path, :style=>"color:white; text-decoration: none;" do %>
 					<h4>コメント投稿</h4>
 					<div>
@@ -90,7 +90,7 @@
 	<br><br><br>
 	
 	<!-- タブ・メニュー -->
-	<ul class="nav nav-tabs product-show-nav">
+	<ul class="nav nav-tabs product-show-nav animated fadeIn1">
 		<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#item-service-content">サービス内容</a></li>
 		<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#item-caution">購入時の注意</a></li>
 		<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#item-comment">コメント</a></li>
@@ -105,17 +105,17 @@
 			<!-- タブ内容 -->
 			<div class="tab-content">
 				<!--サービス内容-->
-				<div class="tab-pane" id="item-service-content">
+				<div class="tab-pane  animated fadeIn1" id="item-service-content">
 					<h3 class="tab-title1">サービス内容</h3>
 					<div class="tab-items-content"><%= simple_format(@product.body) %></div>
 				</div>
 				<!--購入時の注意-->
-				<div class="tab-pane" id="item-caution">
+				<div class="tab-pane animated fadeIn1" id="item-caution">
 					<h3 class="tab-title2">購入時の注意点</h3>
 					<div class="tab-items-content"><%= simple_format(@product.caution) %></div>
 				</div>
 				<!--コメント一覧-->
-				<div class="tab-pane" id="item-comment">
+				<div class="tab-pane animated fadeIn1" id="item-comment">
 					<h3 class="tab-title3">コメント</h3>
 					<div class="comment-container">
 						<%= render partial: "comments/index", locals: {comments: @comments, product: @product} %>
@@ -124,7 +124,7 @@
 			</div>
 		</div>
 		<!--プロフィール情報　固定-->
-		<div class="col-md-3">
+		<div class="col-md-3 animated fadeIn2">
 			<div class="seller-profile">
 				<h4 class="product-user-info">[出品者情報]</h4>
 				<!--simple_formatメソッドを用いると入力の時の改行が適用される-->

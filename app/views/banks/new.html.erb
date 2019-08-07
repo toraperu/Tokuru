@@ -1,4 +1,7 @@
 <div class="new-bank-container">
+	<% if @bank.errors.any? %>
+		<%= render 'layouts/flash_messages' %>
+	<% end %>
 	<h1 class="new-bank-title">振込先登録</h1>
 	<%= form_with model: Bank.new, url: user_banks_path, local: true do |f| %>
 	<div class="bank-field">
