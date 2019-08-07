@@ -195,6 +195,12 @@ $(function() {
 });
 
 
+//flash messageの秒数指定
+$(function(){
+  setTimeout("$('.alert').fadeOut('slow')", 3000) 
+})
+
+
 
 
 
