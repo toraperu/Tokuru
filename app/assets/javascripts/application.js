@@ -150,7 +150,7 @@ $(function(){
 //右からと左からfadeIn
 $(function() {
   $('.fadeIn1').on('inview', function(event, isInView) {
-    console.log('fadeIn')
+    console.log('fadeIn1')
     if (isInView) {
     //表示領域に入った時
       $(this).addClass('fadeInLeft');
@@ -164,7 +164,7 @@ $(function() {
 
 $(function() {
   $('.fadeIn2').on('inview', function(event, isInView) {
-    console.log('fadeIn')
+    console.log('fadeIn2')
     if (isInView) {
     //表示領域に入った時
       $(this).addClass('fadeInRight');
@@ -193,6 +193,40 @@ $(function() {
     }
   });
 });
+
+$(function() {
+  $('.fadeIn4').on('inview', function(event, isInView) {
+    console.log('fadeIn4')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('fadeIn');
+    } else {
+    //表示領域から出た時
+      $(this).removeClass('fadeIn');
+    }
+  });
+});
+
+
+
+//tabmenuをジワリと出す
+//中央にギュッとなる
+$(function() {
+  $('.fadeIn5').on('inview', function(event, isInView) {
+    console.log('fadeIn5')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('rubberBand');
+    } else {
+    //表示領域から出た時
+      $(this).removeClass('rubberBand');
+    }
+  });
+});
+
+
+
+
 
 
 //flash messageの秒数指定

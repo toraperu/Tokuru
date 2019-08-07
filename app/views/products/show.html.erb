@@ -2,7 +2,7 @@
 	<h1 class="show-product-title">商品詳細</h1>
 	<%= render 'layouts/flash_messages' %>
 	<div class="product-show-head">
-		<div class="product-show-item-wrapper animated fadeIn3">
+		<div class="product-show-item-wrapper animated fadeIn4">
 			<h2 class="product-show-item">商品名<br>
 				『　<%= @product.name %> 』
 			</h2>
@@ -105,17 +105,17 @@
 			<!-- タブ内容 -->
 			<div class="tab-content">
 				<!--サービス内容-->
-				<div class="tab-pane  animated fadeIn1" id="item-service-content">
+				<div class="tab-pane  animated fadeIn3" id="item-service-content">
 					<h3 class="tab-title1">サービス内容</h3>
 					<div class="tab-items-content"><%= simple_format(@product.body) %></div>
 				</div>
 				<!--購入時の注意-->
-				<div class="tab-pane animated fadeIn1" id="item-caution">
+				<div class="tab-pane animated fadeIn3" id="item-caution">
 					<h3 class="tab-title2">購入時の注意点</h3>
 					<div class="tab-items-content"><%= simple_format(@product.caution) %></div>
 				</div>
 				<!--コメント一覧-->
-				<div class="tab-pane animated fadeIn1" id="item-comment">
+				<div class="tab-pane animated fadeIn4" id="item-comment">
 					<h3 class="tab-title3">コメント</h3>
 					<div class="comment-container">
 						<%= render partial: "comments/index", locals: {comments: @comments, product: @product} %>
