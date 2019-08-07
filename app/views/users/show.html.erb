@@ -56,7 +56,7 @@
 						    	<div class="carousel-item">
 				    		<% end %>
 
-					    	<%= link_to user_product_path(favorite.product, favorite.product.user) do %>
+					    	<%= link_to user_product_path(favorite.product.user, favorite.product) do %>
 					    		<% if favorite.product.avatar.attached? %>
 									<%= image_tag favorite.product.avatar.variant(resize: "400x400"), class: "img-fluid" %>
 								<% else %>

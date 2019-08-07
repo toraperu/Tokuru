@@ -2,7 +2,7 @@
 	<h1 class="myinfo-edit-title">ユーザー情報編集</h1>
 	<div class="myinfo-edit-body">
 		<%= form_for @user do |f| %>
-			<div class="edit-user-field">
+			<div class="edit-user-field animated fadeIn5">
 				<% if @user.avatar.attached? %>
 					<%= image_tag @user.avatar.variant(resize: "350x350") %>
 				<% else %>
@@ -10,21 +10,21 @@
 				<% end %><br>
 				<%= f.file_field :avatar %>
 			</div>
-			<div class="edit-user-field">
+			<div class="edit-user-field animated fadeIn4">
 				<%= f.label :ユーザー名 %><br>
 				<%= f.text_field :name, class: "user-wname" %>
 			</div>
 			<br>
-			<div class="edit-user-field">
+			<div class="edit-user-field animated fadeIn4">
 				<%= f.label :本名 %><br>
 				<%= f.text_field :real_name, class: "user-wname" %>
 			</div>
 			<br>
-			<div class="edit-user-field">
+			<div class="edit-user-field animated fadeIn4">
 			<%= f.label :プロフィール情報 %><br>
 			<%= f.text_area :profile, class: "user-profile" %>
 			</div>
-			<div class="edit-user-field">
+			<div class="edit-user-field animated fadeIn4">
 				<%= f.label :パスワード %>
 				<% if @minimum_password_length %>
 				<em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -32,15 +32,15 @@
 				<%= f.password_field :password, class: "sign_field" %>
 			</div>
 			<br>
-			<div class="edit-user-field">
+			<div class="edit-user-field animated fadeIn4">
 				<%= f.label :パスワード確認 %><br />
 				<%= f.password_field :password_confirmation, class: "sign_field" %>
 			</div><br>
-			<div>
+			<div class="animated fadeIn4">
 				<%= f.submit "入力完了", class:"post-btn btn btn-secondary btn-lg" %>
 			</div>
 		<% end %>
-		<div class="edit-user-field">
+		<div class="edit-user-field animated fadeIn4">
       		<%= link_to resign_path(@user.id) do %>
 	        	<button class="btn btn-danger">退会する</button>
 	      	<% end %>

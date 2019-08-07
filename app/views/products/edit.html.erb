@@ -2,7 +2,7 @@
 	<h1 class="myproduct-edit-title">商品情報編集</h1>
 	<div class="myproduct-edit-body">
 		<%= form_for [current_user, @product] do |f| %>
-			<div class="">
+			<div class="animated fadeIn5">
 				<% if @product.avatar.attached? %>
 					<%= image_tag @product.avatar.variant(resize: "300x300"), class: "img-fluid" %>
 				<% else %>
@@ -10,40 +10,40 @@
 				<% end %><br>
 				<%= f.file_field :avatar %>
 			</div><br>
-			<div class="product-edit-name">
+			<div class="product-edit-name animated fadeIn4">
 				<%= f.label :商品名 %><br>
 				<%= f.text_field :name, class: "product-edit-skillprice" %>
 			</div><br>
 			<br>
-			<div class="product-edit-price">
+			<div class="product-edit-price animated fadeIn4">
 				<%= f.label :価格 %><br>
 				<%= f.text_field :price, class: "product-edit-skillprice" %>
 			</div><br>
 			<br>
-			<div class="product-edit-genre">
+			<div class="product-edit-genre animated fadeIn4">
 				<%= f.label :ジャンル %><br>
 				<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
 			</div><br>
 			<br>
-			<div class="product-edit-body">
+			<div class="product-edit-body animated fadeIn4">
 				<%= f.label :商品説明 %><br>
 				<%= f.text_area :body, class: "product-bodycaution" %>
 			</div><br>
-			<div class="product-edit-finish">
+			<div class="product-edit-finish animated fadeIn4">
 				<%= f.label :販売状況 %><br>
 				<%= f.select :finish, [["販売中", false], ["取扱停止", true]] %>
 			</div><br>
 			<br>
-			<div class="product-edit-sale">
+			<div class="product-edit-sale animated fadeIn4">
 				<%= f.label :"販売実績(件数)" %><br>
 				<%= f.select(:sale_result, 0..300) %>
 			</div><br>
 			<br>
-			<div class="product-edit-caution">
+			<div class="product-edit-caution animated fadeIn4">
 				<%= f.label :購入時の注意 %><br>
 				<%= f.text_area :caution, class: "product-bodycaution" %>
 			</div><br>
-			<div>
+			<div class="animated fadeIn4">
 				<%= f.submit "入力完了", class:"post-btn btn btn-secondary btn-lg" %>
 			</div>
 		<% end %>
