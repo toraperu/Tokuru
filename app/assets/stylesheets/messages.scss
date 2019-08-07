@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+//roomと併用
+//中央寄せ
+.room-index-title{
+    text-align: center;
+}
+//title
+.room-index-title{
+    background-color: #AAAAAA;
+}
+.room-table{
+    width: 60%;
+    margin: 0 auto;
+}
 .message-container{
     overflow: hidden;
 }

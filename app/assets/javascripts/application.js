@@ -36,10 +36,6 @@ $(function() {
 
 
 
-//ロゴ押すとページ再読み込み??????
-$('#header-logo a').on('click',function(){
-	location.reload(false);
-});
 
 
 
@@ -68,7 +64,7 @@ $(function(){
 
 
 
-//スキルの交換を選択した時にあなたのスキルの入力欄を出す
+//スキルの交換を選択した時に、あなたのスキルの入力欄を出す&&価格を非表示にする
 $(function(){
 	$('#order_payment').change(function(){
 		if ($(this).children('option:selected').val() == 'skill') {
@@ -150,6 +146,8 @@ $(function(){
 
 
 //aboutページの要素をジワリと表示
+//購入へ進むボタンをジワリと表示
+//右からと左からfadeIn
 $(function() {
   $('.fadeIn1').on('inview', function(event, isInView) {
     console.log('fadeIn')
@@ -181,6 +179,7 @@ $(function() {
 
 
 //topページのジャンボトロンをジワリだす
+//上から下にゆっくり降りてくる
 $(function() {
   $('.fadeIn3').on('inview', function(event, isInView) {
     console.log('fadeIn3')

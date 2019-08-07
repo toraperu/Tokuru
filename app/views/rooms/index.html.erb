@@ -1,37 +1,33 @@
 <div class="room-index-container">
-	<div class="row">
-		<div class="col-6 offset-3">
-			<h1>Room一覧</h1>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>商品名</th>
-						<th>出品者</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% current_user.buyer_rooms.each do |room| %>
-						<tr data-href="<%= room_path(room) %>">
-							<td>
-								<%= room.product.name %>
-							</td>
-							<td>
-								<%= room.product.user.name %>
-							</td>
-						</tr>
-					<% end %>
-					<% current_user.seller_rooms.each do |room| %>
-						<tr data-href="<%= room_path(room) %>">
-							<td>
-								<%= room.product.name %>
-							</td>
-							<td>
-								<%= room.product.user.name %>
-							</td>
-						</tr>
-					<% end %>
-				</tbody>
-			</table>
-		</div>
-	</div>
+	<h1 class="room-index-title">Room一覧</h1>
+	<table class="table table-hover room-table">
+		<thead>
+			<tr>
+				<th>商品名</th>
+				<th>出品者</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% current_user.buyer_rooms.each do |room| %>
+				<tr data-href="<%= room_path(room) %>">
+					<td>
+						<%= room.product.name %>
+					</td>
+					<td>
+						<%= room.product.user.name %>
+					</td>
+				</tr>
+			<% end %>
+			<% current_user.seller_rooms.each do |room| %>
+				<tr data-href="<%= room_path(room) %>">
+					<td>
+						<%= room.product.name %>
+					</td>
+					<td>
+						<%= room.product.user.name %>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>

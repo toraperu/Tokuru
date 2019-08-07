@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to user_product_path(current_user, @product)
     else
+      flash.now[:danger] = '商品名、価格および商品情報が不足しています'
       render :new
     end
   end
