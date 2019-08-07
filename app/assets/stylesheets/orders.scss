@@ -78,33 +78,53 @@
 
 
 //confirm画面
+//中央寄せ
+.confirm-container{
+    text-align: center;
+}
 //タイトル
 .confirm-title{
-	margin: 30px 0 30px 0;
-	text-align: center;
 	background-color: #BBBBBB;
+}
+.confirm-message{
+    color: #ff7d6e;
+    background: #ffebe9;
+    border-top: solid 10px #ff7d6e;
 }
 //商品説明
 .confirm-product-content{
-	font-size: 20px;
-}
-.confirm-span-title{
 	font-size: 25px;
 }
+.confirm-span-title{
+	font-size: 30px;
+}
 //左コンテンツ
-.order-confirm-left{
-	padding:1.5em 1.5em 1.5em 3.0em;
-    background: #FFDAB9;
-    box-shadow: 0px 0px 0px 20px #FFEBCD;
-    border: dashed 2px white;
+.order-confirm-top{
+	width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    padding:1.5em 1.5em 1.5em 1.2em;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 20px #DEB887;
 }
 //右コンテンツ
-.order-confirm-right{
-	padding:1.5em 1.5em 1.5em 3.0em;
-    background: #FFDAB9;
-    box-shadow: 0px 0px 0px 20px #FFEBCD;
-    border: dashed 2px white;
-    font-size: 20px;
+.order-confirm-bottom{
+	width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    padding:1.5em 1.5em 1.5em 1.2em;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 20px #DEB887;
+}
+//要素を離れさせる
+.confirm-field{
+    margin: 20px;
+}
+//商品情報と購入情報のタイトル
+.order-confirm-item-title{
+    border: solid 2px #DEB887;
 }
 //商品トップへ戻るボタン
 .confirm-back-btn{

@@ -179,6 +179,7 @@ $(function() {
 
 
 //topページのジャンボトロンをジワリだす
+//購入確定メッセージをジワリ出す
 //上から下にゆっくり降りてくる
 $(function() {
   $('.fadeIn3').on('inview', function(event, isInView) {

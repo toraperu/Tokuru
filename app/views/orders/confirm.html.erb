@@ -1,38 +1,37 @@
 <div class="confirm-container">
-	<div class="center">
-		<h1 class="confirm-title">購入内容確認</h1><br>
-	</div>
-	<div class="row">
-		<div class="col-md-6 col-12 order-confirm-left">
-			<h3 class="confirm-product-name">
-				商品名: <%= @product.name %>
-			</h3><br>
-			<div class="confirm-product-content">
-				<span class="confirm-span-title">商品説明:</span><br> <%= @product.body %>
-			</div><br>
+	<h1 class="confirm-title">購入内容確認</h1><br>
+	<h2 class="confirm-message animated fadeIn3">購入が確定しました</h2>
+	<div class="order-confirm-top">
+		<h2 class="order-confirm-item-title">商品情報</h2>
+		<h4 class="confirm-field">
+			商品名: <%= @product.name %>
+		</h4>
+		<div class="confirm-product-content">
+			<span class="confirm-span-title">商品説明:</span><br> <%= @product.body %>
 		</div>
-		<div class="col-md-6 col-12 order-confirm-right">
-			<div class="confirm-product-price">
-				価格: <%= @product.price %>円
-			</div><br>
-			<div class="confirm-product-user">
-				出品者: <%= @product.user.name %>
-			</div><br>
-			<div class="confirm-contact">
-				連絡手段: <%= @order.contact %>
-			</div><br>
-			<div class="confirm-contact-info">
-				連絡番号: <%= @order.contact_info %>
-			</div><br>
-			<div class="confirm-payment">
-				支払い方法: <%= @order.payment_i18n %>
-			</div><br>
-			<% if Order.payments[@order.payment] == 1 %>
-			<div class="confirm-your-skill">
-				あなたのスキル: <%= @order.my_skill %>
-			</div>
-			<% end %>
-		</div>
+		<h4 class="confirm-field">
+			価格: <%= @product.price %>円
+		</h4>
 	</div>
-	<div class="confirm-back-btn"><%= link_to "商品トップへ", root_path, class: "btn btn-secondary btn-lg" %></div>
+	<div class="order-confirm-bottom">
+		<h2 class="order-confirm-item-title">購入情報</h2>
+		<h4 class="confirm-field">
+			出品者: <%= @product.user.name %>
+		</h4>
+		<h4 class="confirm-field">
+			連絡手段: <%= @order.contact %>
+		</h4>
+		<h4 class="confirm-field">
+			連絡番号: <%= @order.contact_info %>
+		</h4>
+		<h4 class="confirm-field">
+			支払い方法: <%= @order.payment_i18n %>
+		</h4>
+		<% if Order.payments[@order.payment] == 1 %>
+		<h4 class="confirm-field">
+			あなたのスキル: <%= @order.my_skill %>
+		</h4>
+		<% end %>
+	</div>
+	<div class="confirm-back-btn"><%= link_to "商品トップへ", root_path, class: "post-btn btn btn-secondary btn-lg" %></div>
 </div>
