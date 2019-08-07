@@ -104,12 +104,12 @@
 				<!--サービス内容-->
 				<div class="tab-pane" id="item-service-content">
 					<h2>サービス内容</h2>
-					<div><%= @product.body %></div>
+					<div><%= simple_format(@product.body) %></div>
 				</div><br>
 				<!--購入時の注意-->
 				<div class="tab-pane" id="item-caution">
 					<h2>購入時の注意点</h2>
-					<div><%= @product.caution %></div>
+					<div><%= simple_format(@product.caution) %></div>
 				</div><br>
 				<!--コメント一覧-->
 				<div class="tab-pane" id="item-comment">
@@ -124,7 +124,8 @@
 		<div class="col-md-3 offset-md-1 col-6 offset-3">
 			<div class="seller-profile">
 				<h4>[出品者情報]</h4>
-				<%= @product.user.profile %>
+				<!--simple_formatメソッドを用いると入力の時の改行が適用される-->
+				<%= simple_format(@product.user.profile) %>
 			</div>
 		</div>
 	</div>

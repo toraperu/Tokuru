@@ -26,7 +26,7 @@
 				<%= link_to "削除", user_product_comment_path(product.user,product, comment), class: "btn btn-danger btn-xs",method: :delete, remote: true %>
 			</div>
 		<% end %>
-		<div class="col-12"><%= comment.body %></div>
+		<div class="col-12"><%= simple_format(comment.body) %></div>
 	<% end %>
 </div>
 <% end %>

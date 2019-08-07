@@ -7,7 +7,7 @@
 			商品名: <%= @product.name %>
 		</h4>
 		<div class="confirm-product-content">
-			<span class="confirm-span-title">商品説明:</span><br> <%= @product.body %>
+			<span class="confirm-span-title">商品説明:</span><br> <%= simple_format(@product.body) %>
 		</div>
 		<h4 class="confirm-field">
 			価格: <%= @product.price %>円

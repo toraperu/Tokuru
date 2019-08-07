@@ -4,18 +4,28 @@
 
 
 //roomと併用
+//index
 //中央寄せ
-.room-index-title{
+.room-index-container{
     text-align: center;
+    margin: 0 auto;
+    width: 98%;
 }
-//title
 .room-index-title{
     background-color: #AAAAAA;
 }
 .room-table{
-    width: 60%;
     margin: 0 auto;
+    border: solid 8px #AAAAAA;
 }
+
+
+
+
+
+
+
+//show
 .message-container{
     overflow: hidden;
 }
