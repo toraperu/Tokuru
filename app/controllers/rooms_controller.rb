@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :setup_username, only:[:show]
+
   def index
   end
 
@@ -28,6 +30,19 @@ class RoomsController < ApplicationController
   def permitted
     @room = Room.find(params[:id])
     @room.update({permitted?: false})
+  end
+
+
+
+  private
+
+  def setup_username
+    unless current_user.name.present?
+      @room = Room.find(params[:id])
+      @product = @room.product
+      flash[:danger] = 'ユーザー名を入力してください'
+      redirect_to user_product_path(@product.user, @product)
+    end
   end
 
 
