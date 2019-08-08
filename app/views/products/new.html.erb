@@ -5,7 +5,7 @@
 	<% end %>
 	<%= form_for [current_user, @product] do |f| %>
 		<% if current_user.name? %>
-			<div class="product-new-field animated fadeIn5">
+			<div class="product-new-field animated fadeIn4">
 				<%= f.label :"投稿画像" %><br>
 				<%= f.file_field :avatar, class: "new-product-image" %>
 			</div><br>

@@ -2,22 +2,22 @@
   <h2 class="sign-in-title">ログイン</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="sign-in-field">
+    <div class="sign-in-field animated fadeIn4">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "sign_field" %>
     </div>
 
-    <div class="sign-in-field">
+    <div class="sign-in-field animated fadeIn4">
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "password", class: "sign_field" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="sign-in-field rememberme">
+      <div class="sign-in-field rememberme animated fadeIn4">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
     <% end %>
 
-    <div class="action">
+    <div class="action animated fadeIn4">
       <%= f.submit "ログイン", class: "sign-in-up-action" %>
     </div>
   <% end %>
