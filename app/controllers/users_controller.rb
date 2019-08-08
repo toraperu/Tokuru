@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	#他ユーザーの情報にアクセスできないようにする
+	before_action :correct_user, only: [:show, :edit, :update, :resign]
 
 	def show
 		@user = User.find(params[:id])
@@ -32,13 +34,28 @@ class UsersController < ApplicationController
 
 	def resign_confirm
 		@user = User.find(params[:id])
-		@user.update(resignation: true)
-		flash[:danger] = "退会しました"
-		redirect_to root_path
+		if @user.update(resignation: true)
+			flash[:danger] = "退会しました"
+			redirect_to root_path
+		else
+			render :resign
+		end
 	end
 
 
 	private
+
+
+
+	def correct_user
+		@user = User.find(params[:id])
+		@genres = Genre.all
+    	@products = Product.at_sale.order(id: "DESC").page(params[:page]).per(6)
+		unless @user == current_user
+			flash.now[:danger] = 'あなたにはアクセスする権限がありません'
+			render 'products/index'
+		end
+	end
 
 	def user_params
 		params.require(:user).permit(

@@ -11,94 +11,138 @@
 	display: none;
 }
 //タイトル
-.center{
-	margin: 0 auto;
+.order-new-container{
+	text-align: center;
 }
 .order-new-title{
-	margin: 30px 0 30px 0;
-	text-align: center;
 	background-color: #BBBBBB;
+	text-align: center;
 }
-//商品名
-.order-new-product-title{
-	font-size: 20px;
-}
-//ユーザー名
-.order-new-user-name{
-	font-size: 20px;
-}
-//上二つをくくる枠
-.order-new-head{
+
+//new上側
+.order-new-top{
+    width: 50%;
+    margin: 20px auto;
     text-align: center;
-    color: #ff7d6e;
-    background: #ffebe9;
-    border-top: solid 10px #ff7d6e;
-}
-//new左側
-.order-new-left{
-    padding:1.5em 1.5em 1.5em 3.0em;
+    padding:1.5em 1.5em 1.5em 1.2em;
     color: #232323;
     background: #fff8e8;
-    border-left: solid 10px #DEB887;
+    border-left: solid 20px #DEB887;
+}
+//new下側
+.order-new-bottom{
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    padding:1.5em 1.5em 1.5em 1.2em;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 20px #DEB887;
+}
+//入力欄と情報欄のタイトル
+.order-new-item-title{
+	border: solid 2px #DEB887;
 }
 //formアウトライン消す
 .outline{
 	outline: 0;
 	border-radius: 10px;
 }
-//new右側
-.order-new-right{
-    padding:1.5em 1.5em 1.5em 3.0em;
-    color: #232323;
-    background: #fff8e8;
-    border-left: solid 10px #DEB887;
+//下側の要素離れさせる
+.order-new-bottom-item{
+	margin: 40px;
 }
+
 //priceの表示切り替え
 .free-price{
 	display: none;
 }
 //購入確定ボタン
-.order-make:hover{
+.btn-danger:hover{
 	-webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
+//ルームへ戻るボタン
+.room-back{
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+
 
 
 //confirm画面
+//中央寄せ
+.confirm-container{
+    text-align: center;
+}
 //タイトル
 .confirm-title{
-	margin: 30px 0 30px 0;
-	text-align: center;
 	background-color: #BBBBBB;
+}
+.confirm-message{
+    color: #ff7d6e;
+    background: #ffebe9;
+    border-top: solid 10px #ff7d6e;
 }
 //商品説明
 .confirm-product-content{
-	font-size: 20px;
-}
-.confirm-span-title{
 	font-size: 25px;
 }
+.confirm-span-title{
+	font-size: 30px;
+}
 //左コンテンツ
-.order-confirm-left{
-	padding:1.5em 1.5em 1.5em 3.0em;
-    background: #FFDAB9;
-    box-shadow: 0px 0px 0px 20px #FFEBCD;
-    border: dashed 2px white;
+.order-confirm-top{
+	width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    padding:1.5em 1.5em 1.5em 1.2em;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 20px #DEB887;
 }
 //右コンテンツ
-.order-confirm-right{
-	padding:1.5em 1.5em 1.5em 3.0em;
-    background: #FFDAB9;
-    box-shadow: 0px 0px 0px 20px #FFEBCD;
-    border: dashed 2px white;
-    font-size: 20px;
+.order-confirm-bottom{
+	width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    padding:1.5em 1.5em 1.5em 1.2em;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 20px #DEB887;
+}
+//要素を離れさせる
+.confirm-field{
+    margin: 20px;
+}
+//商品情報と購入情報のタイトル
+.order-confirm-item-title{
+    border: solid 2px #DEB887;
 }
 //商品トップへ戻るボタン
 .confirm-back-btn{
 	text-align: center;
 	margin:40px auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 //購入履歴
 //列のhover
 .order-history-item:hover{

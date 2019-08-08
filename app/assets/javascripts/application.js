@@ -36,10 +36,6 @@ $(function() {
 
 
 
-//ロゴ押すとページ再読み込み??????
-$('#header-logo a').on('click',function(){
-	location.reload(false);
-});
 
 
 
@@ -68,7 +64,7 @@ $(function(){
 
 
 
-//スキルの交換を選択した時にあなたのスキルの入力欄を出す
+//スキルの交換を選択した時に、あなたのスキルの入力欄を出す&&価格を非表示にする
 $(function(){
 	$('#order_payment').change(function(){
 		if ($(this).children('option:selected').val() == 'skill') {
@@ -150,9 +146,11 @@ $(function(){
 
 
 //aboutページの要素をジワリと表示
+//購入へ進むボタンをジワリと表示
+//右からと左からfadeIn
 $(function() {
   $('.fadeIn1').on('inview', function(event, isInView) {
-    console.log('fadeIn')
+    console.log('fadeIn1')
     if (isInView) {
     //表示領域に入った時
       $(this).addClass('fadeInLeft');
@@ -166,7 +164,7 @@ $(function() {
 
 $(function() {
   $('.fadeIn2').on('inview', function(event, isInView) {
-    console.log('fadeIn')
+    console.log('fadeIn2')
     if (isInView) {
     //表示領域に入った時
       $(this).addClass('fadeInRight');
@@ -181,6 +179,8 @@ $(function() {
 
 
 //topページのジャンボトロンをジワリだす
+//購入確定メッセージをジワリ出す
+//上から下にゆっくり降りてくる
 $(function() {
   $('.fadeIn3').on('inview', function(event, isInView) {
     console.log('fadeIn3')
@@ -193,6 +193,46 @@ $(function() {
     }
   });
 });
+
+$(function() {
+  $('.fadeIn4').on('inview', function(event, isInView) {
+    console.log('fadeIn4')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('fadeIn');
+    } else {
+    //表示領域から出た時
+      $(this).removeClass('fadeIn');
+    }
+  });
+});
+
+
+
+//tabmenuをジワリと出す
+//中央にギュッとなる
+$(function() {
+  $('.fadeIn5').on('inview', function(event, isInView) {
+    console.log('fadeIn5')
+    if (isInView) {
+    //表示領域に入った時
+      $(this).addClass('rubberBand');
+    } else {
+    //表示領域から出た時
+      $(this).removeClass('rubberBand');
+    }
+  });
+});
+
+
+
+
+
+
+//flash messageの秒数指定
+$(function(){
+  setTimeout("$('.alert').fadeOut('slow')", 3000) 
+})
 
 
 

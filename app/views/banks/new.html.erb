@@ -1,23 +1,26 @@
 <div class="new-bank-container">
+	<% if @bank.errors.any? %>
+		<%= render 'layouts/flash_messages' %>
+	<% end %>
 	<h1 class="new-bank-title">振込先登録</h1>
 	<%= form_with model: Bank.new, url: user_banks_path, local: true do |f| %>
-	<div class="bank-field">
+	<div class="bank-field animated fadeIn4">
 		<%= f.label :name, "銀行名" %><br>
 		<%= f.select :name, Bank.names.map { |k,v| [Bank.names_i18n[k],k]} %>
 	</div><br>
-	<div class="bank-field">
+	<div class="bank-field animated fadeIn4">
 		<%= f.label :branch, "支店名" %><br>
 		<%= f.text_field :branch, class: "bank-content" %>
 	</div><br>
-	<div class="bank-field">
+	<div class="bank-field animated fadeIn4">
 		<%= f.label :number, "口座番号" %><br>
 		<%= f.text_field :number, class: "bank-content" %>
 	</div><br>
-	<div class="bank-field">
+	<div class="bank-field animated fadeIn4">
 		<%= f.label :holder, "名義人" %><br>
 		<%= f.text_field :holder, class: "bank-content" %>
 	</div><br>
-	<div class="bank-action">
+	<div class="bank-action animated fadeIn4">
 		<%= f.submit "振込先登録", class:"post-btn btn btn-secondary btn-lg" %>
 	</div>
 	<% end %>

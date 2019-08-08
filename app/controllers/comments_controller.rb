@@ -8,11 +8,11 @@ class CommentsController < ApplicationController
   def create
   	@product = Product.find(params[:product_id])
   	@comment = @product.comments.build(comment_params)
-
-  	if @comment.user_id = current_user.id
-      @comment.save
+  	@comment.user_id = current_user.id
+    if @comment.save
       redirect_to user_product_path(@product.user_id, @product.id)
     else
+      flash.now[:danger] = 'コメントを1〜300字以内で入力してください'
       render :new
     end
   end

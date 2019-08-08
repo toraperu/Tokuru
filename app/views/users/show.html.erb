@@ -1,7 +1,8 @@
 <div class="mypage-container">
 	<h1 class="mypage-title">マイページ</h1>
+	<%= render 'layouts/flash_messages' %>
 	<div class="row mypage-link">
-		<div class="my-profile-image col-12">
+		<div class="my-profile-image col-12  animated fadeIn1">
 			<% if @user.avatar.attached? %>
 				<%= image_tag @user.avatar.variant(resize: "350x350"), class: "img-fluid" %>
 			<% else %>
@@ -9,25 +10,25 @@
 			<% end %>
 		</div><br>
 		<!--リンク4つ-->
-		<div class="col-3 user-show-links">
+		<div class="col-3 user-show-links animated fadeIn2">
 			<%= link_to new_user_bank_path(current_user), {:style => 'text-decoration: none'} do %>
 				<p><%= image_tag "/images/creditcard.png", class: "img-fluid user-show-icon" %></p>
 				<p class="show-link-title">振込先登録</p>
 			<% end %>
 		</div>
-		<div class="col-3 user-show-links">
+		<div class="col-3 user-show-links animated fadeIn2">
 			<%= link_to user_banks_path(current_user), {:style => 'text-decoration: none'} do %>
 				<p><%= image_tag "/images/bank.png", class: "img-fluid user-show-icon" %></p>
 				<p class="show-link-title">振込先一覧</p>
 			<% end %>
 		</div>
-		<div class="col-3 user-show-links">
+		<div class="col-3 user-show-links animated fadeIn2">
 			<%= link_to edit_user_path(current_user), {:style => 'text-decoration: none'} do %>
 				<p><%= image_tag "/images/house.png", class: "img-fluid user-show-icon" %></p>
 				<p class="show-link-title">ユーザー編集</p>
 			<% end %>
 		</div>
-		<div class="col-3 user-show-links">
+		<div class="col-3 user-show-links animated fadeIn2">
 			<%= link_to  rooms_path, {:style => 'text-decoration: none'} do %>
 				<p><%= image_tag "/images/message.png", class: "img-fluid user-show-icon" %></p>
 				<p class="show-link-title">チャットルーム</p>
@@ -36,7 +37,7 @@
 	</div>
 	<div class="tab-wrapper">
 		<!-- タブ・メニュー -->
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs animated fadeIn1">
 			<li class="nav-item"><a class="nav-link" href="#nav-content-favorite" data-toggle="tab">いいねした商品</a></li>
 			<li class="nav-item"><a class="nav-link" href="#nav-content-myproduct" data-toggle="tab">自分の商品</a></li>
 			<li class="nav-item"><a class="nav-link" href="#nav-content-order-history" data-toggle="tab">購入履歴</a></li>
@@ -44,7 +45,7 @@
 		<!-- タブ内容 -->
 		<div class="tab-content">
 			<!--いいねした商品-->
-			<div class="tab-pane" id="nav-content-favorite">
+			<div class="tab-pane animated fadeIn5" id="nav-content-favorite">
 				<h2>いいねした商品一覧</h2>
 				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 					<!-- スライドさせる画像の設定 -->
@@ -56,7 +57,7 @@
 						    	<div class="carousel-item">
 				    		<% end %>
 
-					    	<%= link_to user_product_path(favorite.product, favorite.product.user) do %>
+					    	<%= link_to user_product_path(favorite.product.user, favorite.product) do %>
 					    		<% if favorite.product.avatar.attached? %>
 									<%= image_tag favorite.product.avatar.variant(resize: "400x400"), class: "img-fluid" %>
 								<% else %>
@@ -80,7 +81,7 @@
 				</div>
 			</div>
 			<!--自分の商品-->
-			<div class="tab-pane" id="nav-content-myproduct">
+			<div class="tab-pane animated fadeIn1" id="nav-content-myproduct">
 				<div class="row d-flex flex-wrap">
 					<% @products.each do |product| %>
 					<div class="col-md-3 col-6">
@@ -105,7 +106,7 @@
 				<%= paginate @products %>
 			</div>
 			<!--購入履歴-->
-			<div class="tab-pane" id="nav-content-order-history">
+			<div class="tab-pane animated fadeIn1" id="nav-content-order-history">
 				<%= render 'orders/index', orders: @orders %>
 			</div>
 		</div>

@@ -13,6 +13,8 @@ class Product < ApplicationRecord
 	validates :name, presence: true, length: {in: 1..20}
 	validates :price, presence: true
 	validates :body, presence: true, length: {in: 1..400}
+	validates :genre_id, presence: true
+	validates :caution, presence: true, length: {in: 1..400}
 
 	#販売中のスコープ genre/show, product/indexに使用
 	scope :at_sale, -> { where(finish: false) }

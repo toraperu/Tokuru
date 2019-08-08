@@ -1,66 +1,46 @@
 <div class="new-product-container">
 	<h1 class="new-product-title">商品投稿</h1>
-	<br>
-	<br>
+	<% if @product.errors.any? %>
+		<%= render 'layouts/flash_messages' %>
+	<% end %>
 	<%= form_for [current_user, @product] do |f| %>
 		<% if current_user.name? %>
-			<div class="product-new-field">
+			<div class="product-new-field animated fadeIn4">
 				<%= f.label :"投稿画像" %><br>
 				<%= f.file_field :avatar, class: "new-product-image" %>
 			</div><br>
-			<div class="product-new-field">
+			<div class="product-new-field animated fadeIn4">
 				<%= f.label :"あなたの得意" %><br>
 				<%= f.text_field :name, class: "product-new-skillprice" %>
 			</div><br>
-			<div class="product-new-field">
+			<div class="product-new-field animated fadeIn4">
 				<%= f.label :"ジャンル" %><br>
 				<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
 			</div><br>
-			<div class="product-new-field new-under">
+			<div class="product-new-field new-under animated fadeIn4">
 				<%= f.label :"価格" %><br>
 				<%= f.text_field :price, class: "product-new-skillprice" %>
 			</div><br>
-			<div class="product-new-field new-under">
+			<div class="product-new-field new-under animated fadeIn4">
 				<%= f.label :"商品説明" %><br>
 				<%= f.text_area :body, class: "product-bodycaution" %><br><br>
 			</div><br>
-			<div class="product-new-field new-under">
+			<div class="product-new-field new-under animated fadeIn4">
 				<%= f.label :"購入時の注意点" %><br>
 				<%= f.text_area :caution, class: "product-bodycaution" %><br><br>
 			</div><br>
-			<div><%= f.submit "投稿", class:"post-btn btn btn-secondary btn-lg" %>
+			<div class="animated fadeIn4"><%= f.submit "投稿", class:"post-btn btn btn-secondary btn-lg" %>
 			</div>
 		<% else %>
-			<div class="user-edit-link-field">
-				*投稿するにはユーザー名が必要です。<br>
+			<div class="user-edit-link-field animated fadeIn4">
+				*投稿するには『ユーザー名』が必要です。<br>
 				ユーザー情報編集はこちら<span><i class="far fa-hand-point-right"></i></span>
-				<%= link_to "", edit_user_path(current_user), class: "far fa-edit btn btn-warning btn-xs"%><br><br>
+				<%= link_to "", edit_user_path(current_user), class: "far fa-edit btn btn-warning btn-lg"%>
 			</div>
-			<div class="product-new-field">
-				<%= f.label :"投稿画像" %><br>
-				<%= f.file_field :avatar, class: "new-product-image" %>
-			</div><br>
-			<div class="product-new-field">
-				<%= f.label :"あなたの得意" %><br>
-				<%= f.text_field :name, class: "product-new-skillprice" %>
-			</div><br>
-			<div class="product-new-field">
-				<%= f.label :"ジャンル" %><br>
-				<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
-			</div><br>
-			<div class="product-new-field new-under">
-				<%= f.label :"価格" %><br>
-				<%= f.text_field :price, class: "product-new-skillprice" %>
-			</div><br>
-			<div class="product-new-field new-under">
-				<%= f.label :"商品説明" %><br>
-				<%= f.text_area :body, class: "product-bodycaution" %><br><br>
-			</div><br>
-			<div class="product-new-field new-under">
-				<%= f.label :"購入時の注意点" %><br>
-				<%= f.text_area :caution, class: "product-bodycaution" %><br><br>
-			</div><br>
-			<div><%= f.submit "投稿", class:"post-btn btn btn-secondary btn-lg" %>
+			<div class="user-edit-link-field animated fadeIn4">
+				*また、投稿した商品の詳細で出品者情報が表示されるので、<br>
+				『プロフィール情報』を設定しておくと<br>
+				購入者が安心して商品を購入できます。
 			</div>
 		<% end %>
 	<% end %>

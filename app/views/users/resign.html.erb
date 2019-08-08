@@ -1,19 +1,14 @@
-<div class="row">
-	<div class="col-4 offset-4">
-		<div class="resign-message">
-			<p>退会すると、今後サービスを利用できなくなります。</p>
-			<p>本当に退会してもよろしいですか？</p>
-			<br>
-			<br>
-			<br>
-			<div class="row">
-				<div class="col-3 offset-3">
-					<%= link_to "はい", resign_confirm_path(@user.id), method: :patch,
-					class: "btn btn-danger" %>
-				</div>
-				<div class="col-3 offset-3">
-					<%= link_to "いいえ", edit_user_path(@user.id), class: "btn btn-info" %>
-				</div>
+<div class="resign-container">
+	<div class="animated fadeIn4">
+		<h3 class="resign-message">*退会すると、今後サービスを利用できなくなります。</h3>
+		<h3 class="resign-message">*本当に退会してもよろしいですか？</h3>
+		<div class="row">
+			<div class="col-6 animated fadeIn4">
+				<%= link_to "はい", resign_confirm_path(@user.id), method: :patch,
+				class: "post-btn btn btn-danger btn-lg" %>
+			</div>
+			<div class="col-6 animated fadeIn4">
+				<%= link_to "いいえ", edit_user_path(@user.id), class: "post-btn btn btn-secondary btn-lg" %>
 			</div>
 		</div>
 	</div>

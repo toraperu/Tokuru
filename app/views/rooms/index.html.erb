@@ -1,37 +1,60 @@
 <div class="room-index-container">
+	<h1 class="room-index-title">Room一覧</h1>
 	<div class="row">
-		<div class="col-6 offset-3">
-			<h1>Room一覧</h1>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>商品名</th>
-						<th>出品者</th>
+		<h3 class="col-md-6 col-12">あなたが購入者の部屋</h3>
+		<h3 class="col-md-6 col-12">あなたが出品者の部屋</h3>
+	</div>
+	<div class="row">
+		<!--自分が購入者の時-->
+		<table class="col-md-6 col-12 table table-hover room-table">
+			<thead>
+				<tr class="row">
+					<th class="col-6">商品名</th>
+					<th class="col-6">出品者</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% current_user.buyer_rooms.each do |room| %>
+					<tr class="row" data-href="<%= room_path(room) %>">
+						<td class="col-6">
+							<%= room.product.name %>
+						</td>
+						<td class="col-6">
+							<%= room.seller.name %>
+						</td>
 					</tr>
-				</thead>
-				<tbody>
-					<% current_user.buyer_rooms.each do |room| %>
-						<tr data-href="<%= room_path(room) %>">
-							<td>
-								<%= room.product.name %>
-							</td>
-							<td>
-								<%= room.product.user.name %>
-							</td>
-						</tr>
-					<% end %>
-					<% current_user.seller_rooms.each do |room| %>
-						<tr data-href="<%= room_path(room) %>">
-							<td>
-								<%= room.product.name %>
-							</td>
-							<td>
-								<%= room.product.user.name %>
-							</td>
-						</tr>
-					<% end %>
-				</tbody>
-			</table>
-		</div>
+				<% end %>
+			</tbody>
+		</table>
+
+		<!--自分が出品者の時-->
+		<table class="col-md-6 col-12 table table-hover room-table">
+			<thead>
+				<tr class="row">
+					<th class="col-6">商品名</th>
+					<th class="col-6">購入者</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% current_user.seller_rooms.each do |room| %>
+					<tr class="row" data-href="<%= room_path(room) %>">
+						<td class="col-6">
+							<%= room.product.name %>
+						</td>
+						<td class="col-6">
+							<%= room.buyer.name %>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
 	</div>
 </div>
+
+
+
+
+
+
+
+

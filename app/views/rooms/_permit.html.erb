@@ -1,16 +1,16 @@
 <% if current_user != room.product.user %>
 	<% if room.permitted? %>
-		<div class="go-order">
+		<div class="go-order animated fadeIn2">
 			<%= link_to "購入へ", new_user_product_order_path(current_user, room.product), class: "btn btn-danger btn-lg" %>
 		</div>
 	<% end %>
 <% else %>
 	<% if room.permitted? %>
-		<div class="ok-order">
+		<div class="ok-order animated fadeIn2">
 			<%= link_to "購入を許可しない", room_permitted_path(room), class: "btn btn-danger btn-lg", remote: true %>
 		</div>
 	<% else %>
-		<div class="ok-order">
+		<div class="ok-order animated fadeIn2">
 			<%= link_to "購入を許可する", room_permit_path(room), class: "btn btn-danger btn-lg", remote: true %>
 		</div>
 	<% end %>

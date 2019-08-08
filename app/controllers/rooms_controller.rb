@@ -1,4 +1,9 @@
 class RoomsController < ApplicationController
+  #ユーザー名がないとルームを作成できない
+  before_action :setup_username, only:[:show, :create]
+  #他人のルームにurlからいけない
+  before_action :correct_user, only: [:show, :create]
+
   def index
   end
 
@@ -28,6 +33,28 @@ class RoomsController < ApplicationController
   def permitted
     @room = Room.find(params[:id])
     @room.update({permitted?: false})
+  end
+
+
+
+  private
+
+  def setup_username
+    unless current_user.name.present?
+      @room = Room.find(params[:id])
+      @product = @room.product
+      flash[:danger] = 'ユーザー名を入力してください'
+      redirect_to user_product_path(@product.user, @product)
+    end
+  end
+
+  def correct_user
+    @room = Room.find(params[:id])
+    @user = @room.buyer || @room.seller
+    unless @user == current_user
+      flash[:danger] = '自分のルームを選択してください'
+      redirect_to user_path(current_user)
+    end
   end
 
 
