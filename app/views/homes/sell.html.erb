@@ -1,2 +1,29 @@
-<h1>Homes#sell</h1>
-<p>Find me in app/views/homes/sell.html.erb</p>
+<div class="home-sell-container">
+	<h1 class="home-sell-title">出品について</h1>
+	<div class="sell-explain-container">
+		<h3>Step1 >> 商品投稿画面に行く</h3>
+		<%= image_tag "/images/post_product.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-angle-double-down"></i></p>
+
+		<h3>Step2 >> 入力欄に必要事項を入れる</h3>
+		<p>ユーザー名がないと商品投稿できません</p>
+		<%= image_tag "/images/post_product2.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<%= image_tag "/images/post_product3.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-angle-double-down"></i></p>
+
+		<h3>Step3 >> マイページのチャットルームを選択 =><br>
+		 Room一覧から自分が出品者となっている部屋を選び販売交渉
+		</h3>
+		<p>Roomは購入者側からしか作成できません</p>
+		<%= image_tag "/images/mypage_chat.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-angle-double-down"></i></p>
+		<%= image_tag "/images/room_table.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-angle-double-down"></i></p>
+
+		<h3>Step4 >> チャットルームで購入したいユーザーと購入に関する話し合いをする</h3>
+		<%= link_to "チャットの説明へ", homes_chat_path, class: "post-btn btn btn-warning btn-lg", :style=>"text-decoration: none;"%>
+		<p><i class="fas fa-angle-double-down"></i></p>
+
+		<h3>Step5 >> ユーザーが購入できたら、そのユーザーと連絡を取り合ってスキルを売る</h3>
+	</div>
+</div>
