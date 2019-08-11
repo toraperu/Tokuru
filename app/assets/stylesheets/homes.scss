@@ -1,0 +1,37 @@
+// Place all the styles related to the Homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+//nothing
+//中央寄せ
+.nothing-container{
+	text-align: center;
+	background-image: url('/images/letter.png');
+	background-size: cover;
+}
+.home-nothing-item1{
+	padding: 150px;
+}
+.home-nothing-item2{
+	padding: 70px;
+}
+
+//chat
+//中央寄せ
+.home-chat-container{
+	text-align: center;
+	background-color: #DDDDDD;
+}
+//titleの色変える
+.home-chat-title{
+	padding: 40px;
+	color: #666666;
+}
+//矢印大きさ
+.fa-angle-double-down{
+	font-size: 60px;
+}

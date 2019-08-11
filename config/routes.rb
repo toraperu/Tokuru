@@ -63,5 +63,14 @@ Rails.application.routes.draw do
 	get 'products/test' => 'products#test'
 
 
+	#footerのリンク
+	get 'homes/nothing' => 'homes#nothing', as: 'homes_nothing'
+	get 'homes/question' => 'homes#question', as: 'homes_question'
+	get 'homes/chat' => 'homes#chat', as: 'homes_chat'
+	get 'homes/pay' => 'homes#pay', as: 'homes_pay'
+	get 'homes/sell' => 'homes#sell', as: 'homes_sell'
+	get 'homes/buy' => 'homes#buy', as: 'homes_buy'
+
+
 
 end

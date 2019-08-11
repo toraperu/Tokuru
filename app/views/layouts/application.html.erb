@@ -130,24 +130,42 @@
       <footer>
         <div class="row footer-items">
           <div class="col-3">
-            <p><span><i class="far fa-calendar"></i></span> 会社概要</p>
-            <p><span><i class="fas fa-tools"></i></span> Q&A</p>
-            <p><span><i class="fas fa-exclamation-triangle"></i></span> お客様の安全のために</p>
+            <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
+              <p><span><i class="far fa-calendar"></i></span> 会社概要</p>
+            <% end %>
+            <%= link_to homes_question_path, :style=>"text-decoration: none;" do %>
+              <p><span><i class="fas fa-tools"></i></span> Q&A</p>
+            <% end %>
+            <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
+              <p><span><i class="fas fa-exclamation-triangle"></i></span> お客様の安全のために</p>
+            <% end %>
           </div>
 
           <div class="col-3">
-            <p><span><i class="far fa-clone"></i></span>チャットについて</p>
-            <p><span><i class="far fa-clone"></i></span>お支払いについて</p>
+            <%= link_to homes_chat_path, :style=>"text-decoration: none;" do %>
+              <p><span><i class="far fa-clone"></i></span>チャットについて</p>
+            <% end %>
+            <%= link_to homes_pay_path, :style=>"text-decoration: none;" do %>
+              <p><span><i class="far fa-clone"></i></span>お支払いについて</p>
+            <% end %>
           </div>
 
           <div class="col-3">
-            <p><span><i class="far fa-clone"></i></span>出品について</p>
-            <p><span><i class="far fa-clone"></i></span>購入について</p>
+            <%= link_to homes_sell_path, :style=>"text-decoration: none;" do %>
+              <p><span><i class="far fa-clone"></i></span>出品について</p>
+            <% end %>
+            <%= link_to homes_buy_path, :style=>"text-decoration: none;" do %>
+              <p><span><i class="far fa-clone"></i></span>購入について</p>
+            <% end %>
           </div>
 
           <div class="col-3">
-            <p><span><i class="fas fa-cog"></i></span> プライバシーポリシー</p>
-            <p><span><i class="fas fa-cog"></i></span> tokuru利用規約</p>
+            <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
+              <p><span><i class="fas fa-cog"></i></span> プライバシーポリシー</p>
+            <% end %>
+            <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
+              <p><span><i class="fas fa-cog"></i></span> tokuru利用規約</p>
+            <% end %>
           </div>
         </div>
       </footer>
