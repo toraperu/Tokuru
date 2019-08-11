@@ -12,6 +12,7 @@
 	text-align: center;
 	background-image: url('/images/letter.png');
 	background-size: cover;
+	padding: 20px;
 }
 .home-nothing-item1{
 	padding: 150px;
@@ -20,11 +21,18 @@
 	padding: 70px;
 }
 
+
+
+
+
+
+
 //chat
 //中央寄せ
 .home-chat-container{
 	text-align: center;
 	background-color: #DDDDDD;
+	padding: 20px;
 }
 //titleの色変える
 .home-chat-title{
@@ -35,3 +43,38 @@
 .fa-angle-double-down{
 	font-size: 60px;
 }
+
+
+
+
+
+
+//pay
+//中央寄せ
+.home-pay-container{
+	text-align: center;
+	background-color: #DDDDDD;
+	padding: 20px;
+}
+//titleの色変える
+.home-pay-title{
+	padding: 40px;
+	color: #666666;
+}
+//矢印大きさ
+.fa-angle-double-down{
+	font-size: 60px;
+}
+.fee_charge{
+	color: #AA0000;
+	font-size: 25px;
+}
+
+
+
+
+
+
+
+
+

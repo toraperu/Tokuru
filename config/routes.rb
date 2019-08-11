@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 			resources :messages, only:[:new, :show]
 		end
 		#userに紐づくbankのルーティング
-		resources :banks, only:[:new, :create, :index, :edit, :update, :destroy]
+		resources :banks, only:[:new, :create, :show, :edit, :update, :destroy]
 	end
 	#ルーム
 	resources :rooms, only:[:index, :show]

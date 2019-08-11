@@ -1,0 +1,16 @@
+<div class="bank-show-container">
+	<h1 class="bank-show-title">振込先口座情報</h1>
+	<% if current_user.bank %>
+		<div>
+			<h3 class="bank-items">銀行名 : <%= @bank.name_i18n %></h3><br>
+			<h3 class="bank-items">支店名 : <%= @bank.branch %></h3><br>
+			<h3 class="bank-items">口座番号 : <%= @bank.number %></h3><br>
+			<h3 class="bank-items">名義人 : <%= @bank.holder %></h3><br>
+			<p class="bank-items2"><%= link_to "編集", edit_user_bank_path(current_user, current_user.bank), class: "post-btn btn btn-warning btn-lg" %></p><br>
+			<p class="bank-items2"><%= link_to "マイページ", user_path(current_user), class: "post-btn btn btn-secondary btn-lg" %></p><br>
+	<% else %>
+		<p class="bank-items">先ずは口座を登録してください</p><br>
+		<p class="bank-items2"><%= link_to "振込先登録", new_user_bank_path(current_user)%></p><br>
+		<p class="bank-items2"><%= link_to "マイページ", user_path(current_user), class: "post-btn btn btn-secondary btn-lg" %></p><br>
+	<% end %>
+</div>

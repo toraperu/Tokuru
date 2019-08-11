@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	has_many :favorites, dependent: :destroy
 	has_many :comments, dependent: :destroy
 	has_many :orders
-	has_many :banks, dependent: :destroy
+	has_one :bank, dependent: :destroy
 
 	#チャット機能のための関連付け
 	has_many :from_messages, class_name: "Message",

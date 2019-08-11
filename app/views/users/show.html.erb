@@ -17,9 +17,9 @@
 			<% end %>
 		</div>
 		<div class="col-3 user-show-links animated fadeIn2">
-			<%= link_to user_banks_path(current_user), {:style => 'text-decoration: none'} do %>
+			<%= link_to user_bank_path(current_user, current_user.bank), {:style => 'text-decoration: none'} do %>
 				<p><%= image_tag "/images/bank.png", class: "img-fluid user-show-icon" %></p>
-				<p class="show-link-title">振込先一覧</p>
+				<p class="show-link-title">振込先情報</p>
 			<% end %>
 		</div>
 		<div class="col-3 user-show-links animated fadeIn2">

@@ -1,2 +1,17 @@
-<h1>Homes#pay</h1>
-<p>Find me in app/views/homes/pay.html.erb</p>
+<div class="home-pay-container">
+	<h1 class="home-pay-title">お支払いについて</h1>
+	<div class="pay-explain-container">
+		
+		<h3>Step1 >> マイページから振込先登録を行います</h3>
+		<%= image_tag "/images/register_bank.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-angle-double-down"></i></p>
+
+		<h3>Step2 >> 「銀行名、支店名、口座番号、名義人」を登録します</h3>
+		<%= image_tag "/images/register_bank2.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-angle-double-down"></i></p>
+
+		<h3>Step3 >> あなたが登録した口座に月締めで<br>
+			<span class="fee_charge">手数料1割</span>を除いた売上金が振り込まれます。
+		</h3>
+	</div>
+</div>

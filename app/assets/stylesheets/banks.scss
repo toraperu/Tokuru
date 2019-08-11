@@ -46,13 +46,27 @@
 
 
 
-//一覧ページ
+//詳細ページ
 //高さ固定
-.index-bank-container{
+.bank-show-container{
 	margin: 0 auto;
 	text-align: center;
 }
 
-.index-bank-title{
+.bank-show-title{
 	background-color: #AAAAAA;
 }
+.bank-items{
+	margin: 30px;
+	border-bottom: solid 10px #DEB887;
+	display: inline-block;
+}
+.bank-items2{
+	margin: 30px;
+}
+
+
+
+
+
+
