@@ -1,2 +1,26 @@
-<h1>Homes#buy</h1>
-<p>Find me in app/views/homes/buy.html.erb</p>
+<div class="home-buy-container">
+	<h1 class="home-buy-title">購入について</h1>
+	<div class="buy-explain-container">
+		<h3>Step1 >> 商品詳細から注文相談へ進む</h3>
+		<p>注文相談にはログインが必要です</p>
+		<%= image_tag "/images/go_consult.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-angle-double-down"></i></p>
+
+		<h3>Step2 >> チャットで購入に関する同意を出品者から得る</h3>
+		<%= link_to "チャットの説明へ", homes_chat_path, class: "post-btn btn btn-warning btn-lg", :style=>"text-decoration: none;"%>
+		<p><i class="fas fa-angle-double-down"></i></p>
+
+		<h3>Step3 >> 購入内容確定画面で必要事項を入力</h3>
+		<%= image_tag "/images/order_new1.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-arrows-alt-v"></i></p>
+		<%= image_tag "/images/order_new2.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-angle-double-down"></i></p>
+		<%= image_tag "/images/order_new3.png", :style=>"width: 60%;", class: "img-fluid" %>
+		<p><i class="fas fa-angle-double-down"></i></p>
+
+		<h3>Step4 >> 購入確定=>これで購入は完了しました</h3>
+		<%= image_tag "/images/order_confirm.png", :style=>"width: 60%;", class: "img-fluid" %>
+
+		<h3 class="buy-caution">**購入後、出品者と二者で決めた連絡手段で連絡を取り合って商品を提供してもらってください</h3>
+	</div>
+</div>

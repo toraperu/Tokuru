@@ -64,20 +64,24 @@ $(function(){
 
 
 
-//スキルの交換を選択した時に、あなたのスキルの入力欄を出す&&価格を非表示にする
+//支払い方法にスキルの交換を選択した時、あなたのスキルの入力欄を出す&&価格を非表示にする
 $(function(){
 	$('#order_payment').change(function(){
 		if ($(this).children('option:selected').val() == 'skill') {
 			$('.your-skill-form').show();
 			$('.existing-price').hide();
 			$('.free-price').show();
+      $('.cardInput').hide();
 		} else {
 			$('.your-skill-form').hide();
 			$('.existing-price').show();
 			$('.free-price').hide();
+      $('.cardInput').show();
 		}
 	});
 });
+
+
 
 
 

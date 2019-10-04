@@ -22,6 +22,17 @@
 			<div class="order-field">
 				<%= f.label :payment, "支払い方法" %><br>
 				<%= f.select :payment, Order.payments.map { |k, v| [Order.payments_i18n[k], k]} %>
+				<p class="cardInput">
+					<script
+						type="text/javascript"
+						src="https://checkout.pay.jp/"
+						class="payjp-button"
+						data-key="pk_test_36fcfb0b10e5d3f8ba6fcf82"
+						data-text="カード情報を入力"
+						data-submit-text="入力確定"
+						data-partial="true">
+					</script>
+				<p>
 
 				<div class="your-skill-form">
 					<%= f.label :my_skill, "あなたが交換するスキル" %><br>
