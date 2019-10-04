@@ -11,7 +11,7 @@
 			</div><br>
 			<div class="product-new-field">
 				<%= f.label :"あなたの得意" %><br>
-				<%= f.text_field :name, class: "product-new-skillprice" %>
+				<%= f.text_field :name, placeholder: '例)恋愛相談なんでも',  class: "product-new-skillprice" %>
 			</div><br>
 			<div class="product-new-field">
 				<%= f.label :"ジャンル" %><br>
@@ -19,15 +19,15 @@
 			</div><br>
 			<div class="product-new-field new-under">
 				<%= f.label :"価格" %><br>
-				<%= f.text_field :price, class: "product-new-skillprice" %>
+				<%= f.text_field :price, placeholder: '例)6000円', class: "product-new-skillprice" %>
 			</div><br>
 			<div class="product-new-field new-under">
 				<%= f.label :"商品説明" %><br>
-				<%= f.text_area :body, class: "product-bodycaution" %><br><br>
+				<%= f.text_area :body, placeholder: '例)あなたが恋愛で悩んでいることをなんでも聞きます。60分間どんどん悩みを打ち明けてください。', class: "product-bodycaution" %><br><br>
 			</div><br>
 			<div class="product-new-field new-under">
 				<%= f.label :"購入時の注意点" %><br>
-				<%= f.text_area :caution, class: "product-bodycaution" %><br><br>
+				<%= f.text_area :caution, placeholder: '例)あなたの悩みを100%解決することは私一人では難しいです。アドバイスはしますが最後はあなたの勇気がすべての鍵です。', class: "product-bodycaution" %><br><br>
 			</div><br>
 			<div><%= f.submit "投稿", class:"post-btn btn btn-secondary btn-lg" %>
 			</div>

@@ -4,23 +4,23 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="sign-up-field animated fadeIn4">
+    <div class="sign-up-field">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "sign_field" %>
     </div>
 
-    <div class="sign-up-field animated fadeIn4">
+    <div class="sign-up-field">
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "sign_field" %>
     </div>
 
-    <div class="sign-up-field animated fadeIn4">
+    <div class="sign-up-field">
       <em>(もう一度入力してください)</em><br>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password confirm", class: "sign_field" %>
     </div>
 
-    <div class="sign-up-actions animated fadeIn4">
+    <div class="sign-up-actions">
       <%= f.submit "新規登録", class: "sign-in-up-action" %>
     </div>
   <% end %>
