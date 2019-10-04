@@ -66,6 +66,20 @@
 	background-color: #AAAAAA;
 	border-radius: 5px;
 }
+
+/*placeholderのcssいじる時*/
+input{
+	position: relative;
+}
+::-webkit-input-placeholder {
+  font-size: 30px;
+  -webkit-transition: font-size .2s ease-in-out;
+  transition: font-size .2s ease-in-out;
+}
+input:focus::-webkit-input-placeholder{
+	font-size: 20px;
+}
+
 /*Footerの見た目*/
 footer{
 	height: 150px;
@@ -140,7 +154,8 @@ body,#wrapper{
 }
 .search_form{
 	text-align: center;
-	width: 85%;
+	width: 95%;
+	height: 30px;
 	outline: 0;
 	border-radius: 35px;
 }

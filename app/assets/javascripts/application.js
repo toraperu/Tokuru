@@ -149,8 +149,7 @@ $(function(){
 
 
 
-//aboutページの要素をジワリと表示
-//購入へ進むボタンをジワリと表示
+
 //右からと左からfadeIn
 $(function() {
   $('.fadeIn1').on('inview', function(event, isInView) {
@@ -182,8 +181,6 @@ $(function() {
 
 
 
-//topページのジャンボトロンをジワリだす
-//購入確定メッセージをジワリ出す
 //上から下にゆっくり降りてくる
 $(function() {
   $('.fadeIn3').on('inview', function(event, isInView) {
@@ -213,30 +210,15 @@ $(function() {
 
 
 
-//tabmenuをジワリと出す
-//中央にギュッとなる
-$(function() {
-  $('.fadeIn5').on('inview', function(event, isInView) {
-    console.log('fadeIn5')
-    if (isInView) {
-    //表示領域に入った時
-      $(this).addClass('rubberBand');
-    } else {
-    //表示領域から出た時
-      $(this).removeClass('rubberBand');
-    }
-  });
-});
-
-
-
-
 
 
 //flash messageの秒数指定
 $(function(){
   setTimeout("$('.alert').fadeOut('slow')", 3000) 
 })
+
+
+
 
 
 
