@@ -37,6 +37,7 @@ class RoomsController < ApplicationController
 
 
 
+
   private
 
   def setup_username

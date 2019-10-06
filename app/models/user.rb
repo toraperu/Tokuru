@@ -9,6 +9,8 @@ class User < ApplicationRecord
 	has_many :comments, dependent: :destroy
 	has_many :orders
 	has_one :bank, dependent: :destroy
+	has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+	has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
 	#チャット機能のための関連付け
 	has_many :from_messages, class_name: "Message",

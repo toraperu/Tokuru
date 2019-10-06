@@ -5,6 +5,7 @@ class Product < ApplicationRecord
 	has_many :favorites, dependent: :destroy
 	has_many :comments, dependent: :destroy
 	has_many :rooms, dependent: :destroy
+	has_many :notifications, dependent: :destroy
 
 	#attachment :jacket_image
 	#active storage使用
@@ -36,4 +37,22 @@ class Product < ApplicationRecord
 		  Product.at_sale #販売中のものを全て表示。
 		end
 	end
+
+	#room通知の作成メソッド
+	def create_notification_room!(current_user, room_id)
+    #その商品を同ユーザーがやりとりしていないか検索し、通知作成
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and product_id = ? and action = ?",
+      buyer_id, seller_id, id, 'make_room'])
+    if temp.blank?
+      notification = current_user.active_notifications.new(
+        product_id: id,
+        visited_id: seller_id,
+        room_id: room_id,
+        action: 'make_room')
+      if notification.visitor_id = notification.visited_id
+        notification.checked = true
+      end
+      notification.save if notification.valid?
+    end
+  end
 end
