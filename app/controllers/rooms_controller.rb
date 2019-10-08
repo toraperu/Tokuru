@@ -19,6 +19,7 @@ class RoomsController < ApplicationController
   	@room.buyer_id = params[:buyer_id]
   	@room.seller_id = params[:seller_id]
   	if @room.save
+      @room.create_notification_room!(current_user, room_id)
   		redirect_to room_path(@room.id)
  	else
   		render :index

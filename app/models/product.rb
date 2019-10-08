@@ -40,7 +40,7 @@ class Product < ApplicationRecord
 
 	#room通知の作成メソッド
 	def create_notification_room!(current_user, room_id)
-    #その商品を同ユーザーがやりとりしていないか検索し、通知作成
+    #その商品を同ユーザーがやりとりしていないとき、通知作成
     temp = Notification.where(["visitor_id = ? and visited_id = ? and product_id = ? and action = ?",
       buyer_id, seller_id, id, 'make_room'])
     if temp.blank?

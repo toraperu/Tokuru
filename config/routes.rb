@@ -61,6 +61,8 @@ Rails.application.routes.draw do
 	get 'genres/:id' => 'genres#show', as: 'genre'
 	#jscrollの発火確認
 	get 'products/test' => 'products#test'
+	#index/notificationのルーティング
+	resources :notifications, only: :index
 
 
 	#footerのリンク
