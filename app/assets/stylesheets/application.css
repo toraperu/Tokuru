@@ -133,14 +133,20 @@ body,#wrapper{
 	min-height: 100vh;
 }
 /*通知ボタン*/
+.notificate-button{
+	border-radius: 50px;
+}
 #notification{
 	position: fixed;
 	right: 40px;
-	top: 180px;
+	top: 176px;
 	z-index: 999;
 	border: solid 2px #FF4F50;
+	border-radius: 50px;
 }
-
+#notification:hover{
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+}
 /*ページトップへ戻るボタン*/
 #back{
   position: fixed;

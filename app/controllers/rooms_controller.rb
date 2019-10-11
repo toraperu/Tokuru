@@ -19,9 +19,9 @@ class RoomsController < ApplicationController
   	@room.buyer_id = params[:buyer_id]
   	@room.seller_id = params[:seller_id]
   	if @room.save
-      @room.create_notification_room!(current_user, room_id)
+      @room.create_notification_room!(@room.buyer_id, @room.id)
   		redirect_to room_path(@room.id)
- 	else
+   	else
   		render :index
   	end
   end
@@ -43,8 +43,7 @@ class RoomsController < ApplicationController
 
   def setup_username
     unless current_user.name.present?
-      @room = Room.find(params[:id])
-      @product = @room.product
+      @product = Product.find(params[:product_id])
       flash[:danger] = 'ユーザー名を入力してください'
       redirect_to user_product_path(@product.user, @product)
     end

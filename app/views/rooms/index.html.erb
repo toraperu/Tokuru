@@ -9,19 +9,21 @@
 		<table class="col-md-6 col-12 table table-hover room-table">
 			<thead>
 				<tr class="row">
-					<th class="col-6">商品名</th>
-					<th class="col-6">出品者</th>
+					<th class="col-5">商品名</th>
+					<th class="col-5">出品者</th>
+					<th class="col-2">作成日時</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% current_user.buyer_rooms.each do |room| %>
 					<tr class="row" data-href="<%= room_path(room) %>">
-						<td class="col-6">
+						<td class="col-5">
 							<%= room.product.name %>
 						</td>
-						<td class="col-6">
+						<td class="col-5">
 							<%= room.seller.name %>
 						</td>
+						<td class="col-2"><%= time_ago_in_words(room.created_at).upcase%>前</td>
 					</tr>
 				<% end %>
 			</tbody>
@@ -31,19 +33,21 @@
 		<table class="col-md-6 col-12 table table-hover room-table">
 			<thead>
 				<tr class="row">
-					<th class="col-6">商品名</th>
-					<th class="col-6">購入者</th>
+					<th class="col-5">商品名</th>
+					<th class="col-5">購入者</th>
+					<th class="col-2">作成日時</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% current_user.seller_rooms.each do |room| %>
 					<tr class="row" data-href="<%= room_path(room) %>">
-						<td class="col-6">
+						<td class="col-5">
 							<%= room.product.name %>
 						</td>
-						<td class="col-6">
+						<td class="col-5">
 							<%= room.buyer.name %>
 						</td>
+						<td class="col-2"><%= time_ago_in_words(room.created_at).upcase%>前</td>
 					</tr>
 				<% end %>
 			</tbody>
