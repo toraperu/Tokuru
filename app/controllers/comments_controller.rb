@@ -24,12 +24,14 @@ class CommentsController < ApplicationController
 
   def update
   	@comment = Comment.find(params[:id])
+
     @product = @comment.product
   	if @comment.update(comment_params)
       redirect_to user_product_path(@product.user_id, @product.id)
     else
       render :edit
     end
+
   end
 
   def destroy
