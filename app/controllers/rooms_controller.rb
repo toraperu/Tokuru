@@ -1,8 +1,8 @@
 class RoomsController < ApplicationController
   #ユーザー名がないとルームを作成できない
-  before_action :setup_username, only:[:show, :create]
-  #他人のルームにurlからいけない
-  before_action :correct_user, only: [:show, :create]
+  before_action :setup_username, only:[:create]
+  # #他人のルームにurlからいけない
+  # before_action :correct_user, only: [:show]
 
   def index
   end
@@ -19,8 +19,9 @@ class RoomsController < ApplicationController
   	@room.buyer_id = params[:buyer_id]
   	@room.seller_id = params[:seller_id]
   	if @room.save
+      @room.create_notification_room!(@room.buyer_id, @room.id)
   		redirect_to room_path(@room.id)
- 	else
+   	else
   		render :index
   	end
   end
@@ -37,25 +38,25 @@ class RoomsController < ApplicationController
 
 
 
+
   private
 
   def setup_username
     unless current_user.name.present?
-      @room = Room.find(params[:id])
-      @product = @room.product
+      @product = Product.find(params[:product_id])
       flash[:danger] = 'ユーザー名を入力してください'
       redirect_to user_product_path(@product.user, @product)
     end
   end
 
-  def correct_user
-    @room = Room.find(params[:id])
-    @user = @room.buyer || @room.seller
-    unless @user == current_user
-      flash[:danger] = '自分のルームを選択してください'
-      redirect_to user_path(current_user)
-    end
-  end
+  # def correct_user
+  #   @room = Room.find(params[:id])
+  #   @user = @room.buyer || @user = @room.seller
+  #   unless @user == current_user
+  #     flash[:danger] = '自分のルームを選択してください'
+  #     redirect_to user_path(current_user)
+  #   end
+  # end
 
 
 

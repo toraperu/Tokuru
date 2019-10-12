@@ -3,11 +3,11 @@
 		<h3 class="resign-message">*退会すると、今後サービスを利用できなくなります。</h3>
 		<h3 class="resign-message">*本当に退会してもよろしいですか？</h3>
 		<div class="row">
-			<div class="col-6 animated fadeIn4">
+			<div class="col-6">
 				<%= link_to "はい", resign_confirm_path(@user.id), method: :patch,
 				class: "post-btn btn btn-danger btn-lg" %>
 			</div>
-			<div class="col-6 animated fadeIn4">
+			<div class="col-6">
 				<%= link_to "いいえ", edit_user_path(@user.id), class: "post-btn btn btn-secondary btn-lg" %>
 			</div>
 		</div>

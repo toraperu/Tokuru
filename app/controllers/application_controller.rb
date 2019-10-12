@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
 	    end
 	end
 
+
 	private
 
 	#ログイン後のリダイレクト先

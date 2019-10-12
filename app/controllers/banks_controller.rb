@@ -13,8 +13,9 @@ class BanksController < ApplicationController
     end
   end
 
-  def index
-    @banks = Bank.where(user_id: current_user.id).page(params[:page]).per(10)
+
+  def show
+    @bank = Bank.find(params[:id])
   end
 
   def edit

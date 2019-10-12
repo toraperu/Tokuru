@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 			resources :messages, only:[:new, :show]
 		end
 		#userに紐づくbankのルーティング
-		resources :banks, only:[:new, :create, :index, :edit, :update, :destroy]
+		resources :banks, only:[:new, :create, :show, :edit, :update, :destroy]
 	end
 	#ルーム
 	resources :rooms, only:[:index, :show]
@@ -61,6 +61,17 @@ Rails.application.routes.draw do
 	get 'genres/:id' => 'genres#show', as: 'genre'
 	#jscrollの発火確認
 	get 'products/test' => 'products#test'
+	#index/notificationのルーティング
+	resources :notifications, only: :index
+
+
+	#footerのリンク
+	get 'homes/nothing' => 'homes#nothing', as: 'homes_nothing'
+	get 'homes/question' => 'homes#question', as: 'homes_question'
+	get 'homes/chat' => 'homes#chat', as: 'homes_chat'
+	get 'homes/pay' => 'homes#pay', as: 'homes_pay'
+	get 'homes/sell' => 'homes#sell', as: 'homes_sell'
+	get 'homes/buy' => 'homes#buy', as: 'homes_buy'
 
 
 

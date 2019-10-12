@@ -5,6 +5,7 @@ class Product < ApplicationRecord
 	has_many :favorites, dependent: :destroy
 	has_many :comments, dependent: :destroy
 	has_many :rooms, dependent: :destroy
+	has_many :notifications, dependent: :destroy
 
 	#attachment :jacket_image
 	#active storage使用
@@ -36,4 +37,8 @@ class Product < ApplicationRecord
 		  Product.at_sale #販売中のものを全て表示。
 		end
 	end
+
+
+
+
 end

@@ -4,7 +4,7 @@
 	<div class="new-comment-body">
 	<%= form_with model: Comment.new, url: user_product_comments_path, local: true do |f| %>
 		<!--星機能-->
-		<div class="animated fadeIn3" id="star">
+		<div id="star">
 			<%= f.label :rate,'評価 ', class:'col-form-label' %>
 			<%= f.hidden_field :star, id: :comment_star %>
 		</div><br>
@@ -17,10 +17,10 @@
 			});
 		</script>
 		<!--コメント内容-->
-		<div class="animated fadeIn4">
+		<div>
 			<%= f.text_area :body, class: "comment-post" %>
 		</div>
-		<div class="animated fadeIn4">
+		<div>
 			<%= f.submit "投稿", class: 'post-btn btn btn-secondary btn-lg' %>
 		</div>
 	<% end %>
