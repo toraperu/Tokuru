@@ -6,7 +6,16 @@
 			<<strong><%= visitor.name %></strong>>さんが
 			<% case notification.action when 'make_order' then %>
 				<%= link_to "あなたの商品", user_product_path(notification.product.user, notification.product), style: "font-weight: bold;"%>
-				+ <em>を購入しました</em>
+				<em>を購入しました</em>
+			<% when 'make_room' then %>
+				<%= link_to "あなたの商品", user_product_path(notification.product.user, notification.product), style: "font-weight: bold;"%>
+				<em>の相談部屋を作りました</em>
+			<% when 'exist_message' then %>
+				<em>あなたに</em>
+				<strong><%= notification.visitor %></strong>
+				<em>から</em>
+				<%= link_to "メッセージ", room_path(notification.room), style: "font-weight: bold;"%>
+				<em>が来ています</em>
 			<% end %>
 		</span>
 		<p class="small text-muted text-right">
