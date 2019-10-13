@@ -125,11 +125,13 @@
 		</div>
 		<!--プロフィール情報　固定-->
 		<div class="col-md-3 animated fadeIn2">
+			<%= link_to user_path(@product.user), :style=>"text-decoration: none;" do %>
 			<div class="seller-profile">
 				<h4 class="product-user-info">[出品者情報]</h4>
 				<!--simple_formatメソッドを用いると入力の時の改行が適用される-->
 				<%= simple_format(@product.user.profile) %>
 			</div>
+			<% end %>
 		</div>
 	</div>
 </div>

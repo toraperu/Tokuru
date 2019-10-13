@@ -1,0 +1,28 @@
+<div class="following-container container">
+	<div class="row">
+		<table class="table table-striped col-12">
+			<h1>フォローしているユーザー</h1>
+			<thead>
+				<tr class="row">
+					<th class="col-4"></th>
+					<th class="col-8">ユーザー名</th>
+				</tr>
+			</thead>
+			<% relationships.each do |r| %>
+			<tbody>
+				<tr class="row following-item" data-href="<%= user_path(r.follow) %>">
+					<td class="col-4">
+						<% if r.follow.avatar.attached? %>
+							<%= image_tag r.follow.avatar.variant(resize: "100x100"), class: "img-fluid" %>
+						<% else %>
+							<%= image_tag '/images/no_image.png', size:'100x100', class: "img-fluid" %>
+						<% end %>
+					</td>
+					<td class="col-8"><%= r.follow.name %></td>
+				</tr>
+			</tbody>
+			<% end %>
+		</table>
+		<%= paginate relationships, param_name: 'follow_page' %>
+	</div>
+</div>

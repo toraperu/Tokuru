@@ -5,14 +5,15 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@genres = Genre.all
-    	@products = Product.at_sale.order(id: "DESC").page(params[:page]).per(6)
+    	@products = Product.at_sale.order(id: "DESC").page(params[:product_page]).per(8)
 		#カルーセルでactiveにする一件
 		@first_favorite = @user.favorites.first
 		#カルーセルで表示する全件
 		@favorites = @user.favorites.all
 		@count = 1
 		#renderで渡すインスタンス変数
-		@orders = @user.orders.order(id: "DESC").page(params[:page]).per(6)
+		@relationships = @user.relationships.order(id: "DESC").page(params[:follow_page]).per(6)
+		@orders = @user.orders.order(id: "DESC").page(params[:order_page]).per(6)
 	end
 
 	def edit
