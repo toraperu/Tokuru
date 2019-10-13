@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 		resources :banks, only:[:new, :create, :show, :edit, :update, :destroy]
 	end
 	#ルーム
-	resources :rooms, only:[:index, :show]
+	resources :rooms, only:[:index, :show, :destroy]
 	#permit/roomのルーティング
 	get 'rooms/:id/permit' => 'rooms#permit', as: 'room_permit'
 	#permitted/roomのルーティング

@@ -3,3 +3,107 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+//index
+//中央寄せ
+.room-index-container{
+    text-align: center;
+    margin: 0 auto;
+}
+.room-index-title{
+    background-color: #AAAAAA;
+}
+.room-section{
+    margin: 0 auto;
+    text-align: center;
+    border-left: solid 0.5px #DDDDDD;
+}
+
+
+
+
+
+
+
+//show
+.message-container{
+    overflow: hidden;
+}
+.message_box {
+	background-color: #ddd;
+    padding: 100px;
+    margin-top: 50px;
+    border: 1px solid #778899;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #999999;
+    overflow: scroll;
+    #messages {
+    	height: 400px;
+    }
+}
+.message-title{
+    text-align: center;
+    padding: 20px;
+}
+.message-product-title{
+    text-align: center;
+}
+.message-user1{
+    color: #3399FF;
+}
+.message-user2{
+    color: #CC3333;
+}
+
+.message_form {
+    padding: 10px;
+}
+.input_messages{
+    width: 70%;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    outline: 0;
+    background-color: #ddd;
+}
+.input_messages:hover{
+    box-shadow: 0 0 10px #999999;
+}
+
+#message_sender {
+    font-size: 0.6em;
+}
+
+#message_content {
+    font-size: 1.1em;
+
+}
+#message_content > span {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background-color: #ddd;
+}
+
+.room-item{
+    padding: 30px;
+    text-align: center;
+}
+.ok-order{
+    color: white;
+    font-size: 24px;
+}
+.ok-order:hover{
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+.go-order{
+    color: white;
+    font-size: 24px;
+}
+.go-order:hover{
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}

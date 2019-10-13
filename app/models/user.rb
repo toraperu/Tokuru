@@ -26,7 +26,7 @@ class User < ApplicationRecord
 	has_many :sent_messages, through: :from_messages, source: :from
 	has_many :received_messages, through: :to_messages, source: :to
 	has_many :buyer_rooms, class_name: "Room", foreign_key: 'buyer_id', dependent: :destroy
-	has_many :seller_rooms, class_name: "Room", dependent: :destroy
+	has_many :seller_rooms, class_name: "Room", foreign_key: 'seller_id', dependent: :destroy
 
 	#attachment :profile_image
 	#active storage使用

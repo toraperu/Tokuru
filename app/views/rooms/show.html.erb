@@ -1,5 +1,5 @@
 <div class="message-container">
-	<div class="col-8 offset-2">
+	<div class="col-8" style="margin: 0 auto;">
 		<h2 class="message-title"><span class="message-user1"><%= @room.buyer.name %>（購入者）</span>と<span class="message-user2"><%= @room.seller.name %>（販売者）</span>のチャット</h2>
 		<h2 class="message-product-title">商品名 : <%= @room.product.name %></h2>
 		<div class="message_box">
@@ -15,6 +15,10 @@
 				<%= render partial: 'rooms/permit', locals: {room: @room  }%>
 			</div>
 		</div>
+		<p>
+			<%= link_to "このルームを削除する", room_path(@room), class: "btn btn-warning", method: :delete, :style=>"width: 400px;" %>
+		</p>
+		<br>
 	</div>
 </div>
 
