@@ -9,8 +9,14 @@ class User < ApplicationRecord
 	has_many :comments, dependent: :destroy
 	has_many :orders
 	has_one :bank, dependent: :destroy
+	#通知機能のための関連付け
 	has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
 	has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+	#フォロー機能のための関連付け
+	has_many :relationships
+	has_many :followings, through: :relationships, source: :follow
+	has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
+	has_many :followers, through: :reverse_of_relationships, source: :user
 
 	#チャット機能のための関連付け
 	has_many :from_messages, class_name: "Message",
@@ -30,6 +36,27 @@ class User < ApplicationRecord
 	#チャット機能でメッセージを送信するためのメソッド
 	def send_message(other_user, room_id, content)
 		from_messages.create!(to_id: other_user.id, room_id: room_id, content: content)
+	end
+
+
+
+
+	#フォローメソッド
+	def follow(other_user)
+		unless self == other_user
+			self.relationships.find_or_create_by(follow_id: other_user.id)
+		end
+	end
+
+	#フォロー解除メソッド
+	def unfollow(other_user)
+		relationship = self.relationships.find_by(follow_id: other_user.id)
+		relationship.destroy if relationship
+	end
+
+	#すでにフォローしていないかチェック
+	def following?(other_user)
+		self.followings.include?(other_user)
 	end
 
 

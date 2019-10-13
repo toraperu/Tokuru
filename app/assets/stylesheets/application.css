@@ -147,6 +147,12 @@ body,#wrapper{
 #notification:hover{
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
 }
+.fa-exclamation-circle{
+	position: fixed;
+	padding-right: 45px;
+	padding-top: 0;
+	color: #3366FF;
+}
 /*ページトップへ戻るボタン*/
 #back{
   position: fixed;

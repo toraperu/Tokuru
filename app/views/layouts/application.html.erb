@@ -123,9 +123,11 @@
         <span id="notification">
           <%= link_to notifications_path, :style=>"text-decoration: none;" do %>
             <%= image_tag "/images/notificate.png", :size => '70x70', class: "notificate-button" %>
+            <% if unchecked_notifications.any? %>
+              <i class="fas fa-2x fa-exclamation-circle"></i>
+            <% end %>
           <% end %>
         </span>
-
 
         <!--ページトップへ戻るボタン-->
         <span id="back">
