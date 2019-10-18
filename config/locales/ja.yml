@@ -47,9 +47,10 @@ ja:
         language: 語学
         love: 恋愛結婚
         business: ビジネス
-        webdesign: WEBデザイン
+        WEBdesign: WEBデザイン
         consulting: 悩み相談
         lisence: 資格学習
+        others: その他
     
     order:
       payment:

@@ -120,6 +120,7 @@
         <%= yield %>
         
         <!--通知ボタン-->
+        <% if user_signed_in? %>
         <span id="notification">
           <%= link_to notifications_path, :style=>"text-decoration: none;" do %>
             <%= image_tag "/images/notificate.png", :size => '70x70', class: "notificate-button" %>
@@ -128,6 +129,7 @@
             <% end %>
           <% end %>
         </span>
+        <% end %>
 
         <!--ページトップへ戻るボタン-->
         <span id="back">

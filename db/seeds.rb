@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
 #ジャンルseed
 Genre.create!(name: "design")
 Genre.create!(name: "art")
@@ -14,9 +15,15 @@ Genre.create!(name: "music")
 Genre.create!(name: "fashion")
 Genre.create!(name: "programming")
 Genre.create!(name: "language")
-Genre.create!(name: "bride")
+Genre.create!(name: "love")
 Genre.create!(name: "business")
 Genre.create!(name: "WEBdesign")
 Genre.create!(name: "consulting")
 Genre.create!(name: "lisence")
+Genre.create!(name: "others")
+
+
+#admin
+admin = Admin.new(:email => 'admin@tokuru.com', :password => 'secret')
+admin.save!
 

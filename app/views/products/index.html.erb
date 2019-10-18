@@ -13,7 +13,7 @@
 				<ul class="list-group" style="max-width: 400px;">
 				  <li class="list-group-item disabled" aria-disabled="true">ジャンル</li>
 				  <% @genres.each do |genre| %>
-				  <li class="list-group-item list-group-item-secondary genre-list-items"><%= link_to genre.name, genre_path(genre.id), class:"genre-link", style: "color: #333333" %>
+				  <li class="list-group-item list-group-item-secondary genre-list-items"><%= link_to genre.name_i18n, genre_path(genre.id), class:"genre-link", style: "color: #333333" %>
 				  </li>
 				  <% end %>
 				</ul>
