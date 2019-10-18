@@ -144,70 +144,19 @@ $(function(){
 
 
 
-
-
-
-
-
-
-//右からと左からfadeIn
-$(function() {
-  $('.fadeIn1').on('inview', function(event, isInView) {
-    console.log('fadeIn1')
-    if (isInView) {
-    //表示領域に入った時
-      $(this).addClass('fadeInLeft');
-    } else {
-    //表示領域から出た時
-    console.log('fadeOut')
-      $(this).removeClass('fadeInLeft');
-    }
-  });
+//ゆっくり要素を下に下げながら表示
+$(function(){
+　$(window).scroll(function (){
+    $('.effect-fade').each(function(){
+        var elemPos = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > elemPos - windowHeight){
+            $(this).addClass('effect-scroll');
+        }
+    });
+　});
 });
-
-$(function() {
-  $('.fadeIn2').on('inview', function(event, isInView) {
-    console.log('fadeIn2')
-    if (isInView) {
-    //表示領域に入った時
-      $(this).addClass('fadeInRight');
-    } else {
-    //表示領域から出た時
-    console.log('fadeOut')
-      $(this).removeClass('fadeInRight');
-    }
-  });
-});
-
-
-
-//上から下にゆっくり降りてくる
-$(function() {
-  $('.fadeIn3').on('inview', function(event, isInView) {
-    console.log('fadeIn3')
-    if (isInView) {
-    //表示領域に入った時
-      $(this).addClass('fadeInDown');
-    } else {
-    //表示領域から出た時
-      $(this).removeClass('fadeInDown');
-    }
-  });
-});
-
-$(function() {
-  $('.fadeIn4').on('inview', function(event, isInView) {
-    console.log('fadeIn4')
-    if (isInView) {
-    //表示領域に入った時
-      $(this).addClass('fadeIn');
-    } else {
-    //表示領域から出た時
-      $(this).removeClass('fadeIn');
-    }
-  });
-});
-
 
 
 
