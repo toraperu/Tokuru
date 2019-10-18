@@ -11,7 +11,7 @@
 	<% if user_signed_in? && current_user.id.to_s ==  params[:id] %>
 		<section class="row mypage-link">
 
-
+			<!-- profile-image -->
 			<div class="my-profile-image col-12">
 				<% if @user.avatar.attached? %>
 					<%= image_tag @user.avatar.variant(resize: "350x350"), class: "img-fluid" %>
@@ -58,6 +58,11 @@
 
 
 		</section>
+
+
+
+
+		<!-- tab items -->
 		<section class="tab-wrapper">
 			<!-- タブ・メニュー -->
 			<ul class="nav nav-tabs">
@@ -71,12 +76,13 @@
 
 				<!-- フォロー中のユーザー -->
 				<div class="tab-pane" id="nav-content-follow">
+					<h2 class="tabUnderLine">フォロー中のユーザー</h2>
 					<%= render 'relationships/index', relationships: @relationships %>
 				</div>
 
 				<!--いいねした商品-->
 				<div class="tab-pane" id="nav-content-favorite">
-					<h2>いいねした商品一覧</h2>
+					<h2 class="tabUnderLine">いいねした商品一覧</h2>
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 						<!-- スライドさせる画像の設定 -->
 						<div class="carousel-inner">
@@ -112,6 +118,7 @@
 				</div>
 				<!--自分の商品-->
 				<div class="tab-pane" id="nav-content-myproduct">
+					<h2 class="tabUnderLine">自分の商品</h2>
 					<div class="row d-flex flex-wrap">
 						<% @products.each do |product| %>
 						<div class="col-md-3 col-6">
@@ -137,6 +144,7 @@
 				</div>
 				<!--購入履歴-->
 				<div class="tab-pane" id="nav-content-order-history">
+					<h2 class="tabUnderLine">購入した商品</h2>
 					<%= render 'orders/index', orders: @orders %>
 				</div>
 			</div>
@@ -149,6 +157,7 @@
 
 	<!-- ログインユーザーがマイページユーザーではないとき -->
 	<% else %>
+		<!-- profile-image -->
 		<section class="my-profile-image col-12">
 			<% if @user.avatar.attached? %>
 				<%= image_tag @user.avatar.variant(resize: "350x350"), class: "img-fluid" %>
@@ -173,7 +182,7 @@
 			<%= render 'relationships/follow_button', user: @user %>
 		</section><br>
 
-
+		<!-- tab-items -->
 		<section class="tab-wrapper">
 			<!-- タブ・メニュー -->
 			<ul class="nav nav-tabs">
@@ -187,13 +196,14 @@
 
 				<!-- フォロー中のユーザー -->
 				<div class="tab-pane" id="nav-content-follow">
+					<h2 class="tabUnderLine">フォロー中のユーザー</h2>
 					<%= render 'relationships/index', relationships: @relationships %>
 				</div>
 
 
 				<!--いいねした商品-->
 				<div class="tab-pane" id="nav-content-favorite">
-					<h2>いいねした商品一覧</h2>
+					<h2 class="tabUnderLine">いいねした商品一覧</h2>
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 						<!-- スライドさせる画像の設定 -->
 						<div class="carousel-inner">
@@ -231,6 +241,7 @@
 				
 				<!--自分の商品-->
 				<div class="tab-pane" id="nav-content-myproduct">
+					<h2 class="tabUnderLine">自分の商品</h2>
 					<div class="row d-flex flex-wrap">
 						<% @products.each do |product| %>
 						<div class="col-md-3 col-6">
@@ -254,6 +265,7 @@
 				
 				<!--購入履歴-->
 				<div class="tab-pane" id="nav-content-order-history">
+					<h2 class="tabUnderLine">購入した商品</h2>
 					<%= render 'orders/index', orders: @orders %>
 				</div>
 			</div>

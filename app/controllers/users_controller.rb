@@ -24,8 +24,10 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		if @user.update(user_params)
 			sign_in(@user, bypass: true)  #パスワードが変更された時、強制ログアウト=>ログインする
+			flash[:primary] = "ユーザー情報が更新されました"
 			redirect_to user_path(@user.id)
 		else
+			flash[:success] = "パスワードが入力されていません"
 			render :edit
 		end
 	end
