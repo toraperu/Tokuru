@@ -15,7 +15,7 @@
 			</div><br>
 			<div class="product-new-field">
 				<%= f.label :"ジャンル" %><br>
-				<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
+				<%= f.select :genre_id, @genres.map{|t| [t.name_i18n, t.id]} %>
 			</div><br>
 			<div class="product-new-field new-under">
 				<%= f.label :"価格" %><br>
