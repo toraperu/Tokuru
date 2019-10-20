@@ -45,13 +45,20 @@
 					<h3>商品画面では？</h3>
 					<article>
 						商品一覧では投稿された商品をざっと見たり、ジャンル検索できます。気になる商品をクリックすると詳細画面に行くことができます。そこでいいねやコメント(レビュー)や注文の相談部屋を作成できます。
+						<p><%= image_tag "/images/product_index.png", class: "img-fluid"%></p>
+						<p><i class="fas fa-angle-double-down"></i></p>
+						<p><%= image_tag "/images/product_show.png", class: "img-fluid"%></p>
 					</article>
 				</div>
 				<div id="in-product-new" class="effect-fade">
 					<h3>商品投稿はどうするの？</h3>
 					<article>
 						商品投稿をするには画面上部の商品投稿ボタンを押して、必要な情報をすべて入力すれば投稿できます。商品の写真は必須ではありません。また、ユーザーの名前を作成しておかないと投稿はできません。<br>
-						<a href="#in-mypage">ユーザーの名前の入力に関してはこちら</a>
+						<p><%= image_tag "/images/cant_post_product.png", class: "img-fluid" %></p>
+						<p><i class="fas fa-angle-double-down"></i></p>
+						<%= image_tag "/images/product_new.png", class: "img-fluid" %>
+						<%= image_tag "/images/product_new2.png", class: "img-fluid" %>
+						<a href="#input-user-name">ユーザーの名前の入力に関してはこちら</a>
 						<i class="fas fa-location-arrow"></i>
 					</article>
 				</div>
@@ -61,17 +68,21 @@
 						<div>
 							マイページではログインしている本人だけが振込先情報やユーザー情報編集や相談部屋の利用をできます。本人とは違う人のマイページも見ることができます。その際はそのユーザーがフォローしている人やいいねしている商品や投稿した商品や購入した商品までを見ることができます。またプロフィール情報で気になった人をフォローすることができます。商品投稿する際にはマイページのユーザー編集からユーザー名を作成しておく必要があります。
 						</div><br>
-						<p><%= image_tag "/images/user_show.png", class: "img-fluid"%></p><br>
+						<p id="input-user-name">#ユーザー情報編集からユーザー名を保存できます</p>
+						<p><%= image_tag "/images/my_user_show.png", class: "img-fluid"%></p>
+						<p><i class="fas fa-arrows-alt-v"></i></i></p>
+						<p><%= image_tag "/images/non_user_show.png", class: "img-fluid"%></p>
+						<p><i class="fas fa-arrows-alt-v"></i></p>
+						<p><%= image_tag "/images/other_user_show.png", class: "img-fluid"%></p>
 					</article>
 				</div>
 				<div id="about-login" class="effect-fade">
 					<h3>ログインって？</h3>
 					<article>
-						<div>
 							ログインとは先に登録しておいた情報で自分だけの機能を使うことができるようになることです。
 							ログインするには新規登録する必要があります。新規登録とログインはメールアドレスとパスワードだけ用意してもらえればできます。
-						</div><br>
-						<p><%= image_tag "/images/session.png", class: "img-fluid" %></p><br>
+						<p><%= image_tag "/images/session.png", class: "img-fluid" %></p>
+						<p><i class="fas fa-angle-double-down"></i></p>
 						<p><%= image_tag "/images/registration.png", class: "img-fluid" %></p>
 					</article>
 				</div>
