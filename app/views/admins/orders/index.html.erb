@@ -10,7 +10,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% orders.each do |order| %>
+			<% @orders.each do |order| %>
 			<tr id="admin-order_<%= order.id %>">
 				<td><%= order.user.name %></td>
 				<td><%= order.product.name %></td>
@@ -22,5 +22,5 @@
 			<% end %>
 		</tbody>
 	</table>
-	<%= paginate orders %>
+	<%= paginate @orders %>
 </div>

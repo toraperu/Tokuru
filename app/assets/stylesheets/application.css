@@ -67,6 +67,8 @@
 	border-radius: 5px;
 }
 
+
+
 /*placeholderのcssいじる時*/
 input{
 	position: relative;
@@ -82,9 +84,11 @@ input:focus::-webkit-input-placeholder{
 
 /*Footerの見た目*/
 footer{
-	background-color: #DCDCDC;
 	margin-top: auto;
-	padding: 40px;
+	width: 100%;
+	background-color: #DCDCDC;
+	padding: 30px;
+
 }
 .footer-container{
 	opacity: 0.8;
@@ -93,18 +97,36 @@ footer{
 	text-align: center;
 }
 
-main{
-	width: 100%;
+/*コンテンツ*/
+#wrapper{
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
 }
+
+
 /*header*/
 header{
 	background-color: #DEB887;
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 999;
-	transition: .3s;
+	z-index: 50;
+	margin-bottom: 248px;
 }
+
+/*admin-header*/
+.admin-header-lists{
+	text-align: center;
+}
+.admin-header-list{
+	display: inline-block;
+	margin: 1em 5em;
+	font-size: 25px;
+}
+
+/*ロゴメニュー*/
 .navbar{
 	text-align: center;
 	list-style: none;
@@ -124,11 +146,11 @@ header{
 .logo-picture{
 	border-radius: 20px;
 }
-body,#wrapper{
-	display: flex;
-	flex-direction: column;
-	margin-top: 124px;
-}
+
+
+
+
+
 /*通知ボタン*/
 .notificate-button{
 	border-radius: 50px;
@@ -182,9 +204,6 @@ body,#wrapper{
 }
 
 
-.pusher {
-    padding-top:80px;
-}
 
 
 
@@ -197,9 +216,14 @@ body,#wrapper{
 	font-size: 20px;
 	font-family: 'Osaka-Mono';
 }
-
-/*admin hambarger*/
-
+/*adminTOP*/
+.admin-home-container{
+	background-color: rgba(200,200,200,.6);
+	text-align: center;
+}
+.admin-top-item{
+	font-size: 30px;
+}
 
 
 /*admin user-show*/

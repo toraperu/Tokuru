@@ -1,5 +1,5 @@
-<div class="container admin-user-container">
-	<h2>商品一覧</h2>
+<div class="admin-user-container">
+	<h1>商品一覧</h1>
 	<table class="table">
 		<thead>
 			<tr>
@@ -11,7 +11,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% products.each do |product| %>
+			<% @products.each do |product| %>
 			<tr id="admin-product_<%= product.id %>">
 				<td><% if product.avatar.attached? %>
 						<%= image_tag product.avatar.variant(resize: "100x100"), class: "img-fluid" %>
@@ -29,5 +29,5 @@
 			<% end %>
 		</tbody>
 	</table>
-	<%= paginate products %>
+	<%= paginate @products %>
 </div>

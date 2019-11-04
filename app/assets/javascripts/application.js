@@ -37,8 +37,6 @@ $(function() {
 
 
 
-
-
 //ページトップに戻るボタン
 $(function() {
 	$('#back a').on('click',function(){

@@ -9,7 +9,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% users.each do |user| %>
+			<% @users.each do |user| %>
 			<tr id="admin-user_<%= user.id %>">
 				<td><% if user.avatar.attached? %>
 						<%= image_tag user.avatar.variant(resize: "100x100"), class: "img-fluid" %>
@@ -25,5 +25,5 @@
 			<% end %>
 		</tbody>
 	</table>
-	<%= paginate users %>
+	<%= paginate @users %>
 </div>
