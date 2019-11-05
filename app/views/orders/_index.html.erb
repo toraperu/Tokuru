@@ -1,7 +1,6 @@
 <div class="order-history-container container">
 	<div class="row">
 		<table class="table table-striped col-12">
-			<h1>購入履歴</h1>
 			<thead>
 				<tr class="row">
 					<th class="col-3"></th>
@@ -29,6 +28,6 @@
 			</tbody>
 			<% end %>
 		</table>
-		<%= paginate orders %>
+		<%= paginate orders, param_name: 'order_page' %>
 	</div>
 </div>

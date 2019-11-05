@@ -7,12 +7,13 @@
 
 //topページ
 //ジャンボトロンを綺麗にする
-.jumbotron{
-	height: 600px;
+.index-jumbotron{
+	height: 776px;
+	width: 100%;
 	background-image: url("/images/tokuru-index-junb.jpg");
 	background-size: cover;
 }
-.jumbotron:hover{
+.index-jumbotron:hover{
 	box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
   	opacity: 0.8;
@@ -25,15 +26,19 @@
 //ジャンボトロンの文字
 .jumb-title{
 	color: white;
+	text-align: center;
+	margin: 100px auto;
 }
 .jumb-title:first-letter{
 	font-size: 2em;
  	color: #990033;
  	font-family: 'YuMincho';
 }
-.about-link:hover{
-	text-decoration: none;
+.about-link{
+	text-align: center;
 }
+
+
 //ジャンルボタンの調整
 .genre-link:hover{
 	color: #111111;
@@ -127,55 +132,61 @@
 //aboutページ
 //aboutページのジャンボトロン
 .about-junbotron{
-	background-image: url("/images/mad-doll.jpg");
+	background-image: url("/images/baby-lemon.jpeg");
 	background-size: cover;
-	height: 600px;
+	height: 700px;
+	padding: 200px auto;
 }
-//aboutページのbg
-.about1-bg{
-	background-image: url("/images/guitar.jpg");
-	background-size: cover;
-	height: 400px;
-}
-.about2-bg{
-	background-image: url("/images/macbook3.jpg");
-	background-size: cover;
-	height: 500px;
-}
-
-
-
-
-
-
-
-
-
 //aboutページのジャンボもじ
 .about-container{
-	position: relative;
-	width: 98%;
 	margin: 0 auto;
+	text-align: center;
 }
 .junb-about-title{
-	position: absolute;
-	left: 30px;
-	top: 50px;
 	color: white;
 	text-shadow: 1px 2px 3px #CCCCCC;
 }
-//aboutページのタイトルにアンダーライン
-.about-item-title1{
-	border-style: solid dotted;
-	border-width: 10px;
-	border-color: #FF6666;
+// navigation
+.about-nav{
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #DEB887;
+    background: #fff8e8;
+    border-top: solid 10px #DEB887;
 }
-.about-item-title2{
-	border-style: solid dotted;
-	border-width: 10px;
-	border-color: #0066FF;
+.about-nav-item{
+	font-size: 20px;
+	line-height: 1.5;
+	padding: 0.5em 0;
+	list-style-type: none!important;
+}
+.about-nav-item:before{
+	font-family: "Font Awesome 5 Free";
+	content: "\f0a4";
+	color: #DEB887;
+}
+// background-color
+.about-wrapper{
+	background-color: #fff8e8;
+	padding-bottom: 10px;
+}
+.about-text-wrapper{
+	width: 80%;
+	margin: 0 auto;
 }
 
+#explain-background, #what-you-can-do, #in-product-index, #in-product-new, #in-mypage, #about-login{
+	border: solid 10px #DEB887;
+	margin: 2em;
+	font-size: 25px;
+}
+.about-using-title{
+	font: bold;
+	border-bottom: solid 5px #DEB887;
+}
+.fa-location-arrow{
+	color: #DEB887;
+}
 
 
 
@@ -345,6 +356,10 @@
     background: white;
     border-top: solid 5px #5d627b;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+.seller-profile:hover{
+	-webkit-transform: translateY(-2%);
+	transform: translateY(-3%);
 }
 .product-user-info{
 	position: relative;

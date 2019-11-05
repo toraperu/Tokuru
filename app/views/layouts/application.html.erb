@@ -11,14 +11,14 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!--jscroll-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
-    <!--inview.js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
     <!--popper.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <!--Bootstrap Js-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!--animate.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- lightbox.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+    <!-- lightbox.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--fontawesome-->
@@ -31,28 +31,25 @@
 
   </head>
   <body>
-    <header>
-      <nav>
-        <ul class="navbar">
-        <!--管理者サインイン時のヘッダー-->
-          <% if admin_signed_in? %>
-            <li class="header-list">
-              <%= link_to admins_admins_top_path do %>
-                <p><%= image_tag "/images/shuttle.png", class: "img-fluid" %></p>
-              <% end %>
-              <p>管理者トップ</p>
+    <!--管理者サインイン時のヘッダー-->
+    <% if admin_signed_in? %>
+      <div>
+        <nav>
+          <ul class="admin-header-lists">
+            <li class="admin-header-list">
+              <%= link_to 'TOPページ', admins_admins_top_path, style: 'text-decoration: none' %>
             </li>
-            <li class="header-list" id="header-logo">
-              <a href="#"><%= image_tag "/images/tokuru_logo.png", class: "img-fluid" %></a>
+            <li class="admin-header-list">
+              <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, style: 'text-decoration: none' %>
             </li>
-            <li class="header-list">
-              <%= link_to destroy_admin_session_path, method: :delete do %>
-                <p><%= image_tag "/images/tablet2.png", class: "img-fluid" %></p>
-              <% end %>
-              <p>ログアウト</p>
-            </li>
-          <!--ユーザーサインイン時のヘッダー-->
-          <% elsif user_signed_in? %>
+          </ul>
+        </nav>
+      </div>
+    <!--ユーザーサインイン時のヘッダー-->
+    <% elsif user_signed_in? %>
+      <header>
+        <nav>
+          <ul class="navbar">
             <li class="header-list">
               <%= link_to root_path do %>
                 <p><%= image_tag "/images/anker.png", class: "img-fluid" %></p>
@@ -82,8 +79,23 @@
               <% end %>
               <p>ログアウト</p>
             </li>
-          <!--非ログイン時のヘッダー-->
-          <% else %>
+          </ul>
+          <!-- 検索窓 -->
+          <div class="seach-window">
+            <%= form_tag search_path, enforce_utf8: false, method:'get' do %>
+              <%= text_field_tag :search, "", class: "search_form", placeholder: "商品名で検索" %>
+              <span><%= button_tag sanitize('<i class="fa fa-search"></i>'), type: "submit", class: "btn glyphicon glyphicon-search" %></span>
+            <% end %>
+          </div>
+        </nav>
+      </header>
+
+
+    <!--非ログイン時のヘッダー-->
+    <% else %>
+      <header>
+        <nav>
+          <ul class="navbar">
             <li class="header-list">
               <%= link_to root_path do %>
                 <p><%= image_tag "/images/anker.png", class: "img-fluid" %></p>
@@ -102,81 +114,84 @@
               <% end %>
               <p>ログイン</p>
             </li>
-          <% end %>
           </ul>
-        <div class="seach-window">
-          <%= form_tag search_path, enforce_utf8: false, method:'get' do %>
-            <%= text_field_tag :search, "", class: "search_form", placeholder: "商品名で検索" %>
-            <span><%= button_tag sanitize('<i class="fa fa-search"></i>'), type: "submit", class: "btn glyphicon glyphicon-search" %></span>
-          <% end %>
-        </div>
-      </nav>
-    </header>
-    <div class="header-cordinate">
-    </div>
-    <div id="wrapper">
-      <main>
-        
-        <%= yield %>
-        
-        <!--通知ボタン-->
+          <!-- 検索窓 -->
+          <div class="seach-window">
+            <%= form_tag search_path, enforce_utf8: false, method:'get' do %>
+              <%= text_field_tag :search, "", class: "search_form", placeholder: "商品名で検索" %><br><br>
+              <p class="search-cursor"><%= button_tag sanitize('<i class="fa fa-search"></i>'), type: "submit", class: "btn glyphicon glyphicon-search" %></p>
+            <% end %>
+          </div>
+
+        </nav>
+      </header>
+    <% end %>
+
+    <main>
+      
+      <%= yield %>
+      
+      <!--通知ボタン-->
+      <% if user_signed_in? %>
         <span id="notification">
           <%= link_to notifications_path, :style=>"text-decoration: none;" do %>
             <%= image_tag "/images/notificate.png", :size => '70x70', class: "notificate-button" %>
+            <% if unchecked_notifications.any? %>
+              <i class="fas fa-2x fa-exclamation-circle"></i>
+            <% end %>
           <% end %>
         </span>
+      <% end %>
 
+      <!--ページトップへ戻るボタン-->
+      <span id="back">
+        <a href="#">
+          <%= image_tag "/images/arrow.png",:size => '50x50', class: "arrow-img" %>
+        </a>
+      </span>
 
-        <!--ページトップへ戻るボタン-->
-        <span id="back">
-          <a href="#">
-            <%= image_tag "/images/arrow.png",:size => '50x50', class: "arrow-img" %>
-          </a>
-        </span>
-
-      </main>
-      <footer>
-        <div class="row footer-items">
-          <div class="col-3">
-            <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
-              <p><span><i class="far fa-calendar"></i></span> 会社概要</p>
-            <% end %>
-            <%= link_to homes_question_path, :style=>"text-decoration: none;" do %>
-              <p><span><i class="fas fa-tools"></i></span> Q&A</p>
-            <% end %>
-            <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
-              <p><span><i class="fas fa-exclamation-triangle"></i></span> お客様の安全のために</p>
-            <% end %>
-          </div>
-
-          <div class="col-3">
-            <%= link_to homes_chat_path, :style=>"text-decoration: none;" do %>
-              <p><span><i class="far fa-clone"></i></span>チャットについて</p>
-            <% end %>
-            <%= link_to homes_pay_path, :style=>"text-decoration: none;" do %>
-              <p><span><i class="far fa-clone"></i></span>お支払いについて</p>
-            <% end %>
-          </div>
-
-          <div class="col-3">
-            <%= link_to homes_sell_path, :style=>"text-decoration: none;" do %>
-              <p><span><i class="far fa-clone"></i></span>出品について</p>
-            <% end %>
-            <%= link_to homes_buy_path, :style=>"text-decoration: none;" do %>
-              <p><span><i class="far fa-clone"></i></span>購入について</p>
-            <% end %>
-          </div>
-
-          <div class="col-3">
-            <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
-              <p><span><i class="fas fa-cog"></i></span> プライバシーポリシー</p>
-            <% end %>
-            <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
-              <p><span><i class="fas fa-cog"></i></span> tokuru利用規約</p>
-            <% end %>
-          </div>
+    </main>
+    <footer>
+      <div class="row footer-items">
+        <div class="col-3">
+          <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
+            <p><span><i class="far fa-calendar"></i></span> 会社概要</p>
+          <% end %>
+          <%= link_to homes_question_path, :style=>"text-decoration: none;" do %>
+            <p><span><i class="fas fa-tools"></i></span> Q&A</p>
+          <% end %>
+          <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
+            <p><span><i class="fas fa-exclamation-triangle"></i></span> お客様の安全のために</p>
+          <% end %>
         </div>
-      </footer>
-    </div>
+
+        <div class="col-3">
+          <%= link_to homes_chat_path, :style=>"text-decoration: none;" do %>
+            <p><span><i class="far fa-clone"></i></span>チャットについて</p>
+          <% end %>
+          <%= link_to homes_pay_path, :style=>"text-decoration: none;" do %>
+            <p><span><i class="far fa-clone"></i></span>お支払いについて</p>
+          <% end %>
+        </div>
+
+        <div class="col-3">
+          <%= link_to homes_sell_path, :style=>"text-decoration: none;" do %>
+            <p><span><i class="far fa-clone"></i></span>出品について</p>
+          <% end %>
+          <%= link_to homes_buy_path, :style=>"text-decoration: none;" do %>
+            <p><span><i class="far fa-clone"></i></span>購入について</p>
+          <% end %>
+        </div>
+
+        <div class="col-3">
+          <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
+            <p><span><i class="fas fa-cog"></i></span> プライバシーポリシー</p>
+          <% end %>
+          <%= link_to homes_nothing_path, :style=>"text-decoration: none;" do %>
+            <p><span><i class="fas fa-cog"></i></span> tokuru利用規約</p>
+          <% end %>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

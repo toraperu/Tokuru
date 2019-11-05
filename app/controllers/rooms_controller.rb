@@ -5,6 +5,8 @@ class RoomsController < ApplicationController
   # before_action :correct_user, only: [:show]
 
   def index
+    @buyer_rooms = current_user.buyer_rooms.order(id: "DESC").page(params[:buyer_room_page]).per(6)
+    @seller_rooms = current_user.seller_rooms.order(id: "DESC").page(params[:seller_room_page]).per(6)
   end
 
   def show
@@ -25,6 +27,18 @@ class RoomsController < ApplicationController
   		render :index
   	end
   end
+
+  def destroy
+    @room = Room.find(params[:id])
+    @room_id = @room.id
+    if @room.destroy
+      flash[:danger] = "ルームを削除しました"
+      redirect_to rooms_path
+    else
+      render :index
+    end
+  end
+
 
   def permit
     @room = Room.find(params[:id])

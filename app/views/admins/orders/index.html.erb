@@ -1,0 +1,26 @@
+<div class="container admin-user-container">
+	<h2>注文一覧</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ユーザー名</th>
+				<th>商品名</th>
+				<th>出品者</th>
+				 <th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @orders.each do |order| %>
+			<tr id="admin-order_<%= order.id %>">
+				<td><%= order.user.name %></td>
+				<td><%= order.product.name %></td>
+				<td><%= order.product.user.name %></td>
+				<td><%= link_to "詳細", admins_order_path(order), class: "btn btn-info btn-xs" %>
+					<%= link_to "削除", admins_order_path(order), class: "btn btn-danger btn-xs", method: :delete, remote: true %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= paginate @orders %>
+</div>

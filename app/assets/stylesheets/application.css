@@ -67,6 +67,8 @@
 	border-radius: 5px;
 }
 
+
+
 /*placeholderのcssいじる時*/
 input{
 	position: relative;
@@ -82,9 +84,11 @@ input:focus::-webkit-input-placeholder{
 
 /*Footerの見た目*/
 footer{
-	height: 150px;
-	background-color: #DCDCDC;
 	margin-top: auto;
+	width: 100%;
+	background-color: #DCDCDC;
+	padding: 30px;
+
 }
 .footer-container{
 	opacity: 0.8;
@@ -93,21 +97,37 @@ footer{
 	text-align: center;
 }
 
+/*コンテンツ*/
 main{
-	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
 }
+
+
 /*header*/
 header{
 	background-color: #DEB887;
-	position: fixed;
-	top: 0;
 	width: 100%;
-	z-index: 999;
-	transition: .3s;
+	padding: 20px;
 }
-.header-cordinate{
-	height: 255px;
+
+/*admin-header*/
+.admin-header-lists{
+	text-align: center;
 }
+.admin-header-list{
+	display: inline-block;
+	margin: 1em auto;
+	border: thin solid #EEEEEE ;
+	font-size: 25px;
+}
+.admin-header-list:hover{
+	box-shadow: 0 .3px .3px 0 rgba(0, 0, 0, 0.25);
+}
+
+/*ロゴメニュー*/
 .navbar{
 	text-align: center;
 	list-style: none;
@@ -117,7 +137,7 @@ header{
 	text-align: center;
 	width: 120px;
 	height: 120px;
-	margin: 10px;
+	margin: 20px;
 	color: white;
 	border:solid 2px transparent;
 }
@@ -127,11 +147,11 @@ header{
 .logo-picture{
 	border-radius: 20px;
 }
-body,#wrapper{
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
+
+
+
+
+
 /*通知ボタン*/
 .notificate-button{
 	border-radius: 50px;
@@ -146,6 +166,12 @@ body,#wrapper{
 }
 #notification:hover{
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+}
+.fa-exclamation-circle{
+	position: fixed;
+	padding-right: 45px;
+	padding-top: 0;
+	color: #3366FF;
 }
 /*ページトップへ戻るボタン*/
 #back{
@@ -174,23 +200,37 @@ body,#wrapper{
 	outline: 0;
 	border-radius: 35px;
 }
+.search-cursor{
+	text-align: center;
+}
 .glyphicon-search{
 	background-color: #FFCC33;
 }
 
+
+
+
+
+
 /*admin session*/
 .admin-session-container{
 	text-align: center;
-	background-image: url('/images/bulldog.jpeg');
-	background-size: cover;
-	opacity: 0.8;
-	height: 700px;
 }
 /*太字*/
 .bold{
 	font-size: 20px;
 	font-family: 'Osaka-Mono';
 }
+/*adminTOP*/
+.admin-home-container{
+	background-color: rgba(200,200,200,.6);
+	text-align: center;
+}
+.admin-top-item{
+	font-size: 30px;
+}
+
+
 /*admin user-show*/
 .admin-user-show-container{
 	text-align: center;
@@ -221,6 +261,19 @@ body,#wrapper{
 .post-btn:hover{
 	box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
+}
+
+
+/*animate element*/
+.effect-fade{
+	opacity: 0;
+	transform: translate(0, 45px);
+	transition: all 1000ms;
+}
+
+.effect-fade.effect-scroll{
+	opacity: 1;
+	transform: translate(0, 0);
 }
 
 

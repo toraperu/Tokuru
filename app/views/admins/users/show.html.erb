@@ -7,13 +7,15 @@
 					<%= image_tag @user.avatar.variant(resize: "300x300"), class: "img-fluid img-circle" %>
 				<% else %>
 					<%= image_tag '/images/no_image.png', size:'300x300', class: "img-fluid img-circle" %>
-				<% end %></div><br>
+				<% end %>
+			</div><br>
 			<div><span class="bold">メールアドレス :</span> <%= @user.email %></div><br>
 			<div><span class="bold">本名 :</span> <%= @user.real_name %></div><br>
 			<div><span class="bold">プロフィール情報 :</span> <%= @user.profile %></div><br>
-			<div><span class="bold">退会情報 :</span> <%= @user.resignation %></div><br>
-			<div><%= link_to "編集", edit_admins_user_path(@user), class: "btn btn-warning btn-lg" %>
-				<%= link_to "管理者トップへ", admins_admins_top_path, class: "btn btn-info btn-lg" %>
+			<div><span class="bold">退会情報 :</span> <%= @user.resignation %></div><hr>
+			<div><%= link_to "編集", edit_admins_user_path(@user), class: "btn btn-warning btn-lg" %><hr>
+				<%= link_to "ユーザー一覧", admins_users_path, class: "btn btn-success btn-lg" %><hr>
+				<%= link_to "管理者トップへ", admins_admins_top_path, class: "btn btn-info btn-lg" %><hr>
 			</div>
 		</div>
 	</div>

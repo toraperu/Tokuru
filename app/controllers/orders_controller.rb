@@ -9,10 +9,10 @@ class OrdersController < ApplicationController
   	@product = Product.find(params[:product_id])
   	@order = current_user.orders.build(order_params)
   	@order.product_id = @product.id
-
   	@order.other_contact = params[:order][:other_contact] if @order.contact == 4
   	@order.my_skill = params[:order][:my_skill] if @order.payment == 1
   	if @order.save
+      @order.product.increment(:sale_result, 1)
       @order.create_order_notification!(current_user, @order.id)
   		redirect_to order_confirm_path(@order.id)
   	else

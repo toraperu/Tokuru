@@ -1,57 +1,61 @@
 <div class="room-index-container">
+	<%= render 'layouts/flash_messages' %>
 	<h1 class="room-index-title">Room一覧</h1>
+	
 	<div class="row">
-		<h3 class="col-md-6 col-12">あなたが購入者の部屋</h3>
-		<h3 class="col-md-6 col-12">あなたが出品者の部屋</h3>
-	</div>
-	<div class="row">
+		
 		<!--自分が購入者の時-->
-		<table class="col-md-6 col-12 table table-hover room-table">
-			<thead>
-				<tr class="row">
-					<th class="col-5">商品名</th>
-					<th class="col-5">出品者</th>
-					<th class="col-2">作成日時</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% current_user.buyer_rooms.each do |room| %>
-					<tr class="row" data-href="<%= room_path(room) %>">
-						<td class="col-5">
+		<section class="col-md-6 col-12 room-section">
+			<h3>あなたが購入者の部屋</h3>
+			<div class="row">
+				<strong class="col-5">商品名</strong>
+				<strong class="col-5">出品者</strong>
+				<strong class="col-2">作成日時</strong>
+			</div>
+			<hr>
+			<% @buyer_rooms.each do |room| %>
+				<%= link_to room_path(room) do %>
+					<div class="row">
+						<p class="col-5">
 							<%= room.product.name %>
-						</td>
-						<td class="col-5">
+						</p>
+						<p class="col-5">
 							<%= room.seller.name %>
-						</td>
-						<td class="col-2"><%= time_ago_in_words(room.created_at).upcase%>前</td>
-					</tr>
+						</p>
+						<p class="col-2"><%= time_ago_in_words(room.created_at).upcase%>前</p>
+					</div>
 				<% end %>
-			</tbody>
-		</table>
+				<hr>
+			<% end %>
+			<%= paginate @buyer_rooms, param_name: 'buyer_room_page' %>
+		</section>
+
 
 		<!--自分が出品者の時-->
-		<table class="col-md-6 col-12 table table-hover room-table">
-			<thead>
-				<tr class="row">
-					<th class="col-5">商品名</th>
-					<th class="col-5">購入者</th>
-					<th class="col-2">作成日時</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% current_user.seller_rooms.each do |room| %>
-					<tr class="row" data-href="<%= room_path(room) %>">
-						<td class="col-5">
+		<section class="col-md-6 col-12 room-section">
+			<h3>あなたが出品者の部屋</h3>
+			<div class="row">
+				<strong class="col-5">商品名</strong>
+				<strong class="col-5">購入者</strong>
+				<strong class="col-2">作成日時</strong>
+			</div>
+			<hr>
+			<% @seller_rooms.each do |room| %>
+				<%= link_to room_path(room) do %>
+					<div class="row">
+						<p class="col-5">
 							<%= room.product.name %>
-						</td>
-						<td class="col-5">
+						</p>
+						<p class="col-5">
 							<%= room.buyer.name %>
-						</td>
-						<td class="col-2"><%= time_ago_in_words(room.created_at).upcase%>前</td>
-					</tr>
+						</p>
+						<p class="col-2"><%= time_ago_in_words(room.created_at).upcase%>前</p>
+					</div>
 				<% end %>
-			</tbody>
-		</table>
+				<hr>
+			<% end %>
+			<%= paginate @seller_rooms, param_name: 'seller_room_page' %>
+		</section>
 	</div>
 </div>
 

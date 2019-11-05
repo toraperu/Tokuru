@@ -1,17 +1,19 @@
 class UsersController < ApplicationController
 	#他ユーザーの情報にアクセスできないようにする
-	before_action :correct_user, only: [:show, :edit, :update, :resign]
+	before_action :correct_user, only: [:edit, :update, :resign]
 
 	def show
 		@user = User.find(params[:id])
+		@genres = Genre.all
+    	@products = Product.at_sale.order(id: "DESC").page(params[:product_page]).per(8)
 		#カルーセルでactiveにする一件
 		@first_favorite = @user.favorites.first
 		#カルーセルで表示する全件
 		@favorites = @user.favorites.all
 		@count = 1
-		@products = @user.products.page(params[:page]).per(8)
 		#renderで渡すインスタンス変数
-		@orders = @user.orders.order(id: "DESC").page(params[:page]).per(6)
+		@relationships = @user.relationships.order(id: "DESC").page(params[:follow_page]).per(6)
+		@orders = @user.orders.order(id: "DESC").page(params[:order_page]).per(6)
 	end
 
 	def edit
@@ -22,8 +24,10 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		if @user.update(user_params)
 			sign_in(@user, bypass: true)  #パスワードが変更された時、強制ログアウト=>ログインする
+			flash[:primary] = "ユーザー情報が更新されました"
 			redirect_to user_path(@user.id)
 		else
+			flash[:success] = "パスワードが入力されていません"
 			render :edit
 		end
 	end
@@ -49,8 +53,6 @@ class UsersController < ApplicationController
 
 	def correct_user
 		@user = User.find(params[:id])
-		@genres = Genre.all
-    	@products = Product.at_sale.order(id: "DESC").page(params[:page]).per(6)
 		unless @user == current_user
 			flash.now[:danger] = 'あなたにはアクセスする権限がありません'
 			render 'products/index'

@@ -22,7 +22,7 @@
 			<br>
 			<div class="product-edit-genre">
 				<%= f.label :ジャンル %><br>
-				<%= f.select :genre_id, @genres.map{|t| [t.name, t.id]} %>
+				<%= f.select :genre_id, @genres.map{|t| [t.name_i18n, t.id]} %>
 			</div><br>
 			<br>
 			<div class="product-edit-body">
@@ -32,11 +32,6 @@
 			<div class="product-edit-finish">
 				<%= f.label :販売状況 %><br>
 				<%= f.select :finish, [["販売中", false], ["取扱停止", true]] %>
-			</div><br>
-			<br>
-			<div class="product-edit-sale">
-				<%= f.label :"販売実績(件数)" %><br>
-				<%= f.select(:sale_result, 0..300) %>
 			</div><br>
 			<br>
 			<div class="product-edit-caution">

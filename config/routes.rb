@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 		resources :banks, only:[:new, :create, :show, :edit, :update, :destroy]
 	end
 	#ルーム
-	resources :rooms, only:[:index, :show]
+	resources :rooms, only:[:index, :show, :destroy]
 	#permit/roomのルーティング
 	get 'rooms/:id/permit' => 'rooms#permit', as: 'room_permit'
 	#permitted/roomのルーティング
@@ -61,8 +61,10 @@ Rails.application.routes.draw do
 	get 'genres/:id' => 'genres#show', as: 'genre'
 	#jscrollの発火確認
 	get 'products/test' => 'products#test'
-	#index/notificationのルーティング
-	resources :notifications, only: :index
+	#notificationのルーティング
+	resources :notifications, only: [:index]
+	#followのルーティング
+	resources :relationships, only: [:create, :destroy]
 
 
 	#footerのリンク

@@ -36,6 +36,10 @@
 	background-color: #000066;
 	color: white;
 }
+.user-info{
+	width: 500px;
+	margin: 0 auto;
+}
 
 //resign
 .resign-container{
@@ -84,15 +88,15 @@
     text-decoration: none;
 }
 
-
-
-
-
-
 //tab大きさ
 .tab-wrapper{
 	width: 70%;
 	margin: 0 auto;
+}
+.tabUnderLine{
+	padding: 0.5em;
+	margin: 1em 0;
+	border-bottom: solid 5px #DEB887;
 }
 //いいねした商品のカルーセル矢印
 .carousel-control-prev-icon{
