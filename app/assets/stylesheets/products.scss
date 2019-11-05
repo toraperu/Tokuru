@@ -7,12 +7,13 @@
 
 //topページ
 //ジャンボトロンを綺麗にする
-.jumbotron{
-	height: 600px;
+.index-jumbotron{
+	height: 776px;
+	width: 100%;
 	background-image: url("/images/tokuru-index-junb.jpg");
 	background-size: cover;
 }
-.jumbotron:hover{
+.index-jumbotron:hover{
 	box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.25);
   	transform: translateY(-0.1875em);
   	opacity: 0.8;
@@ -25,15 +26,19 @@
 //ジャンボトロンの文字
 .jumb-title{
 	color: white;
+	text-align: center;
+	margin: 100px auto;
 }
 .jumb-title:first-letter{
 	font-size: 2em;
  	color: #990033;
  	font-family: 'YuMincho';
 }
-.about-link:hover{
-	text-decoration: none;
+.about-link{
+	text-align: center;
 }
+
+
 //ジャンルボタンの調整
 .genre-link:hover{
 	color: #111111;
@@ -129,18 +134,15 @@
 .about-junbotron{
 	background-image: url("/images/baby-lemon.jpeg");
 	background-size: cover;
-	height: 600px;
+	height: 700px;
+	padding: 200px auto;
 }
 //aboutページのジャンボもじ
 .about-container{
-	position: relative;
 	margin: 0 auto;
 	text-align: center;
 }
 .junb-about-title{
-	position: absolute;
-	left: 30px;
-	top: 50px;
 	color: white;
 	text-shadow: 1px 2px 3px #CCCCCC;
 }
