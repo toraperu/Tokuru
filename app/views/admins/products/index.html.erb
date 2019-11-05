@@ -5,7 +5,7 @@
 			<tr>
 				<th></th>
 				<th>商品名</th>
-				<th>価格</th>
+				<!-- <th>価格</th> -->
 				<th>販売終了</th>
 				 <th></th>
 			</tr>
@@ -20,7 +20,7 @@
 					<% end %>
 				</td>
 				<td><%= product.name %></td>
-				<td><%= product.price %></td>
+				<!-- <td><%= product.price %></td> -->
 				<td><%= product.finish %></td>
 				<td><%= link_to "詳細", admins_product_path(product), class: "btn btn-info btn-xs" %>
 					<%= link_to "削除", admins_product_path(product), class: "btn btn-danger btn-xs", method: :delete, remote: true %>

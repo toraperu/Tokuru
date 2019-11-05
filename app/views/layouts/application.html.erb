@@ -118,10 +118,11 @@
           <!-- 検索窓 -->
           <div class="seach-window">
             <%= form_tag search_path, enforce_utf8: false, method:'get' do %>
-              <%= text_field_tag :search, "", class: "search_form", placeholder: "商品名で検索" %>
-              <span><%= button_tag sanitize('<i class="fa fa-search"></i>'), type: "submit", class: "btn glyphicon glyphicon-search" %></span>
+              <%= text_field_tag :search, "", class: "search_form", placeholder: "商品名で検索" %><br><br>
+              <p class="search-cursor"><%= button_tag sanitize('<i class="fa fa-search"></i>'), type: "submit", class: "btn glyphicon glyphicon-search" %></p>
             <% end %>
           </div>
+
         </nav>
       </header>
     <% end %>
