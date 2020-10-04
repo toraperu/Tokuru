@@ -72,7 +72,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 #gem "refile", require: "refile/rails", github: 'manfe/refile'
 #gem "refile-mini_magick"
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 gem 'enum_help'
 gem 'json'
 gem 'listen', '>= 3.0.5', '< 3.2'
