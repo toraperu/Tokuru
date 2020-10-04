@@ -1,0 +1,13 @@
+current directory: /Users/miyazakitoranosuke/Desktop/work/vagrant/Tokuru/vendor/bundle/ruby/2.5.0/gems/json-2.3.1/ext/json
+/Users/miyazakitoranosuke/.rbenv/versions/2.5.8/bin/ruby -r ./siteconf20201004-57333-u4hdhw.rb extconf.rb
+creating Makefile
+
+current directory: /Users/miyazakitoranosuke/Desktop/work/vagrant/Tokuru/vendor/bundle/ruby/2.5.0/gems/json-2.3.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/miyazakitoranosuke/Desktop/work/vagrant/Tokuru/vendor/bundle/ruby/2.5.0/gems/json-2.3.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/miyazakitoranosuke/Desktop/work/vagrant/Tokuru/vendor/bundle/ruby/2.5.0/gems/json-2.3.1/ext/json
+make "DESTDIR=" install
